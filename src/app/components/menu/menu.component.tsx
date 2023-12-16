@@ -1,44 +1,64 @@
-import React, { useContext } from 'react';
-import { MenuContext } from '../../app.component';
+import React, { Dispatch, createContext, useContext, useState } from 'react';
 import './menu.style.scss';
+import useData from '../../hooks/useData';
+import whiteLogo from '../../../assets/img/white_logo.png';
 
-const Hamburger: React.FC = () => {
+const MenuContext = createContext({
+    links: [{
+        section: '',
+        url: ''
+    }],
+});
+
+const Hamburger: React.FC<{
+    on: Boolean, setOn: Dispatch<boolean>
+    }> = ({ on, setOn }) => {
     return (
-        <div className='hamburger-lines'>
-            <span className='line line1'></span>
-            <span className='line line2'></span>
-            <span className='line line3'></span>
+        <div className='hamburger-lines' onClick={() => setOn(!on)}>
+            <span className={on ? 'line line1 active' : 'line line1'} />
+            <span className={on ? 'line line2 active' : 'line line2'} />
+            <span className={on ? 'line line3 active' : 'line line3'} />
         </div>
     )
 };
 
 const MenuLinks = () => {
-    const links = useContext(MenuContext);
+    const { links } = useContext(MenuContext);
 
     return (
-        <div className='menu-items'>
-            {links.map(({ section, url }) => {
-                return (
-                    <li key={section}>
-                        <a href={url}>
-                            {section}
-                        </a>
-                    </li>
-                )
-            })}
+        <div className='MenuLinks'>
+                <nav>
+                    <ul className='menu-items'>
+                        {links.map(({ section, url }) => {
+                            return (
+                                    <li key={section}>
+                                    <a href={url}>
+                                    {section}
+                                    </a>
+                                    </li>
+                                   )
+                            })}
+                    </ul>
+                </nav>
+                <img src={whiteLogo} alt='' className='menu-logo' />
         </div>
     )
 };
 
 export const Menu = () => {
+    const [on, setOn] = useState(false);
+    const { links } = useData();
+
     return (
-        <div className='Menu'>
-            <div className='Menu--wrapper'>
-                <nav>
-                    <Hamburger />
-                    <MenuLinks />
-                </nav>
+        <MenuContext.Provider value={({
+            links,
+        })}>
+            <div className='Menu'>
+                <div className={on ? 'Menu--wrapper active' : 'Menu--wrapper'}>
+                    <Hamburger on={on} setOn={setOn} />
+                        <MenuLinks />
+                </div>
             </div>
-        </div>
+        </MenuContext.Provider>
     )
 };
