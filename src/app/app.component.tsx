@@ -7,8 +7,6 @@ import { IService } from '../custom';
 import { Footer } from './components/footer/footer.component';
 import { links, bodas } from './data';
 
-export const MenuContext = createContext([{ section: '', url: '' }]);
-
 const App: FC = () => {
     return (
         <div className="App">
