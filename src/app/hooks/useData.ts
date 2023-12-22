@@ -94,7 +94,54 @@ const useData = () => {
         },
     ];
 
-    return { links, bodas, testimonials, customizations };
+    const footerLinks = [
+        {
+            text: "repertorio",
+            url: "",
+        },
+        {
+            text: "solistas",
+            url: "",
+        },
+        {
+            text: "decoración",
+            url: "",
+        },
+        {
+            text: "grupos CM agency",
+            url: "",
+        },
+        {
+            text: "escúchanos",
+            url: "",
+        },
+        {
+            text: "contacto",
+            url: "",
+        },
+        {
+            text: "instagram",
+            url: "",
+        },
+        {
+            text: "youtube",
+            url: "",
+        },
+    ];
+
+    const phone = '+34 604 820 022';
+
+    const email = 'grupotrioconcuerda@gmail.com';
+
+    return {
+        links,
+        bodas,
+        testimonials,
+        customizations,
+        footerLinks,
+        phone,
+        email
+    };
 };
 
 export default useData;
