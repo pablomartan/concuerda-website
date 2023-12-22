@@ -30,11 +30,17 @@ const MenuLinks = () => {
                 <nav>
                     <ul className='menu-items'>
                         {links.map(({ section, url }) => {
+                            let className = 'MenuLinks__link';
+                            if (section === 'CM Agency')
+                                className += ' MenuLinks__link--cmagencylink';
+
                             return (
                                     <li key={section}>
-                                    <a href={url}>
-                                    {section}
-                                    </a>
+                                        <a
+                                            href={url}
+                                            className={className}>
+                                            {section}
+                                        </a>
                                     </li>
                                    )
                             })}

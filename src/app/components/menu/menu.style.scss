@@ -1,7 +1,8 @@
-@media (min-width: 320px) {
+@media (min-width: 300px) {
     .Menu {
         &--wrapper {
             position: fixed;
+            top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
@@ -54,7 +55,7 @@
             }
 
             .hamburger-lines {
-                margin: 30px 85%;
+                margin: 35px 85%;
                 margin-bottom: 0;
 
                 width: 30px;
@@ -95,22 +96,40 @@
 
 @media (min-width: 1200px) {
     .Menu {
-        .hamburger-lines {
-            display: none;
-        }
+        margin-right: 5%;
+        align-self: end;
 
-        .menu-items {
-            display: flex;
-            justify-content: space-evenly;
-            width: 75%;
+        &--wrapper {
+            position: unset;
+            height: auto;
+            width: 100%;
 
-            li {
-                list-style: none;
-                
-                a {
-                    font-size: 1.2rem;
+            .hamburger-lines {
+                display: none;
+            }
+
+            .MenuLinks {
+                display: flex;
+
+                .menu-items {
+                    display: flex;
+                    align-self: end;
+                    gap: 3rem;
+                }
+
+                li {
+                    list-style: none;
+                }
+
+                .MenuLinks__link {
+                    color: var(--black);
                     font-family: 'poppins';
                     text-decoration: none;
+
+                    &--cmagencylink {
+                        text-shadow: 0 0 5px #fff, 0 0 8px #fff3cc;
+                        color: #fff3cc;
+                    }
                 }
             }
         }
