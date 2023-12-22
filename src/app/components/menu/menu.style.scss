@@ -5,7 +5,6 @@
             top: 0;
             left: 0;
             width: 100vw;
-            height: 100vh;
 
             .menu-items {
                 display: none;
@@ -16,6 +15,7 @@
             }
 
             &.active {
+                height: 100vh;
                 background-color: var(--black);
                 display: flex;
                 flex-direction: column;
