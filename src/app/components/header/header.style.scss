@@ -1,12 +1,26 @@
-.Header {
-    display: flex;
-    position: absolute;
-    width: 100%;
-    justify-content: space-between;
-    z-index: 1;
+@media (min-width: 300px) {
+    .Header {
+        margin-top: 20px;
+        display: flex;
+        position: absolute;
+        width: 100%;
+        align-items: center;
+        z-index: 1;
 
-    &__logo {
-        height: 60px;
-        margin: 20px 25px;
+        &__logo {
+            height: 60px;
+            margin-left: 20px;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .Header {
+        justify-content: space-between;
+
+        &__logo {
+            height: 60px;
+            margin-left: 100px;
+        }
     }
 }
