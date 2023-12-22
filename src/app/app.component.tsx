@@ -5,9 +5,10 @@ import { MainHero } from './components/main-hero/main-hero.component';
 import { Services } from './components/services/services.component';
 import { IService } from '../custom';
 import { Footer } from './components/footer/footer.component';
-import { links, bodas } from './data';
+import useData from './hooks/useData';
 
 const App: FC = () => {
+    const { bodas } = useData();
     return (
         <div className="App">
             <Header />
