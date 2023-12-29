@@ -47,26 +47,28 @@ export const Footer: React.FC = () => {
                 <ul className='Footer__nav-ul'>
                     {links.slice(3, 6).map((link) => <FooterLink {...link} />)}
                 </ul>
-            </nav>
-            <nav className='Footer__social'>
-                <ul className='Footer__social-ul'>
+                <div className='Footer__social'>
+                    <ul className='Footer__social-ul'>
                     {links.slice(6).map((link) => <SocialLink {...link} />)}
-                </ul>
+                    </ul>
+                </div >
             </nav>
             {/* CONTACTO */}
-            <form className='Footer__contact-form'>
-                <label htmlFor='message'>Cuéntanos tu idea</label>
-                <input type='text' name='message' placeholder='Escribe tu mensaje' />
-                <input type='submit' value='Enviar' />
-            </form>
-            <div className='Footer__contact-data'>
-                <div className='Footer__contact__phone'>
-                    <i className='' />
-                    <p>{contactPhone}</p>
-                </div>
-                <div className='Footer__contact__email'>
-                    <i className='' />
-                    <p>{contactEmail}</p>
+            <div className='Footer__contact'>
+                <form className='Footer__contact-form'>
+                    <label htmlFor='message'>Cuéntanos tu idea</label>
+                    <input type='text' name='message' placeholder='Escribe tu mensaje' />
+                    <input type='submit' value='Enviar' />
+                </form>
+                <div className='Footer__contact-data'>
+                    <div className='Footer__contact__phone'>
+                        <i className='' />
+                        <p>{contactPhone}</p>
+                    </div>
+                    <div className='Footer__contact__email'>
+                        <i className='' />
+                        <p>{contactEmail}</p>
+                    </div>
                 </div>
             </div>
             {/* LOGO */}
