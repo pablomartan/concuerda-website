@@ -1,6 +1,7 @@
 import React from 'react';
 import useData from '../../hooks/useData';
-import logo from '../../../assets/img/white_logo.png';
+import smallLogo from '../../../assets/img/footer_logo_small.png';
+import bigLogo from '../../../assets/img/footer_logo_big.png';
 import insta from '../../../assets/img/insta.png';
 import yt from '../../../assets/img/youtube.png';
 import './footer.style.scss';
@@ -72,7 +73,8 @@ export const Footer: React.FC = () => {
                 </div>
             </div>
             {/* LOGO */}
-            <img src={logo} alt='' className='Footer__logo' />
+            <img src={smallLogo} alt='' className='Footer__logo Footer__logo--small' />
+            <img src={bigLogo} alt='' className='Footer__logo Footer__logo--big' />
         </footer>
     );
 };

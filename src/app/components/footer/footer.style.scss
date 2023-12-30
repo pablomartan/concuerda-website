@@ -97,8 +97,16 @@
         }
 
         &__logo {
-            width: 100px;
+            width: 150px;
             margin: 25%;
+
+            &--big {
+                display: none;
+            }
+
+            &--small {
+                display: unset;
+            }
         }
     }
 }
@@ -188,7 +196,15 @@
             grid-column: 1/4;
             grid-row: 2;
             margin: 6% auto;
-            width: 70px;
+            width: 250px;
+
+            &--small {
+                display: none;
+            }
+
+            &--big {
+                display: unset;
+            }
         }
     }
 }
