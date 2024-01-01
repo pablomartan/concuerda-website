@@ -1,7 +1,7 @@
 import React from 'react';
 import ceremonia from '../../assets/img/bodas_ceremonia.png';
-import religiosa from '../../assets/img/bodas_religiosa.png';
-import civil from '../../assets/img/bodas_civil.png';
+import religiosaPic from '../../assets/img/bodas_religiosa.png';
+import civilPic from '../../assets/img/bodas_civil.png';
 import coctel from '../../assets/img/bodas_coctel.png';
 import banquete from '../../assets/img/bodas_banquete.png';
 import fiesta from '../../assets/img/bodas_fiesta.png';
@@ -140,7 +140,9 @@ const useData = () => {
         customizations,
         footerLinks,
         phone,
-        email
+        email,
+        religiosaPic,
+        civilPic
     };
 };
 
