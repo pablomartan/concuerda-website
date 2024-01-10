@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'kento';
+    src: url('./assets/kento.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'monbaiti';
+    src: url('./assets/monbaiti.ttf') format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+:root {
+    --serif: 'monbaiti';
+    --sans: 'kento';
+    --black: #040d12;
+    --white: #fff;
+    --accent: #e2b73d;
+}
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
