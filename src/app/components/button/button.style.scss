@@ -1,4 +1,10 @@
 .Button {
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 100px;
+    background-color: var(--white);
+
+    a {
+        text-decoration: none;
+        font-family: 'Poppins';
+    }
 }

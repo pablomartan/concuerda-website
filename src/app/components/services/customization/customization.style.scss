@@ -1,28 +1,28 @@
 @media screen and (min-width: 300px) {
     .Customization {
         text-align: center;
-        font-weight: normal;
         margin: 30px 20px;
 
         &__title {
+            font-weight: 100;
             font-family: var(--sans);
             text-transform: uppercase;
             margin: unset;
         }
 
         &__subtitle {
+            font-weight: 100;
             font-family: 'Poppins';
             opacity: 60%;
             margin: unset;
         }
 
         .Button {
-            margin: 10px;
+            margin: 20px 0;
             width: 100px;
 
             a {
                 color: var(--black);
-                font-weight: bold;
             }
         }
     }
