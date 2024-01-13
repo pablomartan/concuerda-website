@@ -73,10 +73,10 @@ const Ceremonia: React.FC<{ active: boolean }> = ({ active }) => {
         },
     ];
     return (
-        <div className={"Ceremonia".concat(active
-            ? ''
-            : ' inactive')}>
-            <div className="Ceremonia__options">
+        <>
+            <div className={"Ceremonia__options".concat(active
+                                                            ? ''
+                                                            : ' inactive')}>
                 <h3 className="Ceremonia__title">
                     Música para la ceremonia
                 </h3>
@@ -84,10 +84,12 @@ const Ceremonia: React.FC<{ active: boolean }> = ({ active }) => {
                     return <Customization key={cust.url} {...cust} />
                 })}
             </div>
-            <div className="Ceremonia__types">
+            <div className={"Ceremonia__types".concat(active
+                                                            ? ''
+                                                            : ' inactive')}>
                 {subtypes.map((subtype) => <CeremoniaSubType {...subtype} />)}
             </div>
-        </div>
+        </>
     )
 };
 
@@ -104,10 +106,10 @@ export const Service: React.FC<IService> = ({ name, pic }) => {
             <div className="Service" onClick={toggleActive}>
                 <img src={pic} className="Service__banner" alt="" />
                 <h2 className="Service__title">{name}</h2>
+                {name === 'ceremonia' && (
+                        <Ceremonia active={ceremoniaActive} />
+                        )}
             </div>
-            {name === 'ceremonia' && (
-                <Ceremonia active={ceremoniaActive} />
-            )}
         </>
     )
 };
