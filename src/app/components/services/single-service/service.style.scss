@@ -1,5 +1,5 @@
 .inactive {
-    display: none;
+    display: none !important;
 }
 
 @media screen and (min-width: 300px) {
@@ -26,10 +26,12 @@
     }
 
     .Ceremonia {
-        width: 100%;
-        padding-top: 100px;
+        &__options {
+            width: 100%;
+            padding-top: 100px;
 
-        border-top: 1px solid;
+            border-top: 1px solid;
+        }
 
         &__title {
             font-size: 1.3em;
@@ -42,6 +44,7 @@
         }
 
         &__types {
+            width: 100%;
             background-color: var(--black);
             padding: 20px 0;
         }
@@ -54,7 +57,7 @@
                 max-width: 100vw;
                 height: 430px;
             }
-            
+
             &--title {
                 font-size: 2rem;
                 color: var(--white);
@@ -64,6 +67,74 @@
                 text-transform: uppercase;
                 margin: unset;
             }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .Service {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        margin: 45px 60px;
+
+        &:nth-child(even) {
+            align-self: flex-end;
+        }
+
+        &__banner {
+            margin: auto;
+            width: 300px;
+            border-radius: 160px 160px 0 0;
+            height: 380px;
+            object-fit: cover;
+        }
+
+        &__title {
+            text-transform: uppercase;
+            font-size: 3em;
+            font-weight: 400;
+            margin: 10px auto 0 auto;
+        }
+
+    }
+
+    .Service:has(.Ceremonia__options) {
+        display: grid;
+        grid-template-areas: "banner options"
+        "title options"
+        "types types";
+        margin: unset;
+
+        .Service__banner {
+            margin: 45px 60px;
+            margin-bottom: 0;
+            grid-area: banner;
+        }
+
+        .Service__title {
+            margin: 0 60px;
+            grid-area: title;
+        }
+    }
+
+    .Ceremonia {
+        &__options {
+            grid-area: options;
+            border: none;
+        }
+
+        &__title {
+            text-align: auto;
+        }
+
+        &__types {
+            grid-area: types;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 100vw;
         }
     }
 }
