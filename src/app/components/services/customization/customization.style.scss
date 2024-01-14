@@ -31,3 +31,32 @@
         }
     }
 }
+
+@media screen and (min-width: 1200px) {
+    .Customization {
+        text-align: left;
+        border-bottom: 1px solid;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2%;
+        width: 75%;
+
+        &__title {
+        }
+
+        &__subtitle {
+            margin: unset;
+        }
+
+        &__button {
+            display: none;
+        }
+
+        &__decorative-dot {
+            display: block;
+            grid-area: dot;
+            margin: unset;
+            font-size: 1.5rem;
+        }
+    }
+}
