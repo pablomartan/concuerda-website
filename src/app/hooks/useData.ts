@@ -73,23 +73,23 @@ const useData = () => {
 
     const customizations = [
         {
-            title: 'repertorio personalizado',
-            subtitle: 'clásico, bandas sonoras y pop',
+            title: '"canciones a la carta"',
+            subtitle: 'personaliza una a una todas las canciones',
             url: '#',
         },
         {
-            title: 'versiones trio concuerda',
-            subtitle: 'estilo único y arreglos propios de cada canción',
+            title: 'añade solistas',
+            subtitle: 'sopranos y cantantes de poop',
             url: '#',
         },
         {
-            title: 'solistas para la ceremonia',
-            subtitle: 'sopranos y voces líricas',
+            title: 'escúchanos',
+            subtitle: 'versiones únicas de tu música favorita',
             url: '#',
         },
         {
-            title: 'protocolo',
-            subtitle: '',
+            title: 'tbv ceremonias',
+            subtitle: 'los mejores grupos',
             url: '#',
         },
     ];
