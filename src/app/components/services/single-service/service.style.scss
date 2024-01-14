@@ -102,10 +102,11 @@
 
     .Service:has(.Ceremonia__options) {
         display: grid;
-        grid-template-areas: "banner options"
-        "title options"
-        "types types";
+        grid-template-areas: "banner options options"
+        "title options options"
+        "types types types";
         margin: unset;
+        width: 100%;
 
         .Service__banner {
             margin: 45px 60px;
@@ -123,18 +124,26 @@
         &__options {
             grid-area: options;
             border: none;
+            padding-top: unset;
+            margin-left: -25%;
+            width: 75%;
         }
 
         &__title {
-            text-align: auto;
+            text-align: left;
+            margin-bottom: 60px;
         }
 
         &__types {
+            position: relative;
+            width: 100vw;
+            margin-left: -15%;
+
             grid-area: types;
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
-            width: 100vw;
+            margin-top: 40px;
         }
     }
 }
