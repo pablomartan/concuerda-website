@@ -12,6 +12,7 @@ export const Customization: React.FC<ICustomization> = ({ title, subtitle, url }
             </div>
             <div>
                 <Button url={url} className="Customization__button" />
+                <p className="Customization__decorative-dot">•</p>
             </div>
         </div>
     )
