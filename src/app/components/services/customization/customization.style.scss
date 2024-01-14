@@ -25,5 +25,9 @@
                 color: var(--black);
             }
         }
+
+        &__decorative-dot {
+            display: none;
+        }
     }
 }
