@@ -72,6 +72,7 @@ const Ceremonia: React.FC<{ active: boolean }> = ({ active }) => {
             title: 'civil'
         },
     ];
+
     return (
         <>
             <div className={"Ceremonia__options".concat(active
