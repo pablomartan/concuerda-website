@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { ICustomization, IService } from "../../../../custom";
 import { Customization } from "../customization/customization.component";
-import useData from "../../../hooks/useData";
 import "./service.style.scss";
+import ServiceModal from "../service-modal/service-modal.component";
+import {
+  useBodasCeremonyTypes,
+  useBodasCustomizations,
+} from "../../../hooks/useData";
 
 const OvalImage: React.FC<any> = ({ picture, svgClass }) => {
   return (
@@ -48,24 +52,8 @@ const CeremoniaSubType: React.FC<{
 };
 
 const Ceremonia: React.FC<{ active: boolean }> = ({ active }) => {
-  const {
-    customizations,
-    religiosaPic: religiosa,
-    civilPic: civil,
-  } = useData();
-
-  const subtypes = [
-    {
-      url: "#",
-      picture: religiosa,
-      title: "religiosa",
-    },
-    {
-      url: "#",
-      picture: civil,
-      title: "civil",
-    },
-  ];
+  const customizations = useBodasCustomizations();
+  const subtypes = useBodasCeremonyTypes();
 
   return (
     <div className="Ceremonia">
@@ -86,6 +74,7 @@ const Ceremonia: React.FC<{ active: boolean }> = ({ active }) => {
 
 export const Service: React.FC<IService> = ({ name, pic }) => {
   const [ceremoniaActive, setCeremoniaActive] = useState(false);
+  const [toggleModal, setToggleModal] = useState(false);
 
   const toggleActive = () => {
     setCeremoniaActive(!ceremoniaActive);
@@ -102,11 +91,17 @@ export const Service: React.FC<IService> = ({ name, pic }) => {
           {name === "ceremonia" && <Ceremonia active={ceremoniaActive} />}
         </div>
       ) : (
-        <div className="Service" onClick={toggleActive}>
+        <div
+          className="Service"
+          onClick={() => {
+            setToggleModal((toggleModal) => !toggleModal);
+          }}
+        >
           <img src={pic} className="Service__banner" alt="" />
           <h2 className="Service__title">{name}</h2>
         </div>
       )}
+      {/* toggleModal ? <ServiceModal /> : null */}
     </>
   );
 };
