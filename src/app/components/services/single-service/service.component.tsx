@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import { ICustomization, IService } from "../../../../custom";
-import { Customization } from "../customization/customization.component";
+import {
+  Customization,
+  CustomizationType,
+} from "../customization/customization.component";
 import "./service.style.scss";
 import ServiceModal from "../service-modal/service-modal.component";
 import {
-  useBodasCeremonyTypes,
-  useBodasCustomizations,
+  useWeddingsCustomizations,
+  useWeddingsCeremonyTypes,
 } from "../../../hooks/useData";
+import { ServiceType } from "../services.component";
 
 const OvalImage: React.FC<any> = ({ picture, svgClass }) => {
   return (
@@ -52,14 +55,14 @@ const CeremoniaSubType: React.FC<{
 };
 
 const Ceremonia: React.FC<{ active: boolean }> = ({ active }) => {
-  const customizations = useBodasCustomizations();
-  const subtypes = useBodasCeremonyTypes();
+  const customizations = useWeddingsCustomizations();
+  const subtypes = useWeddingsCeremonyTypes();
 
   return (
     <div className="Ceremonia">
       <div className={"Ceremonia__options".concat(active ? "" : " inactive")}>
         <h3 className="Ceremonia__title">Música para la ceremonia</h3>
-        {customizations.map((cust: ICustomization) => {
+        {customizations.map((cust: CustomizationType) => {
           return <Customization key={cust.url} {...cust} />;
         })}
       </div>
@@ -72,7 +75,7 @@ const Ceremonia: React.FC<{ active: boolean }> = ({ active }) => {
   );
 };
 
-export const Service: React.FC<IService> = ({ name, pic }) => {
+export const Service: React.FC<ServiceType> = ({ name, pic }) => {
   const [ceremoniaActive, setCeremoniaActive] = useState(false);
   const [toggleModal, setToggleModal] = useState(false);
 
@@ -83,12 +86,12 @@ export const Service: React.FC<IService> = ({ name, pic }) => {
   return (
     <>
       {name === "ceremonia" ? (
-        <div className="Ceremonia--wrapper">
-          <div className="Service" onClick={toggleActive}>
+        <div className="Service">
+          <div className="Ceremonia--wrapper" onClick={toggleActive}>
             <img src={pic} className="Service__banner" alt="" />
             <h2 className="Service__title">{name}</h2>
           </div>
-          {name === "ceremonia" && <Ceremonia active={ceremoniaActive} />}
+          <Ceremonia active={ceremoniaActive} />
         </div>
       ) : (
         <div

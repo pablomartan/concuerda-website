@@ -7,11 +7,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        width: 85%;
         margin: 45px 0;
 
         &__banner {
-            width: 85%;
+            width: 100%;
             border-radius: 160px 160px 0 0;
             height: 380px;
             object-fit: cover;
@@ -26,8 +26,12 @@
     }
 
     .Ceremonia {
-        &--wrapper {
+        &__wrapper {
             width: 100%;
+
+            .Service__banner {
+                width: 100%;
+            }
         }
 
         &__options {
@@ -105,21 +109,18 @@
     }
 
     .Service:has(.Ceremonia__options) {
+        position: relative;
         display: grid;
         grid-template-areas: "banner options options"
         "title options options"
         "types types types";
-        margin: unset;
-        width: 100%;
+        width: 100vw;
 
         .Service__banner {
-            margin: 45px 60px;
-            margin-bottom: 0;
             grid-area: banner;
         }
 
         .Service__title {
-            margin: 0 60px;
             grid-area: title;
         }
     }
@@ -129,8 +130,7 @@
             grid-area: options;
             border: none;
             padding-top: unset;
-            margin-left: -25%;
-            width: 75%;
+            width: 45%;
         }
 
         &__title {
@@ -140,9 +140,7 @@
         }
 
         &__types {
-            position: relative;
             width: 100vw;
-            margin-left: -15%;
 
             grid-area: types;
             display: flex;

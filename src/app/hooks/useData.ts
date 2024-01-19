@@ -9,43 +9,43 @@ import fiesta from "../../assets/img/bodas_fiesta.png";
 export const useMenuLinks = () => [
   {
     section: "Inicio",
-    url: "#",
+    url: "./home",
   },
   {
     section: "Bodas",
-    url: "#",
+    url: "./weddings",
   },
   {
     section: "Eventos",
-    url: "#",
+    url: "./events",
   },
   {
     section: "Infinity",
-    url: "#",
+    url: "./infinity",
   },
   {
     section: "CM Agency",
-    url: "#",
+    url: "./cma",
   },
   {
     section: "Proyectos",
-    url: "#",
+    url: "./projects",
   },
   {
     section: "Personalización",
-    url: "#",
+    url: "./customization",
   },
   {
     section: "Vídeos",
-    url: "#",
+    url: "./videos",
   },
   {
     section: "Contacto",
-    url: "#",
+    url: "./contact",
   },
 ];
 
-export const useBodasServices = () => [
+export const useWeddingsServices = () => [
   {
     name: "ceremonia",
     pic: ceremonia,
@@ -70,7 +70,7 @@ export const useTestimonials = () => [
   "Contactamos con ellos solo un mes antes de la boda, aun así se amoldaron a nosotros y fueron muy flexibles, ofreciendo todas las facilidades y ajustándose a nuestros gustos musicales. Los elegimos para el cocktail de la boda y fué un acierto, muy profesionales, todos los invitados quedaron encantados, los recomendaríamos 100%.",
 ];
 
-export const useBodasCustomizations = () => [
+export const useWeddingsCustomizations = () => [
   {
     title: '"canciones a la carta"',
     subtitle: "personaliza una a una todas las canciones",
@@ -93,7 +93,7 @@ export const useBodasCustomizations = () => [
   },
 ];
 
-export const useBodasCeremonyTypes = () => [
+export const useWeddingsCeremonyTypes = () => [
   {
     url: "#",
     picture: religiosaPic,

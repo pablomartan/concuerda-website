@@ -1,20 +1,43 @@
 import React, { FC } from "react";
-import "./app.module.scss";
-import { Header } from "./components/header/header.component";
-import { MainHero } from "./components/main-hero/main-hero.component";
-import { Services } from "./components/services/services.component";
-import { IService } from "../custom";
+import Weddings from "./routes/weddings/weddings.component";
 import { Footer } from "./components/footer/footer.component";
-import { useBodasServices } from "./hooks/useData";
+import { Header } from "./components/header/header.component";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+} from "react-router-dom";
+import "./app.module.scss";
+import Events from "./routes/events/events.component";
+import NotFound from "./routes/404/404.route";
 
 const App: FC = () => {
-  const bodas = useBodasServices();
+  const router = createBrowserRouter([
+    /*
+     * {
+     * path: "/",
+     *   element: <Landing>,
+     * },
+     */
+    {
+      path: "/weddings",
+      element: <Weddings />,
+    },
+    {
+      path: "/events",
+      element: <Events />,
+    },
+    {
+      path: "*",
+      element: <NotFound />,
+    },
+  ]);
 
   return (
     <div className="App">
       <Header />
-      <MainHero />
-      <Services serviceList={bodas as IService[]} />
+      <RouterProvider router={router} />
       <Footer />
     </div>
   );
