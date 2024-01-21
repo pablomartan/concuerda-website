@@ -3,6 +3,8 @@ import {
   MainHero,
   MainHeroProps,
 } from "../../components/main-hero/main-hero.component";
+import { Header } from "../../components/header/header.component";
+import { Footer } from "../../components/footer/footer.component";
 
 const NotFound: FC = () => {
   const heroProps: MainHeroProps = {
@@ -12,7 +14,9 @@ const NotFound: FC = () => {
   };
   return (
     <>
+      <Header />
       <MainHero {...heroProps} />
+      <Footer />
     </>
   );
 };

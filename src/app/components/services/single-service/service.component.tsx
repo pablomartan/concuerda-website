@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useReducer, useState } from "react";
 import {
   Customization,
   CustomizationType,
 } from "../customization/customization.component";
 import "./service.style.scss";
-import ServiceModal from "../service-modal/service-modal.component";
+import { ServiceModal } from "../service-modal/service-modal.component";
 import {
   useWeddingsCustomizations,
   useWeddingsCeremonyTypes,
@@ -54,7 +54,9 @@ const CeremoniaSubType: React.FC<{
   );
 };
 
-const Ceremonia: React.FC<{ active: boolean }> = ({ active }) => {
+const Ceremonia: React.FC<{
+  active: boolean;
+}> = ({ active }) => {
   const customizations = useWeddingsCustomizations();
   const subtypes = useWeddingsCeremonyTypes();
 
@@ -76,35 +78,27 @@ const Ceremonia: React.FC<{ active: boolean }> = ({ active }) => {
 };
 
 export const Service: React.FC<ServiceType> = ({ name, pic }) => {
-  const [ceremoniaActive, setCeremoniaActive] = useState(false);
-  const [toggleModal, setToggleModal] = useState(false);
-
-  const toggleActive = () => {
-    setCeremoniaActive(!ceremoniaActive);
-  };
+  const [ceremoniaActive, setCeremoniaActive] = useReducer(
+    (state) => !state,
+    false,
+  );
 
   return (
     <>
       {name === "ceremonia" ? (
         <div className="Service">
-          <div className="Ceremonia--wrapper" onClick={toggleActive}>
+          <div className="Ceremonia--wrapper" onClick={setCeremoniaActive}>
             <img src={pic} className="Service__banner" alt="" />
             <h2 className="Service__title">{name}</h2>
           </div>
           <Ceremonia active={ceremoniaActive} />
         </div>
       ) : (
-        <div
-          className="Service"
-          onClick={() => {
-            setToggleModal((toggleModal) => !toggleModal);
-          }}
-        >
+        <div className="Service">
           <img src={pic} className="Service__banner" alt="" />
           <h2 className="Service__title">{name}</h2>
         </div>
       )}
-      {/* toggleModal ? <ServiceModal /> : null */}
     </>
   );
 };

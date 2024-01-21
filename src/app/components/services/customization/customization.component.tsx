@@ -6,7 +6,7 @@ export type CustomizationType = {
   title: string;
   subtitle: string;
   url: string;
-  banner?: ImageBitmapSource;
+  banner?: string;
 };
 
 export const Customization: React.FC<CustomizationType> = ({

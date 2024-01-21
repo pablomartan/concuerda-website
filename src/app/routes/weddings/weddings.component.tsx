@@ -1,4 +1,6 @@
 import React, { FC } from "react";
+import { Footer } from "../../components/footer/footer.component";
+import { Header } from "../../components/header/header.component";
 import {
   MainHero,
   MainHeroProps,
@@ -21,8 +23,10 @@ const Weddings: FC = () => {
 
   return (
     <>
+      <Header />
       <MainHero {...heroProps} />
       <Services serviceList={weddingServiceList as ServiceType[]} />
+      <Footer />
     </>
   );
 };
