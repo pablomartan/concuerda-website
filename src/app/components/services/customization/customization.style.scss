@@ -3,6 +3,11 @@
         text-align: center;
         margin: 30px 20px;
 
+        &.infinity {
+            color: var(--infinity-text-color);
+            border-color: var(--white);
+        }
+
         &__title {
             font-weight: 100;
             font-family: var(--sans);

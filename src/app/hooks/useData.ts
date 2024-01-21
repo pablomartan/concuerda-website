@@ -5,8 +5,8 @@ import civilPic from "../../assets/img/bodas_civil.png";
 import coctel from "../../assets/img/bodas_coctel.png";
 import banquete from "../../assets/img/bodas_banquete.png";
 import fiesta from "../../assets/img/bodas_fiesta.png";
-import tbvVid from "../../assets/vid/bodas_velas_vid.mov";
-import bodasReligiosaVid from "../../assets/vid/bodas_religiosa_vid.mov";
+import tbvVid from "../../assets/vid/bodas_velas_vid.mp4";
+import bodasReligiosaVid from "../../assets/vid/bodas_religiosa_vid.mp4";
 
 export const useMenuLinks = () => [
   {

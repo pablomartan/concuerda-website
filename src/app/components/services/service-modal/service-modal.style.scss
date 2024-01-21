@@ -20,6 +20,10 @@
                 color: var(--white);
                 display: block;
                 margin: 5%;
+
+                &--cross {
+                    display: none;
+                }
             }
 
             &--text {
@@ -32,7 +36,7 @@
             &__title {
                 text-transform: uppercase;
                 text-align: center;
-                font-family: var(--serif);;
+                font-family: var(--serif);
             }
             
             &__subtitle {
@@ -72,6 +76,7 @@
 
                 &__banner {
                     widht: 100%;
+                    height: auto;
                 }
             }
         }
@@ -93,4 +98,77 @@
 }
 
 @media (min-width: 1200px) {
+    .ServiceModal {
+        width: 100%;
+        overflow: hidden;
+
+        &__header {
+            background-size: cover;
+            background-position: 60% 37%;
+
+            &__back-link {
+                display: none;
+
+                &--cross {
+                    display: block;
+                    color: var(--white);
+                    text-decoration: none;
+                    margin: 1% 97%;
+                }
+            }
+
+            &--text {
+                align-items: flex-start;
+                margin-left: 2%;
+            }
+
+            &__title {
+                margin: unset;
+                font-size: 3rem;
+                font-weight: normal;
+            }
+
+            &__subtitle {
+                margin: unset;
+                width: 21%;
+                text-align: unset;
+            }
+        }
+
+        &__body {
+            padding-top: 10%;
+
+            .Customization {
+                margin: 2% auto;
+                height: 60px;
+            }
+
+            &__premium-customization {
+                background-color: transparent;
+                color: var(--accent);
+                width: 80%;
+                margin: 0 auto;
+
+                .Customization {
+                    margin-top: -10%;
+                    border: none;
+
+                    &__decorative-dot {
+                        display: none;
+                    }
+                }
+
+                &__banner {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        &__footer {
+            &__link {
+                margin-left: 25%;
+            }
+        }
+    }
 }

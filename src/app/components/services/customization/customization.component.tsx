@@ -15,7 +15,11 @@ export const Customization: React.FC<CustomizationType> = ({
   url,
 }) => {
   return (
-    <div className="Customization">
+    <div
+      className={"Customization".concat(
+        title === "infinity" ? " infinity" : "",
+      )}
+    >
       <div>
         <h4 className="Customization__title">{title}</h4>
         <h5 className="Customization__subtitle">{subtitle}</h5>
