@@ -52,17 +52,16 @@ export const useWeddingsServices = () => [
     name: "ceremonia",
     pic: ceremonia,
   },
-  {
-    name: "cóctel",
-    pic: coctel,
-  },
+  { name: "cóctel", pic: coctel, url: "/weddings/cocktail" },
   {
     name: "banquete",
     pic: banquete,
+    url: "/weddings/dinner",
   },
   {
     name: "fiesta",
     pic: fiesta,
+    url: "/weddings/party",
   },
 ];
 

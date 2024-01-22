@@ -49,6 +49,7 @@ export const ServiceModal: FC<{ modal: ServiceModalKeyType }> = ({ modal }) => {
           <video
             className={"ServiceModal__body__premium-customization__banner"}
             src={premiumCustomization["banner"]}
+            autoPlay={true}
           />
           <Customization {...premiumCustomization} />
         </div>

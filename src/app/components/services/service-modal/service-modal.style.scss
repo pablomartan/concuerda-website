@@ -75,7 +75,7 @@
                 }
 
                 &__banner {
-                    widht: 100%;
+                    width: 100%;
                     height: auto;
                 }
             }
@@ -158,15 +158,12 @@
                     }
                 }
 
-                &__banner {
-                    width: 100%;
-                    height: auto;
-                }
             }
         }
 
         &__footer {
             &__link {
+                margin: unset;
                 margin-left: 25%;
             }
         }

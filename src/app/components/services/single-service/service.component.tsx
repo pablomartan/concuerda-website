@@ -77,7 +77,7 @@ const Ceremonia: React.FC<{
   );
 };
 
-export const Service: React.FC<ServiceType> = ({ name, pic }) => {
+export const Service: React.FC<ServiceType> = ({ name, pic, url }) => {
   const [ceremoniaActive, setCeremoniaActive] = useReducer(
     (state) => !state,
     false,
@@ -88,15 +88,23 @@ export const Service: React.FC<ServiceType> = ({ name, pic }) => {
       {name === "ceremonia" ? (
         <div className="Service">
           <div className="Ceremonia--wrapper" onClick={setCeremoniaActive}>
-            <img src={pic} className="Service__banner" alt="" />
+            <div
+              style={{ backgroundImage: `url("${pic}")` }}
+              className="Service__banner"
+            />
             <h2 className="Service__title">{name}</h2>
           </div>
           <Ceremonia active={ceremoniaActive} />
         </div>
       ) : (
         <div className="Service">
-          <img src={pic} className="Service__banner" alt="" />
-          <h2 className="Service__title">{name}</h2>
+          <a href={url}>
+            <div
+              style={{ backgroundImage: `url("${pic}")` }}
+              className="Service__banner"
+            />
+            <h2 className="Service__title">{name}</h2>
+          </a>
         </div>
       )}
     </>
