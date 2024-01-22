@@ -233,7 +233,7 @@ export const useWeddingsServiceModalsData = () => ({
         url: "/personalization",
       },
       {
-        title: "inifinity",
+        title: "infinity",
         subtitle: "marca la diferencia",
         url: "/infinity",
       },
