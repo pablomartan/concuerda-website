@@ -1,159 +1,160 @@
 .inactive {
-    display: none !important;
+  display: none !important;
 }
 
 @media screen and (min-width: 300px) {
-    .Service {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 85%;
-        margin: 45px 0;
+  .Service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    margin: 45px 0;
 
-        &__banner {
-            width: 100%;
-            border-radius: 160px 160px 0 0;
-            height: 380px;
-            background-size: cover;
-        }
-
-        &__title {
-            text-transform: uppercase;
-            font-size: 3em;
-            font-weight: 400;
-            margin: 10px auto 0 auto;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-            text-align: center;
-        }
+    &__banner {
+      width: 100%;
+      border-radius: 160px 160px 0 0;
+      height: 380px;
+      background-size: cover;
     }
 
-    .Ceremonia {
-        &__wrapper {
-            width: 100%;
-
-            .Service__banner {
-                width: 100%;
-            }
-        }
-
-        &__options {
-            width: 100%;
-            padding-top: 100px;
-
-            border-top: 1px solid;
-        }
-
-        &__title {
-            font-size: 1.3em;
-            text-transform: uppercase;
-            text-align: center;
-            font-family: var(--sans);
-
-            width: 90%;
-            margin: auto;
-        }
-
-        &__types {
-            width: 100%;
-            background-color: var(--black);
-            padding: 20px 0;
-        }
-
-        &__subtype {
-            display: block;
-            margin: 90px 0;
-
-            &--pic {
-                max-width: 100vw;
-                height: 430px;
-            }
-
-            &--title {
-                font-size: 2rem;
-                color: var(--white);
-                font-family: var(--serif);
-                font-weight: normal;
-                text-align: center;
-                text-transform: uppercase;
-                margin: unset;
-            }
-        }
+    &__title {
+      text-transform: uppercase;
+      font-size: 3em;
+      font-weight: 400;
+      margin: 10px auto 0 auto;
     }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      text-align: center;
+    }
+  }
+
+  .Ceremonia {
+    &__wrapper {
+      width: 100%;
+
+      .Service__banner {
+        width: 100%;
+      }
+    }
+
+    &__options {
+      width: 100%;
+      padding-top: 100px;
+
+      border-top: 1px solid;
+    }
+
+    &__title {
+      font-size: 1.3em;
+      text-transform: uppercase;
+      text-align: center;
+      font-family: var(--sans);
+
+      width: 90%;
+      margin: auto;
+    }
+
+    &__types {
+      width: 100%;
+      background-color: var(--black);
+      padding: 20px 0;
+    }
+
+    &__subtype {
+      display: block;
+      margin: 90px 0;
+
+      &--pic {
+        max-width: 100vw;
+        height: 430px;
+      }
+
+      &--title {
+        font-size: 2rem;
+        color: var(--white);
+        font-family: var(--serif);
+        font-weight: normal;
+        text-align: center;
+        text-transform: uppercase;
+        margin: unset;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 1200px) {
-    .Service {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: auto;
-        margin: 45px 60px;
+  .Service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    margin: 45px 60px;
 
-        &:nth-child(even) {
-            align-self: flex-end;
-        }
-
-        &__banner {
-            margin: auto;
-            width: 300px;
-            border-radius: 160px 160px 0 0;
-            height: 380px;
-            object-fit: cover;
-        }
-
-        &__title {
-            text-transform: uppercase;
-            font-size: 3em;
-            font-weight: 400;
-            margin: 10px auto 0 auto;
-        }
-
+    &:nth-child(even) {
+      align-self: flex-end;
     }
 
-    .Service:has(.Ceremonia__options) {
-        position: relative;
-        display: grid;
-        grid-template-areas: "banner options options"
-        "title options options"
-        "types types types";
-        width: 100vw;
-
-        .Service__banner {
-            grid-area: banner;
-            margin: unset;
-        }
-
-        .Service__title {
-            grid-area: title;
-        }
+    &__banner {
+      margin: auto;
+      width: 300px;
+      border-radius: 160px 160px 0 0;
+      height: 380px;
+      object-fit: cover;
     }
 
-    .Ceremonia {
-        &__options {
-            grid-area: options;
-            border: none;
-            padding-top: unset;
-            width: 45%;
-        }
-
-        &__title {
-            text-align: left;
-            margin-bottom: 60px;
-            font-size: 1.5rem;
-        }
-
-        &__types {
-            width: 100vw;
-
-            grid-area: types;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            margin-top: 40px;
-        }
+    &__title {
+      text-transform: uppercase;
+      font-size: 3em;
+      font-weight: 400;
+      margin: 10px auto 0 auto;
     }
+  }
+
+  .Service:has(.Ceremonia__options) {
+    display: grid;
+    grid-template-areas:
+      "banner options options"
+      "title options options"
+      "types types types";
+
+    .Service__banner {
+      grid-area: banner;
+      margin: unset;
+    }
+
+    .Service__title {
+      grid-area: title;
+      margin: unset;
+    }
+  }
+
+  .Ceremonia {
+    &__options {
+      grid-area: options;
+      border: none;
+      padding-top: unset;
+      width: 70%;
+      margin-left: -20%;
+    }
+
+    &__title {
+      text-align: left;
+      margin-bottom: 60px;
+      font-size: 1.5rem;
+    }
+
+    &__types {
+      width: 100vw;
+      grid-area: types;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-top: 40px;
+      margin-left: -19.2%;
+    }
+  }
 }

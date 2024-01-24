@@ -61,7 +61,7 @@ const Ceremonia: React.FC<{
   const subtypes = useWeddingsCeremonyTypes();
 
   return (
-    <div className="Ceremonia">
+    <>
       <div className={"Ceremonia__options".concat(active ? "" : " inactive")}>
         <h3 className="Ceremonia__title">Música para la ceremonia</h3>
         {customizations.map((cust: CustomizationType) => {
@@ -73,7 +73,7 @@ const Ceremonia: React.FC<{
           <CeremoniaSubType {...subtype} />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
@@ -87,13 +87,12 @@ export const Service: React.FC<ServiceType> = ({ name, pic, url }) => {
     <>
       {name === "ceremonia" ? (
         <div className="Service">
-          <div className="Ceremonia--wrapper" onClick={setCeremoniaActive}>
-            <div
-              style={{ backgroundImage: `url("${pic}")` }}
-              className="Service__banner"
-            />
-            <h2 className="Service__title">{name}</h2>
-          </div>
+          <div
+            style={{ backgroundImage: `url("${pic}")` }}
+            className="Service__banner"
+            onClick={setCeremoniaActive}
+          />
+          <h2 className="Service__title">{name}</h2>
           <Ceremonia active={ceremoniaActive} />
         </div>
       ) : (
