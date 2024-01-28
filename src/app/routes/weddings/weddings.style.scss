@@ -1,27 +1,43 @@
-.Weddings {
-  .hamburger-lines {
-    .line {
-      background-color: var(--black);
+@media (min-width: 300px) {
+  .Weddings {
+    .Header__logo {
+      filter: invert(1);
+    }
+    .Menu--wrapper {
+      .hamburger-lines {
+        .line {
+          background-color: var(--black);
+        }
+      }
+
+      .MenuLinks {
+        .MenuLinks__link {
+          color: var(--white);
+
+          &--cmagencylink {
+            text-shadow:
+              0 0 5px #fff,
+              0 0 8px #fff3cc;
+            color: #fff3cc;
+          }
+        }
+      }
+    }
+    .MainHero__bg {
+      background-image: url("../../../assets/img/hero_banners/weddings_hero.png");
     }
   }
+}
 
-  .Header__logo {
-    filter: invert(1);
-  }
-  .MainHero__bg {
-    background-image: url("../../../assets/img/hero_banners/weddings_hero.png");
-  }
-
-  .Menu--wrapper {
-    .MenuLinks {
-      .MenuLinks__link {
-        color: var(--black);
-
-        &--cmagencylink {
-          text-shadow:
-            0 0 5px #fff,
-            0 0 8px #fff3cc;
-          color: #fff3cc;
+@media (min-width: 1200px) {
+  .Weddings {
+    .Menu--wrapper {
+      .MenuLinks {
+        .MenuLinks__link {
+          color: var(--black);
+          &--cmagencylink {
+            color: #fff3cc;
+          }
         }
       }
     }
