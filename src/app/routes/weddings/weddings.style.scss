@@ -1,3 +1,23 @@
-.MainHero__bg.Weddings {
-    background-image: url("../../../assets/hero_banners/weddings_hero.png");
+.Weddings {
+  .Header__logo {
+    filter: invert(1);
+  }
+  .MainHero__bg {
+    background-image: url("../../../assets/img/hero_banners/weddings_hero.png");
+  }
+
+  .Menu--wrapper {
+    .MenuLinks {
+      .MenuLinks__link {
+        color: var(--black);
+
+        &--cmagencylink {
+          text-shadow:
+            0 0 5px #fff,
+            0 0 8px #fff3cc;
+          color: #fff3cc;
+        }
+      }
+    }
+  }
 }
