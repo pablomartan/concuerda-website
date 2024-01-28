@@ -5,22 +5,17 @@ import "./app.module.scss";
 import Events from "./routes/events/events.component";
 import NotFound from "./routes/404/404.route";
 import { ServiceModal } from "./components/services/service-modal/service-modal.component";
+import Landing from "./routes/landing/landing.route";
 
 const App: FC = () => {
   const router = createBrowserRouter([
-    /*
-     * {
-     * path: "/",
-     *   element: <Landing>,
-     * },
-     */
+    {
+      path: "/",
+      element: <Landing />,
+    },
     {
       path: "/weddings",
       element: <Weddings />,
-    },
-    {
-      path: "/events",
-      element: <Events />,
     },
     {
       path: "/weddings/religious",
@@ -41,6 +36,18 @@ const App: FC = () => {
     {
       path: "/weddings/party",
       element: <ServiceModal modal={"party"} />,
+    },
+    {
+      path: "/events",
+      element: <Events />,
+    },
+    {
+      path: "/events/corporate",
+      element: <ServiceModal modal={"corporate"} />,
+    },
+    {
+      path: "/events/custom",
+      element: <ServiceModal modal={"custom"} />,
     },
     {
       path: "*",

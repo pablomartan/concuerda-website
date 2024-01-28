@@ -1,0 +1,173 @@
+@media (min-width: 1200px) {
+  .Landing {
+    background: var(--black);
+    color: var(--white);
+
+    .MainHero {
+      &__hook {
+        color: inherit;
+      }
+
+      &__bg {
+        width: inherit;
+        height: auto;
+      }
+    }
+
+    .Service {
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      &--special {
+        height: 20%;
+
+        &.infinity {
+          .Service__title--special {
+            span {
+              color: #fa09ff;
+              font-size: 2.5rem;
+            }
+          }
+        }
+
+        &.candlemusic-agency {
+          .Service__title--special {
+            span {
+              color: #f4df9b;
+              font-size: 1.3rem;
+              font-weight: 300;
+              letter-spacing: 0.7rem;
+              line-height: 2rem;
+
+              &:nth-child(even) {
+                font-size: 1rem;
+                font-weight: lighter;
+                letter-spacing: 1rem;
+              }
+            }
+          }
+        }
+
+        &:nth-child(odd) {
+          /*
+             * candlemusic agency div
+             */
+          a {
+            flex-direction: row-reverse;
+
+            .Service__interaction--special {
+              background-color: #ffe58f;
+              color: black;
+              border-radius: 0 0 0 80px;
+              padding-left: 8%;
+              width: 22%;
+
+              &__logo {
+                width: 93px;
+                height: 70px;
+                background-image: url("../../../assets/img/cma_logo.png");
+              }
+            }
+
+            .Service__subtitle--special {
+              border-color: black;
+            }
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: inherit;
+
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          margin: unset;
+        }
+      }
+
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      margin: unset;
+
+      &__interaction {
+        width: 50%;
+        text-align: center;
+
+        .Button {
+          width: 25%;
+          height: 45px;
+          margin-top: 10px;
+        }
+
+        &--special {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          padding-left: 2%;
+          background: #4d0777;
+          width: 30%;
+          border-radius: 0 80px 0 0;
+
+          &__logo {
+            font-family: var(--sans);
+            font-size: 1.3em;
+            font-weight: 600;
+          }
+        }
+      }
+
+      &__title {
+        max-width: 75%;
+
+        &--span {
+          display: block;
+        }
+
+        &--special {
+          position: absolute;
+          max-width: unset;
+          width: 50%;
+          text-align: center;
+          margin: 130px 12%;
+          z-index: 3;
+
+          span {
+            display: block;
+            font-family: var(--sans);
+          }
+        }
+      }
+
+      &__subtitle--special {
+        border-left: 1px solid white;
+        padding-left: 4%;
+        margin-bottom: 0;
+        font-family: "Poppins";
+        font-size: 2.5em;
+        line-height: 0.9em;
+        width: 75%;
+        text-transform: uppercase;
+      }
+
+      &__banner {
+        width: 50%;
+        border-radius: unset;
+
+        &--special {
+          width: 70%;
+          height: 280px;
+
+          &__video {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
