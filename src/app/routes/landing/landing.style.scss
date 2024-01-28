@@ -2,8 +2,10 @@
   .Landing {
     background: var(--black);
     color: var(--white);
+    overflow: hidden;
 
     .CookieNotice {
+      display: none;
       position: fixed;
       bottom: 0;
       width: 100%;
@@ -48,6 +50,247 @@
           font-weight: bold;
         }
       }
+    }
+
+    .MainHero {
+      &__text {
+        margin: 12% 0;
+      }
+
+      &__hook {
+        color: inherit;
+        text-align: center;
+      }
+
+      &__bg {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        object-position: 65% 80%;
+      }
+    }
+
+    .Service {
+      flex-direction: column-reverse;
+      width: 100%;
+
+      &--special {
+        a {
+          display: flex;
+          flex-direction: column-reverse;
+          text-decoration: none;
+          color: inherit;
+        }
+
+        &.infinity {
+          .Service__title--special {
+            span {
+              color: #fa09ff;
+              font-size: 2.5rem;
+            }
+          }
+        }
+
+        &.candlemusic-agency {
+          .Service__title--special {
+            margin-left: 10%;
+            span {
+              display: block;
+              color: #f4df9b;
+              font-size: 1.3rem;
+              font-weight: 300;
+              letter-spacing: 0.6rem;
+              line-height: 2rem;
+
+              &:nth-child(even) {
+                font-size: 1rem;
+                font-weight: lighter;
+                letter-spacing: 1rem;
+                margin-left: 30%;
+              }
+            }
+          }
+        }
+
+        &:nth-child(even) {
+          /*
+             * candlemusic agency div
+             */
+          a {
+            flex-direction: column;
+
+            .Service__interaction--special {
+              background-color: #ffe58f;
+              color: black;
+              border-radius: 0 0 80px 0;
+
+              &__logo {
+                width: 93px;
+                height: 70px;
+                background-image: url("../../../assets/img/cma_logo.png");
+              }
+            }
+          }
+
+          .Service__subtitle--special {
+            border-color: black;
+          }
+        }
+      }
+
+      &:nth-child(1) {
+        .Service__title {
+          margin-left: 8%;
+          &-word {
+            &:nth-child(even) {
+              padding-left: 40%;
+            }
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        .Service__title {
+          margin-left: 12%;
+          &-word {
+            &:nth-child(even) {
+              padding-left: 30%;
+            }
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        .Service__title {
+          text-align: center;
+          &-word {
+            span:nth-child(1) {
+              margin-right: 4%;
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+
+      &__title {
+        &-word {
+          font-size: 2.3rem;
+          margin: 0 auto;
+        }
+
+        &--special {
+          position: absolute;
+          z-index: 1;
+          font-family: var(--sans);
+          text-transform: uppercase;
+          width: 50%;
+          margin-left: 17%;
+          margin-top: 50%;
+        }
+      }
+
+      &__interaction {
+        width: 100%;
+        margin: 0 auto;
+
+        .Button {
+          width: 95%;
+          height: 50%;
+          margin-left: 2.5%;
+          margin-top: 5%;
+          background-color: var(--black);
+          color: var(--white);
+          border: 1px solid var(--white);
+          font-weight: bold;
+        }
+
+        &--special {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          height: 20vh;
+          padding: 4%;
+          background: #4d0777;
+          border-radius: 0 80px 0 0;
+
+          &__logo {
+            font-family: var(--sans);
+            font-size: 1rem;
+            font-weight: 600;
+          }
+        }
+      }
+
+      &__subtitle--special {
+        border-left: 1px solid white;
+        padding-left: 2%;
+        margin-left: 2%;
+        margin-bottom: 0;
+        font-family: "Poppins";
+        font-size: 2rem;
+        line-height: 0.9em;
+        width: 75%;
+        text-transform: uppercase;
+      }
+
+      &__banner {
+        border-radius: unset;
+
+        &--special {
+          &__video {
+            position: relative;
+            height: 50vh;
+            width: auto;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
+  .LandingServices__special {
+    margin-top: 80%;
+  }
+
+  .Reviews {
+    margin-top: 30%;
+
+    &__title {
+      text-transform: uppercase;
+      font-size: 2.3rem;
+      letter-spacing: 1rem;
+      font-weight: normal;
+      text-align: center;
+    }
+
+    &__separation-line {
+      width: 75%;
+      height: 2px;
+      background-color: white;
+      margin: auto;
+      margin-bottom: 3%;
+    }
+
+    &__review-wrapper {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: "Poppins";
+
+      &:last-child {
+        .Reviews__decorative-dot {
+          display: none;
+        }
+      }
+    }
+
+    &__decorative-dot {
+      font-size: 2rem;
+      margin: unset;
     }
   }
 }
@@ -135,20 +378,11 @@
               font-weight: 300;
               letter-spacing: 0.7rem;
               line-height: 2rem;
-
-              &:nth-child(odd) {
-                font-size: 1rem;
-                font-weight: lighter;
-                letter-spacing: 1rem;
-              }
             }
           }
         }
 
         &:nth-child(even) {
-          /*
-             * candlemusic agency div
-             */
           a {
             flex-direction: row-reverse;
 
@@ -202,6 +436,8 @@
           display: flex;
           flex-direction: column;
           justify-content: space-around;
+          padding: unset;
+          height: unset;
           padding-left: 2%;
           background: #4d0777;
           width: 30%;
@@ -269,9 +505,6 @@
     .Reviews {
       &__title {
         font-size: 3rem;
-        letter-spacing: 1rem;
-        text-transform: uppercase;
-        text-align: center;
         width: 50%;
         margin: auto;
         margin-top: 15%;
@@ -280,10 +513,6 @@
 
       &__separation-line {
         width: 12%;
-        height: 2px;
-        background-color: white;
-        margin: auto;
-        margin-bottom: 3%;
       }
 
       &--wrapper {
@@ -293,14 +522,11 @@
       }
 
       &__review {
+        width: 100%;
+
         &-wrapper {
           width: 25%;
         }
-
-        width: 100%;
-        font-family: "Poppins";
-        text-align: center;
-        margin: auto;
       }
 
       &__decorative-dot {

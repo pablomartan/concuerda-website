@@ -68,19 +68,19 @@ const LandingServices: FC = () => {
         return (
           <div className="Service">
             <div className="Service__interaction">
-              <h2 className="Service__title">
-                {title.split(" ").map((titleWord) => {
-                  return (
-                    <span
-                      className={"Service__title--span".concat(
-                        titleWord === "de" ? " de" : "",
-                      )}
-                    >
-                      {titleWord}
-                    </span>
+              <div className="Service__title">
+                {title.split(" ").map((titleWord, i, array) => {
+                  return titleWord === "de" ? null : i > 1 &&
+                    i === array.length - 1 ? (
+                    <p className="Service__title-word">
+                      <span>de</span>
+                      <span>{titleWord}</span>
+                    </p>
+                  ) : (
+                    <p className="Service__title-word">{titleWord}</p>
                   );
                 })}
-              </h2>
+              </div>
               <Button url={url} />
             </div>
             <video src={banner} className="Service__banner" autoPlay />
