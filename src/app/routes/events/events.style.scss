@@ -1,3 +1,13 @@
-.Events.MainHero__bg {
-    background-image: url('../../../assets/img/hero_banner/events_hero.png');
+@media (min-width: 300px) {
+.Events {
+    .MainHero__bg {
+    background-image: url('../../../assets/img/hero_banners/events_hero_mobile.png');
+
+}}}
+@media (min-width: 1200px) {
+.Events{
+.MainHero__bg {
+    background-image: url('../../../assets/img/hero_banners/events_hero_desktop.png');
+    background-position: 40% 20%;
+}}
 }

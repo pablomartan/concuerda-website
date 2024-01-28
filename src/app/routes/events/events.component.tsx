@@ -4,17 +4,28 @@ import {
   MainHeroProps,
 } from "../../components/main-hero/main-hero.component";
 import "./events.style.scss";
+import { useEventsServices } from "../../hooks/useData";
+import {
+  ServiceType,
+  Services,
+} from "../../components/services/services.component";
+import { Header } from "../../components/header/header.component";
+import { Footer } from "../../components/footer/footer.component";
 
 const Events: FC = () => {
   const heroProps: MainHeroProps = {
-    hook: "Page under construction",
-    subtext: "",
-    currentComponentClass: "Events",
+    hook: "Eventos Trío Concuerda",
+    subtext: "variedad y calidad para eventos de todo tipo",
   };
+
+  const serviceList = useEventsServices();
   return (
-    <>
+    <div className="Events">
+      <Header />
       <MainHero {...heroProps} />
-    </>
+      <Services serviceList={serviceList as ServiceType[]} />
+      <Footer />
+    </div>
   );
 };
 
