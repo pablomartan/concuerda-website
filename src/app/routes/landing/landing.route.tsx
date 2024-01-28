@@ -148,9 +148,29 @@ const Reviews: FC = () => {
   );
 };
 
+const CookieNotice: FC = () => {
+  return (
+    <div className="CookieNotice">
+      <div className="CookieNotice__wrapper">
+        <div className="CookieNotice__wrapper--text">
+          <div className="CookieNotice__icon" />
+          <div className="CookieNotice__text">
+            Utilizamos cookies para personalizar su experiencia. Si continúa
+            navegando, consideramos que acepta su uso.
+          </div>
+        </div>
+        <Button className="CookieNotice__acceptance-button" url="">
+          Aceptar cookies
+        </Button>
+      </div>
+    </div>
+  );
+};
+
 const Home: FC = () => {
   return (
     <div className="Landing">
+      <CookieNotice />
       <Header />
       <LandingHero />
       <LandingServices />
