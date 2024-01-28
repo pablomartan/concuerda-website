@@ -1,14 +1,18 @@
 import React, { FC } from "react";
 import { Footer } from "../../components/footer/footer.component";
 import { Header } from "../../components/header/header.component";
+import { Button } from "../../components/button/button.component";
+
+import { useReviews } from "../../hooks/useData";
+
+import "./landing.style.scss";
+
 import heroBanner from "../../../assets/vid/landing_hero_banner.mp4";
 import versionesBanner from "../../../assets/vid/landing_soloists_banner.mp4";
 import soloistsBanner from "../../../assets/vid/landing_soloists_banner.mp4";
 import customizationBanner from "../../../assets/vid/landing_soloists_banner.mp4";
 import infinityBanner from "../../../assets/vid/landing_infinity_banner.mp4";
 import cmaBanner from "../../../assets/vid/landing_cma_banner.mp4";
-import "./landing.style.scss";
-import { Button } from "../../components/button/button.component";
 
 const LandingHero: FC = () => {
   return (
@@ -83,45 +87,65 @@ const LandingServices: FC = () => {
           </div>
         );
       })}
-      {specialServices.map(({ title, subtitle, banner, logo, url }) => {
-        return (
-          <div
-            className={"Service--special".concat(
-              ` ${title.replace("\n", "-")}`,
-            )}
-          >
-            <a href={url}>
-              <div className="Service__banner--special">
-                <h2 className="Service__title--special">
-                  {title.split("\n").map((word) => (
-                    <span className="Service__title--special__word">
-                      {word}
-                    </span>
-                  ))}
-                </h2>
-                <video
-                  src={banner}
-                  className="Service__banner--special__video"
-                  autoPlay
-                  muted
-                />
-              </div>
-              <div className="Service__interaction--special">
-                <div className="Service__interaction--special__logo">
-                  {logo}
+      <div className="LandingServices__special">
+        {specialServices.map(({ title, subtitle, banner, logo, url }) => {
+          return (
+            <div
+              className={"Service--special".concat(
+                ` ${title.replace("\n", "-")}`,
+              )}
+            >
+              <a href={url}>
+                <div className="Service__banner--special">
+                  <h2 className="Service__title--special">
+                    {title.split("\n").map((word) => (
+                      <span className="Service__title--special__word">
+                        {word}
+                      </span>
+                    ))}
+                  </h2>
+                  <video
+                    src={banner}
+                    className="Service__banner--special__video"
+                    autoPlay
+                    muted
+                  />
                 </div>
-                <h3 className="Service__subtitle--special">{subtitle}</h3>
-              </div>
-            </a>
-          </div>
-        );
-      })}
+                <div className="Service__interaction--special">
+                  <div className="Service__interaction--special__logo">
+                    {logo}
+                  </div>
+                  <h3 className="Service__subtitle--special">{subtitle}</h3>
+                </div>
+              </a>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
 
 const Reviews: FC = () => {
-  return <></>;
+  const reviews: string[] = useReviews();
+
+  return (
+    <div className="Reviews">
+      <h2 className="Reviews__title">Reseñas</h2>
+      <div className="Reviews__separation-line" />
+      <div className="Reviews--wrapper">
+        {reviews.map((review) => {
+          return (
+            <div className="Reviews__review-wrapper">
+              <p className="Reviews__review">"{review}"</p>
+              <p className="Reviews__decorative-dot">•</p>
+            </div>
+          );
+        })}
+      </div>
+      <div className="Reviews__collabs" />
+    </div>
+  );
 };
 
 const Home: FC = () => {

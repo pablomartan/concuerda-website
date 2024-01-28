@@ -1,9 +1,13 @@
 @media (min-width: 1200px) {
   .Landing {
-    background: var(--black);
+    background: black;
     color: var(--white);
 
     .MainHero {
+      &__text {
+        margin: 12% 0;
+      }
+
       &__hook {
         color: inherit;
       }
@@ -11,6 +15,13 @@
       &__bg {
         width: inherit;
         height: auto;
+      }
+    }
+
+    .LandingServices {
+      &__special {
+        margin-top: 15%;
+        flex-direction: row;
       }
     }
 
@@ -40,7 +51,7 @@
               letter-spacing: 0.7rem;
               line-height: 2rem;
 
-              &:nth-child(even) {
+              &:nth-child(odd) {
                 font-size: 1rem;
                 font-weight: lighter;
                 letter-spacing: 1rem;
@@ -49,7 +60,7 @@
           }
         }
 
-        &:nth-child(odd) {
+        &:nth-child(even) {
           /*
              * candlemusic agency div
              */
@@ -167,6 +178,56 @@
             object-fit: cover;
           }
         }
+      }
+    }
+
+    .Reviews {
+      &__title {
+        font-size: 3rem;
+        letter-spacing: 1rem;
+        text-transform: uppercase;
+        text-align: center;
+        width: 50%;
+        margin: auto;
+        margin-top: 15%;
+        margin-bottom: 3%;
+      }
+
+      &__separation-line {
+        width: 12%;
+        height: 2px;
+        background-color: white;
+        margin: auto;
+        margin-bottom: 3%;
+      }
+
+      &--wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      &__review {
+        &-wrapper {
+          width: 25%;
+        }
+
+        width: 100%;
+        font-family: "Poppins";
+        text-align: center;
+        margin: auto;
+      }
+
+      &__decorative-dot {
+        display: none;
+      }
+
+      &__collabs {
+        width: 90vw;
+        height: 90vh;
+        margin: auto;
+        background-image: url("../../../assets/img/collabs_desktop.png");
+        background-size: contain;
       }
     }
   }
