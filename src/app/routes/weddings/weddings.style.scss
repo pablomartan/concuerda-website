@@ -1,4 +1,10 @@
 .Weddings {
+  .hamburger-lines {
+    .line {
+      background-color: var(--black);
+    }
+  }
+
   .Header__logo {
     filter: invert(1);
   }
