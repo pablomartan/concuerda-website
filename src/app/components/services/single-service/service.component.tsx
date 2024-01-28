@@ -86,7 +86,7 @@ export const Service: React.FC<ServiceType> = ({ name, pic, url }) => {
   return (
     <>
       {name === "ceremonia" ? (
-        <div className="Service">
+        <div className={"Service".concat(ceremoniaActive ? " active" : "")}>
           <div
             style={{ backgroundImage: `url("${pic}")` }}
             className="Service__banner"

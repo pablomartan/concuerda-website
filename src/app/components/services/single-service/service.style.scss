@@ -4,17 +4,22 @@
 
 @media screen and (min-width: 300px) {
   .Service {
+    a {
+      width: 100%;
+    }
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 85%;
+    width: 100%;
     margin: 45px 0;
 
     &__banner {
-      width: 100%;
       border-radius: 160px 160px 0 0;
       height: 380px;
+      width: 80%;
       background-size: cover;
+      margin: auto;
     }
 
     &__title {
@@ -59,6 +64,7 @@
 
     &__types {
       width: 100%;
+      height: 130vh;
       background-color: var(--black);
       padding: 20px 0;
     }
@@ -114,7 +120,9 @@
   }
 
   .Service:has(.Ceremonia__options) {
-    align-self: center;
+    &.active {
+      align-self: center;
+    }
     display: grid;
     grid-template-areas:
       "banner options options"
@@ -123,12 +131,12 @@
 
     .Service__banner {
       grid-area: banner;
-      margin: unset;
+      margin-right: -10%;
     }
 
     .Service__title {
       grid-area: title;
-      margin: unset;
+      margin-right: -10%;
     }
   }
 
@@ -138,7 +146,7 @@
       border: none;
       padding-top: unset;
       width: 70%;
-      margin-left: -20%;
+      margin-left: 10%;
     }
 
     &__title {
