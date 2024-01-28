@@ -7,11 +7,13 @@ import banquete from "../../assets/img/bodas_banquete.png";
 import fiesta from "../../assets/img/bodas_fiesta.png";
 import tbvVid from "../../assets/vid/bodas_velas_vid.mp4";
 import bodasReligiosaVid from "../../assets/vid/bodas_religiosa_vid.mp4";
+import eventsCorporatePic from "../../assets/img/events_corporate_pic.png";
+import eventsCustomPic from "../../assets/img/events_custom_pic.png";
 
 export const useMenuLinks = () => [
   {
     section: "Inicio",
-    url: "./home",
+    url: "./",
   },
   {
     section: "Bodas",
@@ -47,6 +49,12 @@ export const useMenuLinks = () => [
   },
 ];
 
+export const useReviews = () => [
+  "Los contratamos para el cóctel, y, la verdad, es que repetiría, sin dudas, porque le dio al momento un ambiente increíble. ¡Una suerte haber contado con ellos!",
+  "Contactamos con ellos solo un mes antes de la boda, aun así se amoldaron a nosotros y fueron muy flexibles, ofreciendo todas las facilidades y ajustándose a nuestros gustos musicales. Los elegimos para el cocktail de la boda y fué un acierto, muy profesionales, todos los invitados quedaron encantados, los recomendaríamos 100%.",
+  "Una experiencia inolvidable, han hecho de mí boda uno de los recuerdos más gratos. Super profesionales, nos han orientado, han sido pacientes, además son bastante flexibles, vamos! que están allí para hacer de tu momento, un gran momento.",
+];
+
 export const useWeddingsServices = () => [
   {
     name: "ceremonia",
@@ -63,12 +71,6 @@ export const useWeddingsServices = () => [
     pic: fiesta,
     url: "/weddings/party",
   },
-];
-
-export const useTestimonials = () => [
-  "Una experiencia inolvidable, han hecho de mí boda uno de los recuerdos más gratos. Super profesionales, nos han orientado, han sido pacientes, además son bastante flexibles, vamos! que están allí para hacer de tu momento, un gran momento.",
-  "Los contratamos para el cóctel, y, la verdad, es que repetiría, sin dudas, porque le dio al momento un ambiente increíble. ¡Una suerte haber contado con ellos!",
-  "Contactamos con ellos solo un mes antes de la boda, aun así se amoldaron a nosotros y fueron muy flexibles, ofreciendo todas las facilidades y ajustándose a nuestros gustos musicales. Los elegimos para el cocktail de la boda y fué un acierto, muy profesionales, todos los invitados quedaron encantados, los recomendaríamos 100%.",
 ];
 
 export const useWeddingsCustomizations = () => [
@@ -284,6 +286,73 @@ export const useWeddingsServiceModalsData = () => ({
     footer: {
       url: "/contact",
       text: "contacto",
+    },
+  },
+});
+
+export const useEventsServices = () => [
+  {
+    name: "corporativos",
+    pic: eventsCorporatePic,
+    url: "/events/corporate",
+  },
+  { name: "a medida", pic: eventsCustomPic, url: "/events/custom" },
+];
+
+export const useEventsServiceModalData = () => ({
+  corporate: {
+    hero: eventsCorporatePic,
+    title: "corporativos",
+    subtitle: "Especializados en eventos de empresa",
+    customizations: [
+      {
+        title: "eventos personalizados",
+        subtitle: "repertorio, solistas, decoración y vestuario",
+        url: "#",
+      },
+      {
+        title: "infinity",
+        subtitle: "innovación para marcar la diferencia",
+        url: "#",
+      },
+      {
+        title: "escúchanos",
+        subtitle: "versiones únicas de la mejor música",
+        url: "/videos",
+      },
+    ],
+    premiumCustomization: {
+      banner: tbvVid,
+      title: "candle music agency",
+      subtitle: "las mejores bandas de Pop, Funk y Rock",
+      url: "/cma",
+    },
+    footer: {
+      url: "/contact",
+      text: "contacto",
+    },
+  },
+  custom: {
+    hero: eventsCustomPic,
+    title: "a medida",
+    subtitle:
+      "creatividad y una amplia oferta para diseñar eventos personalizados",
+    customizations: [
+      {
+        title: "espectáculos trío concuerda",
+        subtitle:
+          "todo un catálogo de proyectos a elegir, con diferentes objetivos y para todo tipo de audiencias: programas musicales variados, actuaciones para niños y mayores, conciertos literarios",
+        url: "#",
+      },
+      {
+        title: "escúchanos",
+        subtitle: "versiones únicas de la mejor música",
+        url: "/videos",
+      },
+    ],
+    footer: {
+      url: "/contact",
+      text: "cuéntanos tu idea",
     },
   },
 });
