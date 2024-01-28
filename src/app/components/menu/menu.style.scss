@@ -1,137 +1,139 @@
 @media (min-width: 300px) {
-    .Menu {
-        &--wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
+  .Menu {
+    &--wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
 
-            .menu-items {
-                display: none;
-            }
+      .menu-items {
+        display: none;
+      }
 
-            .menu-logo {
-                display: none;
-            }
+      .menu-logo {
+        display: none;
+      }
 
-            &.active {
-                height: 100vh;
-                background-color: var(--black);
-                display: flex;
-                flex-direction: column;
+      &.active {
+        height: 100vh;
+        background-color: var(--black);
+        display: flex;
+        flex-direction: column;
 
-                .MenuLinks {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: space-between;
-                    flex-grow: 1;
-                }
-
-                .menu-items {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 1.2rem;
-                    padding: 0;
-
-                    li {
-                        list-style: none;
-                    }
-
-                    a {
-                        font-family: var(--serif);
-                        font-size: 2.2rem;
-                        color: var(--white);
-                        text-decoration: none;
-                    }
-                }
-
-                .menu-logo {
-                    display: unset;
-                    width: 15%;
-                    margin-bottom: 10%;
-                }
-            }
-
-            .hamburger-lines {
-                margin: 35px 85%;
-                margin-bottom: 0;
-
-                width: 30px;
-                height: 20px;
-
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-
-                cursor: pointer;
-
-                .line {
-                    width: 100%;
-                    height: 2px;
-                    background-color: black;
-                    transform-origin: 0px 100%;
-                    transition: all 300ms;
-                }
-
-                .line1.active {
-                    transform: rotate(45deg) translate(-5px, -2px);
-                    background-color: var(--white);
-                }
-
-                .line2.active {
-                    opacity: 0;
-                    margin-right: -30px;
-                }
-
-                .line3.active {
-                    transform: rotate(-45deg) translate(-2px, 1px);
-                    background-color: var(--white);
-                }
-            }
+        .MenuLinks {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          flex-grow: 1;
         }
+
+        .menu-items {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1.2rem;
+          padding: 0;
+
+          li {
+            list-style: none;
+          }
+
+          a {
+            font-family: var(--serif);
+            font-size: 2.2rem;
+            color: var(--white);
+            text-decoration: none;
+          }
+        }
+
+        .menu-logo {
+          display: unset;
+          width: 15%;
+          margin-bottom: 10%;
+        }
+      }
+
+      .hamburger-lines {
+        margin: 35px 85%;
+        margin-bottom: 0;
+
+        width: 30px;
+        height: 20px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        cursor: pointer;
+
+        .line {
+          width: 100%;
+          height: 2px;
+          background-color: black;
+          transform-origin: 0px 100%;
+          transition: all 300ms;
+        }
+
+        .line1.active {
+          transform: rotate(45deg) translate(-5px, -2px);
+          background-color: var(--white);
+        }
+
+        .line2.active {
+          opacity: 0;
+          margin-right: -30px;
+        }
+
+        .line3.active {
+          transform: rotate(-45deg) translate(-2px, 1px);
+          background-color: var(--white);
+        }
+      }
     }
+  }
 }
 
 @media (min-width: 1200px) {
-    .Menu {
-        margin-right: 5%;
-        align-self: end;
+  .Menu {
+    margin-right: 5%;
+    align-self: end;
 
-        &--wrapper {
-            position: unset;
-            height: auto;
-            width: 100%;
+    &--wrapper {
+      position: unset;
+      height: auto;
+      width: 100%;
 
-            .hamburger-lines {
-                display: none;
-            }
+      .hamburger-lines {
+        display: none;
+      }
 
-            .MenuLinks {
-                display: flex;
+      .MenuLinks {
+        display: flex;
 
-                .menu-items {
-                    display: flex;
-                    align-self: end;
-                    gap: 3rem;
-                }
-
-                li {
-                    list-style: none;
-                }
-
-                .MenuLinks__link {
-                    color: var(--white);
-                    font-family: 'Poppins';
-                    text-decoration: none;
-
-                    &--cmagencylink {
-                        text-shadow: 0 0 5px #fff, 0 0 8px #fff3cc;
-                        color: #fff3cc;
-                    }
-                }
-            }
+        .menu-items {
+          display: flex;
+          align-self: end;
+          gap: 3rem;
         }
+
+        li {
+          list-style: none;
+        }
+
+        .MenuLinks__link {
+          color: var(--white);
+          font-family: "Poppins";
+          text-decoration: none;
+
+          &--cmagencylink {
+            text-shadow:
+              0 0 5px #fff,
+              0 0 8px #fff3cc;
+            color: #fff3cc;
+          }
+        }
+      }
     }
+  }
 }
