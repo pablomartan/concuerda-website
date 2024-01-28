@@ -14,6 +14,9 @@ import customizationBanner from "../../../assets/vid/landing_soloists_banner.mp4
 import infinityBanner from "../../../assets/vid/landing_infinity_banner.mp4";
 import cmaBanner from "../../../assets/vid/landing_cma_banner.mp4";
 
+import soloistsPdf from "../../../assets/pdf/solists.pdf";
+import repertoirePdf from "../../../assets/pdf/repertoire.pdf";
+
 const LandingHero: FC = () => {
   return (
     <div className="MainHero">
@@ -31,17 +34,17 @@ const LandingServices: FC = () => {
     {
       title: "versiones únicas",
       banner: versionesBanner,
-      url: "",
+      url: "/videos",
     },
     {
       title: "añade solistas",
       banner: soloistsBanner,
-      url: "",
+      url: soloistsPdf,
     },
     {
       title: "personalización de repertorio",
       banner: customizationBanner,
-      url: "",
+      url: repertoirePdf,
     },
   ];
 
