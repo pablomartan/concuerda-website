@@ -1,171 +1,169 @@
 @media (min-width: 300px) {
-    .ServiceModal {
-        z-index: 5;
-        position: absolute;
+  .ServiceModal {
+    z-index: 5;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    background: var(--black);
+    color: var(--white);
+
+    &__header {
+      height: 340px;
+      font-family: "Poppins";
+      background-size: 600% 600%;
+      background-position: center;
+
+      &__back-link {
+        text-decoration: none;
+        font-weight: 600;
+        color: var(--white);
+        display: block;
+        margin: 5%;
+
+        &--cross {
+          display: none;
+        }
+      }
+
+      &--text {
+        height: 75%;
         display: flex;
         flex-direction: column;
+        justify-content: end;
+      }
 
-        background: var(--black);
-        color: var(--white);
+      &__title {
+        text-transform: uppercase;
+        text-align: center;
+        font-family: var(--serif);
+      }
 
-        &__header {
-            height: 340px;
-            font-family: 'Poppins';
-            background-size: 600% 600%;
-            background-position: center;
-
-            &__back-link {
-                text-decoration: none;
-                font-weight: 600;
-                color: var(--white);
-                display: block;
-                margin: 5%;
-
-                &--cross {
-                    display: none;
-                }
-            }
-
-            &--text {
-                height: 75%;
-                display: flex;
-                flex-direction: column;
-                justify-content: end;
-            }
-
-            &__title {
-                text-transform: uppercase;
-                text-align: center;
-                font-family: var(--serif);
-            }
-            
-            &__subtitle {
-                text-align: center;
-                font-size: 1em;
-                font-weight: 100;
-                width: 65%;
-                margin: 0 auto;
-            }
-        }
-
-        &__body {
-            padding-top: 40%;
-
-            .Customization__button {
-                background: var(--black);
-                border: 1px solid var(--white);
-
-                a {
-                    color: var(--white);
-                }
-            }
-
-            &__premium-customization {
-                margin-top: 10%;
-                background: var(--yellow);
-                color: var(--black);
-
-                .Customization__button {
-                    background: var(--yellow);
-                    border: 1px solid var(--black);
-                    
-                    a {
-                        color: var(--black);
-                    }
-                }
-
-                &__banner {
-                    width: 100%;
-                    height: auto;
-                }
-            }
-        }
-
-
-        &__footer {
-            height: 200px; 
-            padding-top: 10%;
-
-           &__link {
-               display: block;
-               width: 100%;
-               color: var(--white);
-               margin: 10% 0;
-               text-align: center;
-           }
-        }
+      &__subtitle {
+        text-align: center;
+        font-size: 1em;
+        font-weight: 100;
+        width: 65%;
+        margin: 0 auto;
+      }
     }
+
+    &__body {
+      padding-top: 40%;
+
+      .Customization__button {
+        background: var(--black);
+        border: 1px solid var(--white);
+
+        a {
+          color: var(--white);
+        }
+      }
+
+      &__premium-customization {
+        margin-top: 10%;
+        background: var(--yellow);
+        color: var(--black);
+
+        .Customization__button {
+          background: var(--yellow);
+          border: 1px solid var(--black);
+
+          a {
+            color: var(--black);
+          }
+        }
+
+        &__banner {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    &__footer {
+      height: 200px;
+      padding-top: 10%;
+
+      &__link {
+        display: block;
+        width: 100%;
+        color: var(--white);
+        margin: 10% 0;
+        text-align: center;
+      }
+    }
+  }
 }
 
 @media (min-width: 1200px) {
-    .ServiceModal {
-        width: 100%;
-        overflow: hidden;
+  .ServiceModal {
+    width: 100%;
+    overflow: hidden;
 
-        &__header {
-            background-size: cover;
-            background-position: 60% 37%;
+    &__header {
+      background-size: cover;
+      background-position: 60% 37%;
 
-            &__back-link {
-                display: none;
+      &__back-link {
+        display: none;
 
-                &--cross {
-                    display: block;
-                    color: var(--white);
-                    text-decoration: none;
-                    margin: 1% 97%;
-                }
-            }
-
-            &--text {
-                align-items: flex-start;
-                margin-left: 2%;
-            }
-
-            &__title {
-                margin: unset;
-                font-size: 3rem;
-                font-weight: normal;
-            }
-
-            &__subtitle {
-                margin: unset;
-                width: 21%;
-                text-align: unset;
-            }
+        &--cross {
+          display: block;
+          color: var(--white);
+          text-decoration: none;
+          margin: 1% 97%;
         }
+      }
 
-        &__body {
-            padding-top: 10%;
+      &--text {
+        align-items: flex-start;
+        margin-left: 2%;
+      }
 
-            .Customization {
-                margin: 2% auto;
-                height: 60px;
-            }
+      &__title {
+        margin: unset;
+        font-size: 3rem;
+        font-weight: normal;
+      }
 
-            &__premium-customization {
-                background-color: transparent;
-                color: var(--accent);
-                width: 80%;
-                margin: 0 auto;
-
-                .Customization {
-                    margin-top: -10%;
-                    border: none;
-
-                    &__decorative-dot {
-                        display: none;
-                    }
-                }
-
-            }
-        }
-
-        &__footer {
-            &__link {
-                margin: unset;
-                margin-left: 25%;
-            }
-        }
+      &__subtitle {
+        margin: unset;
+        width: 21%;
+        text-align: unset;
+      }
     }
+
+    &__body {
+      padding-top: 10%;
+
+      .Customization {
+        margin: 2% auto;
+        min-height: 60px;
+      }
+
+      &__premium-customization {
+        background-color: transparent;
+        color: var(--accent);
+        width: 80%;
+        margin: 0 auto;
+
+        .Customization {
+          margin-top: -10%;
+          border: none;
+
+          &__decorative-dot {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__footer {
+      &__link {
+        margin: unset;
+        margin-left: 25%;
+      }
+    }
+  }
 }
