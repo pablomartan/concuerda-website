@@ -5,10 +5,17 @@ import civilPic from "../../assets/img/bodas_civil.png";
 import coctel from "../../assets/img/bodas_coctel.png";
 import banquete from "../../assets/img/bodas_banquete.png";
 import fiesta from "../../assets/img/bodas_fiesta.png";
+
 import tbvVid from "../../assets/vid/bodas_velas_vid.mp4";
 import bodasReligiosaVid from "../../assets/vid/bodas_religiosa_vid.mp4";
 import eventsCorporatePic from "../../assets/img/events_corporate_pic.png";
 import eventsCustomPic from "../../assets/img/events_custom_pic.png";
+
+import repertoirePdf from "../../assets/pdf/repertoire.pdf";
+import soloistsPdf from "../../assets/pdf/solists.pdf";
+import infinityPdf from "../../assets/pdf/infinity.pdf";
+import projectsPdf from "../../assets/pdf/projects.pdf";
+import faqPdf from "../../assets/pdf/faq.pdf";
 
 export const useMenuLinks = () => [
   {
@@ -77,22 +84,22 @@ export const useWeddingsCustomizations = () => [
   {
     title: '"canciones a la carta"',
     subtitle: "personaliza una a una todas las canciones",
-    url: "#",
+    url: repertoirePdf,
   },
   {
     title: "añade solistas",
     subtitle: "sopranos y cantantes de poop",
-    url: "#",
+    url: soloistsPdf,
   },
   {
     title: "escúchanos",
     subtitle: "versiones únicas de tu música favorita",
-    url: "#",
+    url: "/videos",
   },
   {
-    title: "tbv ceremonias",
+    title: "cma ceremonias",
     subtitle: "los mejores grupos",
-    url: "#",
+    url: "/cma",
   },
 ];
 
@@ -119,17 +126,17 @@ export const useWeddingsServiceModalsData = () => ({
       {
         title: "repertorio personalizado",
         subtitle: "clásico, bandas sonoras y pop",
-        url: "",
+        url: repertoirePdf,
       },
       {
         title: "versiones trio concuerda",
         subtitle: "estilo único y arreglos propios de cada canción",
-        url: "./videos",
+        url: "/videos",
       },
       {
         title: "solistas para la ceremonia",
         subtitle: "sopranos y voces líricas",
-        url: "#",
+        url: soloistsPdf,
       },
       {
         title: "protocolo",
@@ -157,7 +164,7 @@ export const useWeddingsServiceModalsData = () => ({
       {
         title: "repertorio personalizado",
         subtitle: "clásico, bandas sonoras y pop",
-        url: "#",
+        url: repertoirePdf,
       },
       {
         title: "versiones trio concuerda",
@@ -167,7 +174,7 @@ export const useWeddingsServiceModalsData = () => ({
       {
         title: "solistas para la ceremonia",
         subtitle: "cantantes pop de diferentes estilos",
-        url: "#",
+        url: soloistsPdf,
       },
       {
         title: "protocolo",
@@ -204,7 +211,7 @@ export const useWeddingsServiceModalsData = () => ({
       {
         title: "solistas para el cóctel",
         subtitle: "cantantes pop de diferentes estilos",
-        url: "#",
+        url: soloistsPdf,
       },
       {
         title: "escúchanos",
@@ -241,7 +248,7 @@ export const useWeddingsServiceModalsData = () => ({
       {
         title: "solistas para el banquete",
         subtitle: "cantantes pop de diferentes estilos",
-        url: "",
+        url: soloistsPdf,
       },
       {
         title: "escúchanos",
@@ -269,12 +276,12 @@ export const useWeddingsServiceModalsData = () => ({
       {
         title: "cantantes",
         subtitle: "acaba tu día por todo lo alto",
-        url: "#",
+        url: soloistsPdf,
       },
       {
         title: "saxo",
         subtitle: "energía y carisma durante la fiesta",
-        url: "#",
+        url: soloistsPdf,
       },
     ],
     premiumCustomization: {
