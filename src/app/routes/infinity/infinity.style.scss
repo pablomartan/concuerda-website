@@ -1,0 +1,32 @@
+@media (min-width: 300px) {
+  .MainHero {
+    height: 60vh;
+    &__bg {
+      position: absolute;
+      height: inherit;
+      width: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &__text {
+      position: relative;
+      text-align: center;
+      width: 90%;
+
+      * {
+        width: 100%;
+        font-family: var(--sans);
+        color: #fa09ff;
+      }
+    }
+
+    &__hook {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+}
