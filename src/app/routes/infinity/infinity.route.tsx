@@ -36,6 +36,7 @@ const InfinityServices = () => {
 
   return (
     <section className="Services">
+      <h2 className="Services__title">¿Qué incluye?</h2>
       {services.map((service: ServiceType & { text: string }) => {
         return (
           <div className="Service">
@@ -89,7 +90,7 @@ const InfinityBody = () => {
       </article>
       <article className="InfinityBody__music-types">
         <h2 className="InfinityBody__music-types__title">{musicTitle}</h2>
-        <section className="InfinityBody__music-types">
+        <section className="InfinityBody__music-types__info">
           <OvalImage
             picture={ovalImage}
             svgClass="InfinityBody__music-types__oval"
