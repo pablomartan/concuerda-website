@@ -11,7 +11,10 @@ import {
 } from "../../../hooks/useData";
 import { ServiceType } from "../services.component";
 
-const OvalImage: React.FC<any> = ({ picture, svgClass }) => {
+export const OvalImage: React.FC<{ picture: string; svgClass: string }> = ({
+  picture,
+  svgClass,
+}) => {
   return (
     <svg className={svgClass} viewBox="0 0 100 100" width="100%" height="100%">
       <defs>
@@ -43,11 +46,7 @@ const CeremoniaSubType: React.FC<{
   return (
     <a className="Ceremonia__subtype" href={url}>
       <div className="Ceremonia__subtype--wrapper">
-        <OvalImage
-          className="Ceremonia__subtype--pic"
-          picture={picture}
-          svgClass="Ceremonia__subtype--pic__svg"
-        />
+        <OvalImage picture={picture} svgClass="Ceremonia__subtype--pic__svg" />
         <h4 className="Ceremonia__subtype--title">{title}</h4>
       </div>
     </a>

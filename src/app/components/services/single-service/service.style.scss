@@ -73,6 +73,12 @@
       display: block;
       margin: 90px 0;
 
+      &:nth-child(1) {
+        image {
+          height: 140%;
+        }
+      }
+
       &--pic {
         max-width: 100vw;
         height: 430px;
@@ -157,12 +163,20 @@
 
     &__types {
       width: 100vw;
+      height: unset;
       grid-area: types;
       position: relative;
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
       margin-top: 40px;
+    }
+
+    &__subtype {
+      &--pic__svg {
+        width: 40%;
+        height: 40%;
+      }
     }
   }
 }
