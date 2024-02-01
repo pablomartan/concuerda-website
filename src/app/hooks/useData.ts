@@ -5,6 +5,7 @@ import civilPic from "../../assets/img/bodas_civil.png";
 import coctel from "../../assets/img/bodas_coctel.png";
 import banquete from "../../assets/img/bodas_banquete.png";
 import fiesta from "../../assets/img/bodas_fiesta.png";
+import infinityExplanationOvalImage from "../../assets/img/infinity_explanation_oval.png";
 
 import tbvVid from "../../assets/vid/bodas_velas_vid.mp4";
 import bodasReligiosaVid from "../../assets/vid/bodas_religiosa_vid.mp4";
@@ -403,3 +404,57 @@ export const useContactData = () => ({
   phone: "+34 604 820 022",
   email: "grupotrioconcuerda@gmail.com",
 });
+
+export const useInfinityBody = () => ({
+  title: "¿Cómo funciona?",
+  paragraphs: [
+    "A través de una pedalera o loop station que nos grabará en vivo y reproducirá cada una de las voces en bucle, podremos improvisar y crear versiones únicas del mejor pop, jazz y R&B. ",
+    "Diseñamos y construimos cada canción, voz por voz, sobre un acompañamiento de percusión, consiguiendo un resultado final único.",
+  ],
+  link: infinityPdf,
+  musicTitle: "¿Qué música?",
+  customizations: [
+    {
+      title: "pop",
+      subtitle: "las mejores canciones de todos los tiempos",
+      url: "",
+    },
+    {
+      title: "lounge covers",
+      subtitle: "música actual versionada a Bossa Nova y R&B",
+      url: "",
+    },
+    {
+      title: "dance covers",
+      subtitle: "los temas más movidos y animados",
+      url: "",
+    },
+    {
+      title: "jazz",
+      subtitle: "para acompañar los eventos más elegantes",
+      url: "",
+    },
+  ],
+  ovalImage: infinityExplanationOvalImage,
+});
+
+export const useInfinityServices = () => [
+  {
+    name: "solistas",
+    pic: eventsCorporatePic,
+    text: "Andrea\nMaryna\nTony\nRolita\nTayra\nFred Sax\nInoidel Sax",
+    url: soloistsPdf,
+  },
+  {
+    name: "decoración",
+    pic: "",
+    text: "Escenarios con diferentes temáticas: disco y floral con paredes verticales de lentejuelas y flores",
+    url: "https://www.youtube.com/playlist?list=PLMLMh9sEXCA8T9CiZhS00ltVyjCn0Xlx4",
+  },
+  {
+    name: "iluminación",
+    pic: "",
+    text: "Focos y tiras led para ambientar la actuación",
+    url: "https://www.youtube.com/playlist?list=PLMLMh9sEXCA8T9CiZhS00ltVyjCn0Xlx4",
+  },
+];
