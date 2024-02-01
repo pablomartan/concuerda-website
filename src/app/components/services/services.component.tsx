@@ -6,6 +6,8 @@ export type ServiceType = {
   name: string;
   url: string;
   pic: string;
+  text?: string;
+  button?: boolean;
 };
 
 export const Services: React.FC<{ serviceList: ServiceType[] }> = ({
