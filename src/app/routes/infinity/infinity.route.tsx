@@ -36,32 +36,29 @@ const InfinityServices = () => {
 
   return (
     <section className="Services">
-      <h2 className="Services__title">¿Qué incluye?</h2>
+      <h2 className="Services__title">¿Qué incluye infinity?</h2>
       {services.map((service: ServiceType & { text: string }) => {
         return (
           <div className="Service">
             <div className="Service__banner" />
-            <div>
-              <div className="Service__title">{service.name}</div>
-              <div className="Service__text">
-                {service.name === "solistas" ? (
-                  <ul>
-                    {service.text.split("\n").map((soloist) => (
-                      <li>{soloist}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p>{service.text}</p>
-                )}
-              </div>
-              <Button url={service.url}>
-                {service.name === "soloists" ? "Ver Catálogo" : "Ver Más"}
-              </Button>
+            <div className="Service__title">{service.name}</div>
+            <div className="Service__text">
+              {service.name === "solistas" ? (
+                <ul>
+                  {service.text.split("\n").map((soloist) => (
+                    <li>{soloist}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p>{service.text}</p>
+              )}
             </div>
+            <Button url={service.url}>
+              {service.name === "solistas" ? "Ver Catálogo" : "Ver Más"}
+            </Button>
           </div>
         );
       })}
-      ;
     </section>
   );
 };
@@ -111,25 +108,19 @@ const InfinityBody = () => {
 };
 
 const InfinityBottomBanner = () => {
-  const bottomBanner = "";
-
-  return (
-    <>
-      <video autoPlay muted src={bottomBanner} />
-    </>
-  );
+  return <div className="InfinityBottomBanner" />;
 };
 
 const InfinityComponent: FC = () => {
   return (
-    <>
+    <div className="Infinity">
       <Header />
       <InfinityHero />
       <InfinityBody />
       <InfinityServices />
       <InfinityBottomBanner />
       <Footer />
-    </>
+    </div>
   );
 };
 

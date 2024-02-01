@@ -1,136 +1,238 @@
 @media (min-width: 300px) {
-  .MainHero {
-    height: 60vh;
-    &__bg {
-      position: absolute;
-      height: inherit;
-      width: auto;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    &__text {
-      position: relative;
-      text-align: center;
-      width: 90%;
-
-      * {
-        width: 100%;
-        font-family: var(--sans);
-        color: #fa09ff;
-      }
-    }
-
-    &__hook {
-      font-size: 3rem;
-      font-weight: bold;
-    }
-  }
-
-  .InfinityBody {
+  .Infinity {
     background-color: var(--black);
     color: var(--white);
-    display: flex;
-    flex-direction: column;
+    overflow: hidden;
 
-    &__how-it-works {
-      position: relative;
-      background-image: url("../../../assets/img/infinity_how_it_works.png");
-      background-size: cover;
-      background-position: center;
-
-      &:before {
-        z-index: -1;
-        content: "";
+    .MainHero {
+      height: 80vh;
+      &__bg {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.95) 0%,
-          rgba(0, 0, 0, 1) 100%
-        );
-      }
-
-      padding: 50% 0;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      color: var(--white);
-
-      &__title {
-        font-family: var(--serif);
-        font-size: 3rem;
-        text-transform: uppercase;
-        text-align: center;
+        height: inherit;
+        width: auto;
+        object-fit: cover;
+        object-position: center;
       }
 
       &__text {
-        font-family: "Poppins";
+        position: relative;
         text-align: center;
-        max-width: 90%;
+        width: 90%;
+        padding: 25% 0;
+
+        * {
+          width: 100%;
+          font-family: var(--sans);
+          color: #fa09ff;
+        }
       }
 
-      &__link {
-        color: var(--white);
-        padding-top: 10%;
+      &__hook {
+        font-size: 3rem;
+        font-weight: bold;
       }
     }
 
-    &__music-types {
-      padding-top: 80%;
+    .InfinityBody {
+      display: flex;
+      flex-direction: column;
+
+      &__how-it-works {
+        position: relative;
+        background-image: url("../../../assets/img/infinity_how_it_works.png");
+        background-size: cover;
+        background-position: center;
+
+        &:before {
+          z-index: -1;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 1) 100%
+          );
+        }
+
+        padding: 50% 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__title {
+          font-family: var(--serif);
+          font-size: 3rem;
+          text-transform: uppercase;
+          text-align: center;
+        }
+
+        &__text {
+          font-family: "Poppins";
+          text-align: center;
+          max-width: 90%;
+        }
+
+        &__link {
+          color: var(--white);
+          padding-top: 10%;
+        }
+      }
+
+      &__music-types {
+        padding-top: 80%;
+
+        &__oval {
+          image {
+            width: 150%;
+          }
+        }
+
+        &__title {
+          font-family: var(--serif);
+          font-size: 3rem;
+          text-transform: uppercase;
+          text-align: center;
+        }
+
+        &__customizations {
+          .Customization {
+            margin: 20% 0;
+            &__subtitle {
+              font-size: 1.2rem;
+            }
+          }
+        }
+
+        .Button {
+          display: none;
+        }
+      }
+
+      &__listen {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        background-image: url("../../../assets/img/infinity_listen.png");
+        background-size: 350%;
+        background-position: 50% 2%;
+
+        &__title {
+          font-size: 2rem;
+          font-family: var(--sans);
+          width: 60%;
+          text-align: center;
+        }
+
+        .Button {
+          margin: 8% 0 20% 0;
+          width: 90%;
+          height: 8%;
+          font-size: 1rem;
+          font-weight: bold;
+          a {
+            color: var(--black);
+          }
+        }
+      }
+    }
+
+    .Services {
       &__title {
+        width: 80%;
         font-family: var(--serif);
         font-size: 3rem;
         text-transform: uppercase;
         text-align: center;
+        margin-top: 80%;
       }
 
-      &__customizations {
-        .Customization {
-          margin: 20% 0;
-          &__subtitle {
-            font-size: 1.2rem;
+      .Service {
+        overflow: hidden;
+        min-height: 100vh;
+        width: 100%;
+        margin: 30% 0;
+
+        &:nth-child(even) {
+          .Service__banner {
+            border-radius: 0 300px 300px 0;
           }
         }
-      }
 
-      .Button {
-        display: none;
+        &:nth-child(odd) {
+          .Service__banner {
+            border-radius: 300px 0 0 300px;
+          }
+        }
+
+        &:nth-child(2) {
+          .Service__banner {
+            background-image: url("../../../assets/img/infinity_service_1.png");
+            background-position: -20%;
+          }
+        }
+
+        &:nth-child(3) {
+          .Service__banner {
+            background-image: url("../../../assets/img/infinity_service_2.png");
+            background-size: 200%;
+            background-position: 20%;
+          }
+        }
+
+        &:nth-child(4) {
+          .Service__banner {
+            background-image: url("../../../assets/img/infinity_service_3.png");
+          }
+        }
+
+        &__banner {
+          width: 100%;
+          height: 300px;
+          margin: unset;
+        }
+
+        &__title {
+          margin: 40% 0 10% 0;
+          font-family: var(--sans);
+          font-weight: bold;
+          font-size: 2rem;
+        }
+
+        &__text {
+          font-family: "Poppins";
+          width: 80%;
+          text-align: center;
+          margin: 10% 0;
+
+          ul {
+            margin-left: -20%;
+
+            li {
+              text-align: center;
+              list-style: none;
+            }
+          }
+        }
+
+        .Button {
+          width: 90%;
+          height: 3rem;
+        }
       }
     }
 
-    &__listen {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: end;
-      align-items: center;
-      background-image: url("../../../assets/img/infinity_listen.png");
-      background-size: 350%;
-      background-position: 50% 2%;
-
-      &__title {
-        font-size: 2rem;
-        font-family: var(--sans);
-        width: 60%;
-        text-align: center;
-      }
-
-      .Button {
-        margin: 8% 0 20% 0;
-        width: 90%;
-        height: 8%;
-        font-size: 1rem;
-        font-weight: bold;
-        a {
-          color: var(--black);
-        }
-      }
+    .InfinityBottomBanner {
+      width: 100%;
+      height: 60vh;
+      background-image: url("../../../assets/img/infinity_bottom_banner.png");
+      background-size: cover;
     }
   }
 }
