@@ -6,6 +6,7 @@ import Events from "./routes/events/events.component";
 import NotFound from "./routes/404/404.route";
 import { ServiceModal } from "./components/services/service-modal/service-modal.component";
 import Landing from "./routes/landing/landing.route";
+import InfinityComponent from "./routes/infinity/infinity.route";
 
 const App: FC = () => {
   const router = createBrowserRouter([
@@ -48,6 +49,10 @@ const App: FC = () => {
     {
       path: "/events/custom",
       element: <ServiceModal modal={"custom"} />,
+    },
+    {
+      path: "/infinity",
+      element: <InfinityComponent />,
     },
     {
       path: "*",
