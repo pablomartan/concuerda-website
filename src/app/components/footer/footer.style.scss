@@ -114,6 +114,9 @@
 
 @media (min-width: 1200px) {
   .Footer {
+    margin: unset;
+    padding: unset;
+    padding-top: 10%;
     display: grid;
     grid-template-columns: 25%;
     grid-template-rows: 50%;
