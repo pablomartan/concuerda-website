@@ -286,6 +286,55 @@
           margin-bottom: 5%;
         }
       }
+
+      &__music-types {
+        padding: unset;
+        margin-bottom: 10%;
+
+        &__title {
+          font-size: 3rem;
+          font-weight: normal;
+          margin: 10% 0 5% 0;
+        }
+
+        &__info {
+          display: flex;
+          flex-direction: row;
+        }
+
+        &__oval {
+          width: 40%;
+          margin: auto;
+        }
+
+        &__customizations {
+          display: flex;
+          flex-direction: column;
+          width: 40%;
+          margin: auto;
+
+          .Customization {
+            border: none;
+            margin: 30px 20px;
+          }
+        }
+      }
+
+      &__listen {
+        height: 900px;
+        background-size: cover;
+        background-position: 50% 30%;
+
+        &__title {
+          font-size: 3.5rem;
+        }
+
+        .Button {
+          font-size: 1.2rem;
+          width: 15%;
+          margin: 1% 0 5% 0;
+        }
+      }
     }
   }
 }
