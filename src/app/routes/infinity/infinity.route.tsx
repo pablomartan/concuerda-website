@@ -22,7 +22,7 @@ const InfinityHero = () => {
 
   return (
     <div className="MainHero">
-      <video src={heroBanner} className="MainHero__bg" autoPlay muted />
+      <video src={heroBanner} className="MainHero__bg" autoPlay muted loop />
       <div className="MainHero__text">
         <h1 className="MainHero__hook">{mainHeroProps.hook}</h1>
         <h2 className="MainHero__subtext">{mainHeroProps.subtext}</h2>
