@@ -48,45 +48,58 @@ const ContactForm = () => {
       <div className="ContactForm__content">
         <h2 className="ContactForm__title">¡Contacta con nosotros!</h2>
         <form>
-          <label htmlFor="name">Nombre</label>
-          <Input
-            type="text"
-            inputProps={register("name", {
-              required: true,
-            })}
-          />
-          <label htmlFor="email">Correo</label>
-          <Input
-            type="email"
-            inputProps={register("email", {
-              required: true,
-            })}
-          />
-          <label htmlFor="phone">Teléfono</label>
-          <Input
-            type="text"
-            inputProps={register("phone", {
-              required: true,
-            })}
-          />
-          <label htmlFor="date">Fecha</label>
-          <Input
-            type="date"
-            inputProps={register("date", {
-              required: true,
-            })}
-          />
-          <label htmlFor="location">Lugar</label>
-          <Input
-            type="text"
-            inputProps={register("location", {
-              required: true,
-            })}
-          />
-          <label htmlFor="details">
-            Detalles del evento <span>(opcional)</span>
-          </label>
-          <textarea {...register("details")} rows={4} cols={50} />
+          <div>
+            <label htmlFor="name">Nombre</label>
+            <Input
+              type="text"
+              inputProps={register("name", {
+                required: true,
+              })}
+            />
+          </div>
+          <div className="name-input-separator" />
+          <div>
+            <label htmlFor="email">Correo</label>
+            <Input
+              type="email"
+              inputProps={register("email", {
+                required: true,
+              })}
+            />
+          </div>
+          <div>
+            <label htmlFor="phone">Teléfono</label>
+            <Input
+              type="text"
+              inputProps={register("phone", {
+                required: true,
+              })}
+            />
+          </div>
+          <div>
+            <label htmlFor="date">Fecha</label>
+            <Input
+              type="date"
+              inputProps={register("date", {
+                required: true,
+              })}
+            />
+          </div>
+          <div>
+            <label htmlFor="location">Lugar</label>
+            <Input
+              type="text"
+              inputProps={register("location", {
+                required: true,
+              })}
+            />
+          </div>
+          <div>
+            <label htmlFor="details">
+              Detalles del evento <span>(opcional)</span>
+            </label>
+            <textarea {...register("details")} rows={4} cols={50} />
+          </div>
           <Input type="submit" inputProps={register("submit")} />
         </form>
         <a className="ContactForm__content__faq-link" href={faqPdf}>
