@@ -7,6 +7,7 @@ import NotFound from "./routes/404/404.route";
 import { ServiceModal } from "./components/services/service-modal/service-modal.component";
 import Landing from "./routes/landing/landing.route";
 import InfinityComponent from "./routes/infinity/infinity.route";
+import ContactComponent from "./routes/contact/contact.route";
 
 const App: FC = () => {
   const router = createBrowserRouter([
@@ -53,6 +54,10 @@ const App: FC = () => {
     {
       path: "/infinity",
       element: <InfinityComponent />,
+    },
+    {
+      path: "/contact",
+      element: <ContactComponent />,
     },
     {
       path: "*",
