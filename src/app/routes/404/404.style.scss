@@ -1,0 +1,25 @@
+@media (min-width: 300px) {
+  .NotFound {
+    background-color: var(--black);
+    color: var(--white);
+  }
+}
+
+@media (min-width: 1200px) {
+  .NotFound {
+    .MainHero {
+      padding-top: 10%;
+      &__bg {
+        display: none;
+      }
+
+      &__hook {
+        color: var(--white);
+      }
+
+      &__subtext {
+        text-align: center;
+      }
+    }
+  }
+}

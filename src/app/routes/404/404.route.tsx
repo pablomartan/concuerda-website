@@ -6,18 +6,19 @@ import {
 import { Header } from "../../components/header/header.component";
 import { Footer } from "../../components/footer/footer.component";
 
+import "./404.style.scss";
+
 const NotFound: FC = () => {
   const heroProps: MainHeroProps = {
     hook: "Página no encontrada",
     subtext: "Disculpa las molestias",
-    currentComponentClass: "NotFound",
   };
   return (
-    <>
+    <div className="NotFound">
       <Header />
       <MainHero {...heroProps} />
       <Footer />
-    </>
+    </div>
   );
 };
 
