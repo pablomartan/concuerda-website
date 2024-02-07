@@ -7,6 +7,7 @@ import NotFound from "./routes/404/404.route";
 import { ServiceModal } from "./components/services/service-modal/service-modal.component";
 import Landing from "./routes/landing/landing.route";
 import InfinityComponent from "./routes/infinity/infinity.route";
+import CmaComponent from "./routes/cma/cma.route";
 import ContactComponent from "./routes/contact/contact.route";
 
 const App: FC = () => {
@@ -54,6 +55,10 @@ const App: FC = () => {
     {
       path: "/infinity",
       element: <InfinityComponent />,
+    },
+    {
+      path: "/cma",
+      element: <CmaComponent />,
     },
     {
       path: "/contact",

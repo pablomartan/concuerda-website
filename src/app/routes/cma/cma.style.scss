@@ -1,0 +1,105 @@
+@media (min-width: 300px) {
+  .Cma {
+    background-color: var(--black);
+    color: var(--white);
+
+    .MainHero {
+      &__bg {
+        object-fit: cover;
+        object-position: center;
+        position: relative;
+      }
+
+      &__text {
+        display: none;
+      }
+    }
+
+    .Services {
+      display: flex;
+      flex-direction: column;
+      width: 95%;
+      margin: auto;
+      align-items: center;
+
+      &__title {
+        width: 80%;
+        font-family: var(--serif);
+        font-size: 3rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 30%;
+      }
+
+      .Service {
+        p {
+          font-family: "Poppins";
+          font-size: 1.1rem;
+          text-align: center;
+          text-transform: uppercase;
+        }
+        &__cma-word {
+          color: var(--yellow);
+          text-transform: none;
+        }
+      }
+
+      .Button {
+        background-color: var(--yellow);
+
+        a {
+          color: var(--black);
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .Cma {
+    .MainHero {
+      &__bg {
+        height: 80vh;
+      }
+
+      &__text {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--yellow);
+      }
+
+      &__subtext {
+        font-family: var(--sans);
+      }
+    }
+
+    .Services {
+      width: 85%;
+
+      &__title {
+        margin: 10% auto;
+      }
+
+      &__service-container {
+        display: flex;
+        flex-direction: column;
+        width: 65%;
+      }
+      .Service {
+        width: 35%;
+        &:nth-child(odd) {
+          align-self: start;
+        }
+      }
+
+      .Button {
+        margin-top: 5%;
+      }
+    }
+  }
+}
