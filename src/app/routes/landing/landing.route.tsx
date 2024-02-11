@@ -85,7 +85,14 @@ const LandingServices: FC = () => {
                   );
                 })}
               </div>
-              <Button url={url} />
+              <Button>
+                <a
+                  href={url}
+                  target={title.includes("versiones") ? "" : "_blank"}
+                >
+                  Ver Más
+                </a>
+              </Button>
             </div>
             <video src={banner} className="Service__banner" autoPlay />
           </div>
@@ -163,8 +170,10 @@ const CookieNotice: FC = () => {
             navegando, consideramos que acepta su uso.
           </div>
         </div>
-        <Button className="CookieNotice__acceptance-button" url="">
-          Aceptar cookies
+        <Button className="CookieNotice__acceptance-button">
+          <a href="" target="">
+            Aceptar cookies
+          </a>
         </Button>
       </div>
     </div>
