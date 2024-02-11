@@ -458,3 +458,36 @@ export const useInfinityServices = () => [
     url: "https://www.youtube.com/playlist?list=PLMLMh9sEXCA8T9CiZhS00ltVyjCn0Xlx4",
   },
 ];
+
+export const useProjectsServices = () => [
+  {
+    name: "Conciertos Trio Concuerda",
+    text: "Programas de todos los estilos para público joven, adulto y mayor",
+    url: projectsPdf + "#page=1",
+  },
+  {
+    name: "Conciertos a la luz de las velas",
+    text: "La mejor música en un formato único de actuación: bandas sonoras, pop, música clásica, jazz y mucho más",
+    url: projectsPdf + "#page=2",
+  },
+  {
+    name: '"Un Viaje a Toda Cuerda"',
+    text: "Una experiencia para que los más pequeños disfruten de la música en directo. Orientada para colegios y centros infantiles",
+    url: projectsPdf + "#page=5",
+  },
+  {
+    name: "Infinity",
+    text: "Una forma diferente de hacer música en directo. Instrumentos y música electrónica juntos para conseguir una mezcla original e innovadora",
+    url: projectsPdf + "#page=4",
+  },
+  {
+    name: "Cuentos Concuerda",
+    text: "Música y literatura juntas en un proyecto muy especial con músicos y narrador en directo ",
+    url: projectsPdf + "#page=3",
+  },
+  {
+    name: "Mayores: la música de siempre",
+    text: "Conciertos y actividades para acercar la música a los más mayores, a través de una selección musical cercana y conocida",
+    url: projectsPdf + "#page=6",
+  },
+];

@@ -9,6 +9,7 @@ import Landing from "./routes/landing/landing.route";
 import InfinityComponent from "./routes/infinity/infinity.route";
 import CmaComponent from "./routes/cma/cma.route";
 import ContactComponent from "./routes/contact/contact.route";
+import Projects from "./routes/projects/projects.route";
 
 const App: FC = () => {
   const router = createBrowserRouter([
@@ -59,6 +60,10 @@ const App: FC = () => {
     {
       path: "/cma",
       element: <CmaComponent />,
+    },
+    {
+      path: "/projects",
+      element: <Projects />,
     },
     {
       path: "/contact",

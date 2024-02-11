@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "rogik";
+  src: url("../../../assets/rogik.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "daily_hustle";
+  src: url("../../../assets/daily_hustle.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "retro_star";
+  src: url("../../../assets/retro_star.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "snellbt";
+  src: url("../../../assets/snellbt.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "merosa";
+  src: url("../../../assets/merosa.otf") format("truetype");
+}
+
+@media (min-width: 300px) {
+  .Projects {
+    color: var(--white);
+    background-color: var(--black);
+
+    &__bg-wrapper {
+      background: url("../../../assets/img/projects_bg.png") no-repeat center;
+    }
+
+    .Services {
+      width: auto;
+      font-family: "Poppins";
+
+      .Service {
+        &:nth-child(odd) {
+          align-self: end;
+        }
+
+        &:nth-child(even) {
+          align-self: start;
+        }
+      }
+
+      .rogik {
+        .Service__title {
+          font-family: "rogik" !important;
+        }
+      }
+      .daily {
+        .Service__title {
+          text-transform: none;
+          color: #fffcac;
+          font-family: "daily_hustle" !important;
+          font-size: 7.5rem;
+          line-height: 3rem;
+          margin-bottom: 15%;
+          text-shadow: 0 0 6px #fffcac;
+        }
+      }
+      .retro {
+        .Service__title {
+          font-family: "retro_star" !important;
+        }
+      }
+      .kento {
+        .Service__title {
+          font-family: "kento" !important;
+        }
+      }
+      .snell {
+        .Service__title {
+          text-transform: none;
+          color: #ef4343;
+          font-family: "snellbt" !important;
+          transform: rotate(-10deg);
+          font-size: 6rem;
+          line-height: 3.8rem;
+          margin-bottom: 15%;
+        }
+      }
+      .merosa {
+        .Service__title {
+          text-transform: none;
+          font-family: "merosa" !important;
+        }
+      }
+    }
+
+    .Button {
+      margin: 30% auto;
+      font-size: 1rem;
+      width: 25%;
+      background-color: var(--yellow);
+      a {
+        color: var(--black);
+      }
+    }
+  }
+}
