@@ -10,6 +10,7 @@ import InfinityComponent from "./routes/infinity/infinity.route";
 import CmaComponent from "./routes/cma/cma.route";
 import ContactComponent from "./routes/contact/contact.route";
 import Projects from "./routes/projects/projects.route";
+import Videos from "./routes/videos/videos.route";
 
 const App: FC = () => {
   const router = createBrowserRouter([
@@ -64,6 +65,10 @@ const App: FC = () => {
     {
       path: "/projects",
       element: <Projects />,
+    },
+    {
+      path: "/Videos",
+      element: <Videos />,
     },
     {
       path: "/contact",
