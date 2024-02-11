@@ -1,69 +1,75 @@
 @media screen and (min-width: 300px) {
-    .Customization {
-        text-align: center;
-        margin: 30px 20px;
-
-        &.infinity {
-            color: var(--infinity-text-color);
-            border-color: var(--white);
-        }
-
-        &__title {
-            font-weight: 100;
-            font-family: var(--sans);
-            text-transform: uppercase;
-            margin: unset;
-        }
-
-        &__subtitle {
-            font-weight: 100;
-            font-family: 'Poppins';
-            opacity: 60%;
-            margin: unset;
-        }
-
-        &__button {
-            margin: 20px 0;
-            width: 100px;
-
-            a {
-                color: var(--black);
-            }
-        }
-
-        &__decorative-dot {
-            display: none;
-        }
+  .Customization {
+    a {
+      text-align: center;
+      margin: 30px 20px;
+      color: unset;
+      text-decoration: none;
     }
+
+    &.infinity {
+      color: var(--infinity-text-color);
+      border-color: var(--white);
+    }
+
+    &__title {
+      font-weight: 100;
+      font-family: var(--sans);
+      text-transform: uppercase;
+      margin: unset;
+    }
+
+    &__subtitle {
+      font-weight: 100;
+      font-family: "Poppins";
+      opacity: 60%;
+      margin: unset;
+    }
+
+    &__button {
+      margin: 20px 0;
+      width: 100px;
+
+      a {
+        color: var(--black);
+      }
+    }
+
+    &__decorative-dot {
+      display: none;
+    }
+  }
 }
 
 @media screen and (min-width: 1200px) {
-    .Customization {
-        text-align: left;
-        border-bottom: 1px solid;
-        display: flex;
-        justify-content: space-between;
-        padding: 0 2%;
-        width: 75%;
-
-        &__title {
-            font-size: 1.2rem;
-        }
-
-        &__subtitle {
-            font-size: 1.2rem;
-            margin: unset;
-        }
-
-        &__button {
-            display: none;
-        }
-
-        &__decorative-dot {
-            display: block;
-            grid-area: dot;
-            margin: unset;
-            font-size: 1.5rem;
-        }
+  .Customization {
+    a {
+      text-align: left !important;
+      border-bottom: 1px solid;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2%;
+      width: 75%;
     }
+
+    &__title {
+      font-size: 1.2rem;
+    }
+
+    &__subtitle {
+      font-size: 1.2rem;
+      margin: unset;
+    }
+
+    &__button {
+      display: none;
+    }
+
+    &__decorative-dot {
+      display: block;
+      grid-area: dot;
+      margin: unset;
+      font-size: 1.5rem;
+    }
+  }
 }
