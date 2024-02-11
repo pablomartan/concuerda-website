@@ -5,7 +5,7 @@ export const Button: React.FC<
   PropsWithChildren<{ url: string; className?: string; target?: string }>
 > = ({ className, children }) => {
   return (
-    <button className={"Button".concat(` ${className}` ?? "")}>
+    <button className={"Button".concat(className ? " " + className : "")}>
       {children}
     </button>
   );
