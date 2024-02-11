@@ -4,7 +4,6 @@ import {
   CustomizationType,
 } from "../customization/customization.component";
 import "./service.style.scss";
-import { ServiceModal } from "../service-modal/service-modal.component";
 import {
   useWeddingsCustomizations,
   useWeddingsCeremonyTypes,
@@ -76,7 +75,13 @@ const Ceremonia: React.FC<{
   );
 };
 
-export const Service: React.FC<ServiceType> = ({ name, pic, url }) => {
+export const Service: React.FC<ServiceType> = ({
+  className,
+  name,
+  pic,
+  url,
+  text,
+}) => {
   const [ceremoniaActive, setCeremoniaActive] = useReducer(
     (state) => !state,
     false,
@@ -95,13 +100,14 @@ export const Service: React.FC<ServiceType> = ({ name, pic, url }) => {
           <Ceremonia active={ceremoniaActive} />
         </div>
       ) : (
-        <div className="Service">
+        <div className={"Service".concat(className ? " " + className : "")}>
           <a href={url}>
             <div
               style={{ backgroundImage: `url("${pic}")` }}
               className="Service__banner"
             />
             <h2 className="Service__title">{name}</h2>
+            <p>{text}</p>
           </a>
         </div>
       )}

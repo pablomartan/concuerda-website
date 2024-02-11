@@ -4,10 +4,11 @@ import "./services.style.scss";
 
 export type ServiceType = {
   name: string;
-  url: string;
-  pic: string;
+  url?: string;
+  pic?: string;
   text?: string;
-  button?: boolean;
+  className?: string;
+  button?: string;
 };
 
 export const Services: React.FC<{ serviceList: ServiceType[] }> = ({
