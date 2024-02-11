@@ -60,7 +60,11 @@ const CmaServices: FC = () => {
           </p>
         </div>
       </div>
-      <Button url="https://candlemusicagency.com/" />
+      <Button>
+        <a href="https://candlemusicagency.com/" target="_blank">
+          Ver Más
+        </a>
+      </Button>
       <video src={bottomBanner} autoPlay muted loop />
     </section>
   );
