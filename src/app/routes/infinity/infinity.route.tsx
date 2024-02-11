@@ -13,23 +13,7 @@ import { useInfinityBody, useInfinityServices } from "../../hooks/useData";
 import heroBanner from "../../../assets/vid/landing_infinity_banner.mp4";
 
 import "./infinity.style.scss";
-
-const InfinityHero = () => {
-  const mainHeroProps = {
-    hook: "infinity",
-    subtext: "un evento diferente y atrevido",
-  };
-
-  return (
-    <div className="MainHero">
-      <video src={heroBanner} className="MainHero__bg" autoPlay muted loop />
-      <div className="MainHero__text">
-        <h1 className="MainHero__hook">{mainHeroProps.hook}</h1>
-        <h2 className="MainHero__subtext">{mainHeroProps.subtext}</h2>
-      </div>
-    </div>
-  );
-};
+import { MainHero } from "../../components/main-hero/main-hero.component";
 
 const InfinityServices = () => {
   const services = useInfinityServices();
@@ -112,10 +96,17 @@ const InfinityBottomBanner = () => {
 };
 
 const InfinityComponent: FC = () => {
+  const mainHeroProps = {
+    pic: false,
+    hook: "infinity",
+    subtext: "un evento diferente y atrevido",
+    video: heroBanner,
+  };
+
   return (
     <div className="Infinity">
       <Header />
-      <InfinityHero />
+      <MainHero {...mainHeroProps} />
       <InfinityBody />
       <InfinityServices />
       <InfinityBottomBanner />

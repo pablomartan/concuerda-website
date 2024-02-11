@@ -16,6 +16,7 @@ import cmaBanner from "../../../assets/vid/landing_cma_banner.mp4";
 
 import soloistsPdf from "../../../assets/pdf/solists.pdf";
 import repertoirePdf from "../../../assets/pdf/repertoire.pdf";
+import { MainHero } from "../../components/main-hero/main-hero.component";
 
 const LandingHero: FC = () => {
   return (
@@ -171,11 +172,18 @@ const CookieNotice: FC = () => {
 };
 
 const Home: FC = () => {
+  const mainHeroProps = {
+    pic: false,
+    video: heroBanner,
+    hook: "la mejor música para tu evento",
+    subtext: "",
+  };
+
   return (
     <div className="Landing">
       <CookieNotice />
       <Header />
-      <LandingHero />
+      <MainHero {...mainHeroProps} />
       <LandingServices />
       <Reviews />
       <Footer />

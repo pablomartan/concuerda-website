@@ -10,6 +10,7 @@ import "./404.style.scss";
 
 const NotFound: FC = () => {
   const heroProps: MainHeroProps = {
+    pic: true,
     hook: "Página no encontrada",
     subtext: "Disculpa las molestias",
   };

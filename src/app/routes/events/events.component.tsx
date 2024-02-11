@@ -16,6 +16,7 @@ const Events: FC = () => {
   const heroProps: MainHeroProps = {
     hook: "Eventos Trío Concuerda",
     subtext: "variedad y calidad para eventos de todo tipo",
+    pic: true,
   };
 
   const serviceList = useEventsServices();

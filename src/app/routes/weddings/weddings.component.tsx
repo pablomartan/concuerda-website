@@ -18,6 +18,7 @@ const Weddings: FC = () => {
   const heroProps: MainHeroProps = {
     hook: "bodas trio concuerda",
     subtext: "Variedad y calidad para toda la boda",
+    pic: true,
   };
 
   return (
