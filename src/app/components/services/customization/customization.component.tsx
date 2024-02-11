@@ -20,14 +20,16 @@ export const Customization: React.FC<CustomizationType> = ({
         title === "infinity" ? " infinity" : "",
       )}
     >
-      <div>
-        <h4 className="Customization__title">{title}</h4>
-        <h5 className="Customization__subtitle">{subtitle}</h5>
-      </div>
-      <div>
-        <Button url={url} className="Customization__button" />
-        <p className="Customization__decorative-dot">•</p>
-      </div>
+      <a href={url} target={url.includes("pdf") ? "_blank" : ""}>
+        <div>
+          <h4 className="Customization__title">{title}</h4>
+          <h5 className="Customization__subtitle">{subtitle}</h5>
+        </div>
+        <div>
+          <Button className="Customization__button">Ver Más</Button>
+          <p className="Customization__decorative-dot">•</p>
+        </div>
+      </a>
     </div>
   );
 };
