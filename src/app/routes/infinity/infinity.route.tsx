@@ -37,8 +37,10 @@ const InfinityServices = () => {
                 <p>{service.text}</p>
               )}
             </div>
-            <Button url={service.url}>
-              {service.name === "solistas" ? "Ver Catálogo" : "Ver Más"}
+            <Button>
+              <a href={service.url} target="_blank">
+                {service.name === "solistas" ? "Ver Catálogo" : "Ver Más"}
+              </a>
             </Button>
           </div>
         );
@@ -85,7 +87,9 @@ const InfinityBody = () => {
       </article>
       <article className="InfinityBody__listen">
         <h2 className="InfinityBody__listen__title">escucha infinity</h2>
-        <Button url="/videos">Ver videos</Button>
+        <Button>
+          <a href="/videos">Ver videos</a>
+        </Button>
       </article>
     </section>
   );
