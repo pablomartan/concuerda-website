@@ -491,3 +491,18 @@ export const useProjectsServices = () => [
     url: projectsPdf + "#page=6",
   },
 ];
+
+export const useVideosPlaylists = () => [
+  {
+    title: "Trio Concuerda",
+    videoList: "PLMLMh9sEXCA9Rj7AISCjNwDkVN4b8Qy0e&si=q04LmlURkaqi6yhy",
+  },
+  {
+    title: "Trio Concuerda con solistas",
+    videoList: "PLMLMh9sEXCA9giE2L7wKSzOTV72WZKsCz&si=05MGrub_qyHEe0GI",
+  },
+  {
+    title: "String Band tc",
+    videoList: "PLMLMh9sEXCA8SrQ9V-arUfDnle7konr0G&si=VseyP9a-ZcuhZDsR",
+  },
+];

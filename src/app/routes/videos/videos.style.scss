@@ -1,8 +1,34 @@
 @media (min-width: 300px) {
   .Videos {
-    &__body-placeholder {
-      min-height: 300px;
-      background-color: var(--black);
+    background-color: var(--black);
+    color: var(--white);
+
+    &Carousel {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 75vh;
+
+      &__title {
+        padding-top: 8%;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 3.5rem;
+        font-weight: lighter;
+
+        span {
+          font-size: 2.5rem;
+          font-family: "Poppins";
+          font-weight: lighter;
+        }
+      }
+      &:nth-child(even) {
+        background-color: var(--white);
+        color: var(--black);
+      }
+    }
+
+    .alice-carousel {
     }
   }
 }
