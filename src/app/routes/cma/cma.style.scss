@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "melrose";
+  src: url("../../../assets/fonts/melrose.otf") format("truetype");
+}
+
 @media (min-width: 300px) {
   .Cma {
     background-color: var(--black);
@@ -42,6 +47,9 @@
         &__cma-word {
           color: var(--yellow);
           text-transform: none;
+          font-family: "melrose";
+          font-size: 4rem;
+          line-height: 1.1rem;
         }
       }
 
