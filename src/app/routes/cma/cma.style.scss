@@ -32,9 +32,10 @@
       }
 
       .Service {
+        max-width: 280px;
         p {
           font-family: "Poppins";
-          font-size: 1.1rem;
+          font-size: 1.3rem;
           text-align: center;
           text-transform: uppercase;
         }
@@ -79,7 +80,7 @@
     }
 
     .Services {
-      width: 85%;
+      max-width: 95%;
 
       &__title {
         margin: 10% auto;
@@ -91,7 +92,8 @@
         width: 65%;
       }
       .Service {
-        width: 35%;
+        max-width: unset;
+        width: 460px;
         &:nth-child(odd) {
           align-self: start;
         }
