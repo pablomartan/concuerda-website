@@ -11,6 +11,7 @@ import CmaComponent from "./routes/cma/cma.route";
 import ContactComponent from "./routes/contact/contact.route";
 import Projects from "./routes/projects/projects.route";
 import Videos from "./routes/videos/videos.route";
+import Personalization from "./routes/personalization/personalization.route";
 
 const App: FC = () => {
   const router = createBrowserRouter([
@@ -67,8 +68,12 @@ const App: FC = () => {
       element: <Projects />,
     },
     {
-      path: "/Videos",
+      path: "/videos",
       element: <Videos />,
+    },
+    {
+      path: "/customization",
+      element: <Personalization />,
     },
     {
       path: "/contact",
