@@ -1,0 +1,41 @@
+@media (min-width: 300px) {
+  .Customization {
+    .MainHero {
+      &__bg {
+        background-image: url("../../../assets/img/hero_banners/customization_banner.jpg");
+      }
+
+      &__text {
+        overflow-x: hidden;
+        word-wrap: break-word;
+        width: 90%;
+        word-wrap: break-word;
+        hyphens: auto;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+      }
+    }
+
+    &__pic {
+      position: absolute;
+
+      &--index-1 {
+        width: 35%;
+        margin-left: 2%;
+        z-index: 1;
+      }
+
+      &--index-2 {
+        display: none;
+      }
+
+      &--index-3 {
+        width: 70%;
+        margin-top: 30%;
+        margin-left: 25%;
+        z-index: 0;
+      }
+    }
+  }
+}
