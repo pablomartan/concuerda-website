@@ -1,13 +1,19 @@
 @media (min-width: 300px) {
   .Button {
+    height: 60px;
+    width: 95%;
+    margin: 0 auto;
+
     border: 1px solid black;
     border-radius: 100px;
+
     background-color: var(--white);
-    height: 60px;
+    color: var(--black);
+    font-size: 1.2rem;
+    font-family: "Poppins";
 
     a {
       text-decoration: none;
-      font-family: "Poppins";
     }
   }
 }
