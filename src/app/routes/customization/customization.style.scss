@@ -1,5 +1,8 @@
 @media (min-width: 300px) {
-  .Customization {
+  .CustomizationPage {
+    max-width: 100%;
+    overflow: hidden;
+
     .MainHero {
       &__bg {
         background-image: url("../../../assets/img/hero_banners/customization_banner.jpg");
@@ -35,6 +38,224 @@
         margin-top: 30%;
         margin-left: 25%;
         z-index: 0;
+      }
+
+      &--index-4 {
+        width: 57%;
+        margin-left: 2%;
+        margin-top: 30%;
+      }
+
+      &--index-5 {
+        width: 35%;
+        margin-left: 63%;
+        margin-top: -25%;
+      }
+
+      &--index-6 {
+        width: 50%;
+        margin-left: -8%;
+        margin-top: -110vh;
+      }
+
+      &--index-7 {
+        width: 45%;
+        margin-left: 63%;
+        margin-top: -85vh;
+      }
+
+      &--index-8 {
+        width: 55%;
+        margin-top: 65vh;
+      }
+
+      &--index-9 {
+        width: 33%;
+        margin-left: 61%;
+        margin-top: 30vh;
+      }
+
+      &--index-10 {
+        width: 50%;
+        margin-top: 85vh;
+        margin-left: 60%;
+      }
+
+      &--index-11 {
+        width: 35%;
+        margin-top: -100vh;
+      }
+
+      &--index-12 {
+        width: 60%;
+        margin-top: -130vh;
+        margin-left: 50%;
+      }
+
+      &--index-13 {
+        width: 70%;
+        margin-top: -90vh;
+        margin-left: 30%;
+      }
+
+      &--index-14 {
+        width: 45%;
+        margin-top: -50vh;
+      }
+
+      &--index-15 {
+        width: 25%;
+        margin-top: -30vh;
+        margin-left: 60%;
+      }
+    }
+
+    .CustomizationService {
+      margin-top: 90%;
+      padding-top: 60%;
+      min-height: 120vh;
+
+      &.repertoire,
+      &.decoration {
+        background-color: var(--white);
+        color: var(--black);
+
+        .Button {
+          background-color: var(--black);
+          color: var(--white);
+          border-color: var(--white);
+        }
+      }
+
+      &.decoration {
+        .CustomizationService {
+          &__hook {
+            margin-top: 60vh;
+          }
+
+          &__subtext {
+            display: none;
+          }
+        }
+      }
+
+      &__hook {
+        font-size: 2.5rem;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 0;
+      }
+
+      &__subtext {
+        font-family: "poppins";
+        font-weight: normal;
+        text-align: center;
+        max-width: 80%;
+        margin: 0 auto;
+      }
+
+      &__list {
+        max-width: 80%;
+        margin: 30% auto;
+        padding: unset;
+
+        &__item {
+          list-style: none;
+          font-family: var(--sans);
+          font-size: 1.5rem;
+          text-align: center;
+          line-height: 2rem;
+        }
+      }
+
+      &__button {
+        display: flex;
+        text-decoration: none;
+        width: 100%;
+      }
+
+      &__video {
+        &--wrapper {
+          margin-top: 80vh;
+          display: flex;
+          flex-direction: column;
+        }
+
+        object-fit: cover;
+        width: 100%;
+
+        &__text {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          width: 100%;
+
+          background-color: var(--yellow);
+          color: var(--black);
+          font-family: "Poppins";
+          border-radius: 0 0 20px 20px;
+
+          a:has(.Button) {
+            min-width: 30%;
+          }
+
+          .Button {
+            height: unset;
+            margin: 5% auto;
+            font-size: 0.8rem;
+            background-color: var(--yellow);
+          }
+        }
+
+        &__hook {
+          font-family: var(--sans);
+          font-weight: normal;
+          margin-bottom: 0;
+        }
+
+        &__subtext {
+          max-width: 80%;
+          margin-top: 0;
+          text-align: center;
+          font-weight: normal;
+        }
+      }
+
+      &__subservice {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50%;
+
+        &:nth-child(4) {
+          height: 200vh;
+        }
+
+        &__name {
+          font-size: 1.4rem;
+          font-family: "Poppins";
+          font-weight: 600;
+        }
+
+        &__hook {
+          text-align: center;
+          font-family: var(--sans);
+          font-weight: normal;
+          margin-bottom: 0;
+        }
+
+        &__subtext {
+          text-align: center;
+          font-size: 1rem;
+          font-family: "Poppins";
+          font-weight: normal;
+          margin-top: 0;
+        }
+
+        &__video {
+          width: 100%;
+        }
       }
     }
   }
