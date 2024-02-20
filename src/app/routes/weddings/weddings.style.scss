@@ -8,10 +8,14 @@
     }
 
     .Menu--wrapper {
-      .hamburger-lines {
+      &.active {
         .line {
-          background-color: var(--black);
+          background-color: var(--white);
         }
+      }
+
+      .line {
+        background-color: var(--black);
       }
 
       .MenuLinks {
