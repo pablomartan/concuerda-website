@@ -140,6 +140,11 @@
       .Customization {
         margin: 2% auto;
         min-height: 60px;
+        width: 75%;
+
+        a {
+          width: 100%;
+        }
       }
 
       &__premium-customization {
@@ -147,6 +152,10 @@
         color: var(--accent);
         width: 80%;
         margin: 0 auto;
+
+        &__banner {
+          margin-top: 10%;
+        }
 
         .Customization {
           margin-top: -10%;
