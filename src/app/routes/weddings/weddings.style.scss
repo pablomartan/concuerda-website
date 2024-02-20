@@ -28,6 +28,8 @@
     .MainHero {
       &__bg {
         background-image: url("../../../assets/img/hero_banners/weddings_hero.png");
+        height: 900px;
+        background-position: 0 70%;
       }
 
       &__text {
