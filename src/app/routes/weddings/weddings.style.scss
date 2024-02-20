@@ -21,13 +21,6 @@
       .MenuLinks {
         .MenuLinks__link {
           color: var(--white);
-
-          &--cmagencylink {
-            text-shadow:
-              0 0 5px #fff,
-              0 0 8px #fff3cc;
-            color: #fff3cc;
-          }
         }
       }
     }
