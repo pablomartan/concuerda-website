@@ -170,12 +170,6 @@
         display: flex;
         text-decoration: none;
         width: 100%;
-
-        &:active,
-        &:focus {
-          color: var(--yellow);
-          border-color: var(--yellow);
-        }
       }
 
       &__video {
@@ -258,6 +252,207 @@
         }
 
         &__video {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .CustomizationPage {
+    .MainHero {
+      &__bg {
+        height: 800px;
+        background-position: 50% 30%;
+      }
+
+      &__text {
+        text-align: center;
+        margin: 25% 0;
+      }
+
+      &__hook {
+        font-size: 2.5rem;
+      }
+
+      &__subtext {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__pic {
+      &--index-1 {
+        width: 25%;
+        margin-left: 70%;
+        margin-top: -25%;
+      }
+
+      &--index-2 {
+        display: unset;
+        width: 12%;
+        margin-left: 35%;
+        margin-top: -10%;
+      }
+
+      &--index-3 {
+        width: 20%;
+        margin-left: 8%;
+        margin-top: -40%;
+      }
+
+      &--index-4 {
+        width: 20%;
+        margin-left: 6%;
+        margin-top: -12%;
+      }
+
+      &--index-5 {
+        width: 10%;
+        margin-left: 76%;
+        margin-top: -5%;
+      }
+
+      &--index-6 {
+        width: 15%;
+        margin-left: 3%;
+        margin-top: -60%;
+      }
+
+      &--index-7 {
+        width: 20%;
+        margin-left: 67%;
+        margin-top: -80%;
+      }
+
+      &--index-8 {
+        width: 16%;
+        margin-top: -5%;
+        margin-left: 4%;
+      }
+
+      &--index-9 {
+        width: 12%;
+        margin-left: 55%;
+        margin-top: -4%;
+      }
+
+      &--index-10 {
+        width: 14%;
+        margin-top: 4%;
+        margin-left: 89%;
+      }
+
+      &--index-11 {
+        width: 13%;
+        margin-top: -80%;
+        margin-left: 5%;
+      }
+
+      &--index-12 {
+        width: 21%;
+        margin-top: -88%;
+        margin-left: 79%;
+      }
+
+      &--index-13 {
+        width: 20%;
+        margin-top: -70%;
+        margin-left: 45%;
+      }
+
+      &--index-14 {
+        width: 15%;
+        margin-top: -50%;
+        margin-left: 25%;
+      }
+
+      &--index-15 {
+        width: 10%;
+        margin-top: -30%;
+        margin-left: 64%;
+      }
+    }
+
+    .CustomizationService {
+      margin-top: unset;
+      padding-top: 15%;
+
+      &.decoration {
+        .CustomizationService__subtext {
+          display: block;
+          font-size: 1.5rem;
+        }
+      }
+
+      &__hook {
+        font-size: 4rem;
+      }
+
+      &__list {
+        margin: 5% auto;
+      }
+
+      .Button {
+        height: 60px;
+        font-size: 1.2rem;
+      }
+
+      &__video {
+        position: relative;
+        width: 60%;
+        margin: auto;
+        margin-bottom: 10%;
+
+        &__text {
+          margin-left: 25%;
+          margin-top: 10%;
+          position: absolute;
+          width: 25%;
+          background: transparent;
+          color: var(--yellow);
+          align-items: start;
+
+          a {
+            height: 100%;
+            width: 100%;
+            .Button {
+              display: none;
+            }
+          }
+        }
+
+        &__hook,
+        &__subtext {
+          text-align: left;
+        }
+
+        &--wrapper {
+          margin-top: 20%;
+        }
+      }
+
+      &__subservice {
+        margin-top: 12%;
+
+        &__name {
+          margin-bottom: 5%;
+        }
+
+        &__hook {
+          font-size: 1.3rem;
+        }
+
+        &__subtext {
+          max-width: 66%;
+          margin: 0 auto;
+          font-size: 1.2rem;
+          opacity: 0.6;
+        }
+
+        &__video {
+          object-fit: cover;
+          max-height: 240px;
           width: 100%;
         }
       }
