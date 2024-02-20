@@ -53,7 +53,14 @@
 
       .Customization__button {
         background: var(--black);
+        color: var(--white);
         border: 1px solid var(--white);
+
+        &:active,
+        &:focus {
+          color: var(--yellow);
+          border-color: var(--yellow);
+        }
 
         a {
           color: var(--white);

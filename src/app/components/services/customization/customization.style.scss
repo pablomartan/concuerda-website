@@ -10,6 +10,14 @@
     &.infinity {
       color: var(--infinity-text-color);
       border-color: var(--white);
+
+      .Customization__button {
+        &:active,
+        &:focus {
+          color: var(--infinity-text-color);
+          border-color: var(--infinity-text-color);
+        }
+      }
     }
 
     &__title {
@@ -29,6 +37,12 @@
     &__button {
       margin: 20px 0;
       width: 100px;
+
+      &:active,
+      &:focus {
+        color: var(--yellow);
+        border-color: var(--yellow);
+      }
 
       a {
         color: var(--black);
