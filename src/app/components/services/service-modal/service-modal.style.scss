@@ -47,7 +47,6 @@
         margin: 0 auto;
       }
     }
-
     &__body {
       padding-top: 40%;
 
@@ -55,12 +54,6 @@
         background: var(--black);
         color: var(--white);
         border: 1px solid var(--white);
-
-        &:active,
-        &:focus {
-          color: var(--yellow);
-          border-color: var(--yellow);
-        }
 
         a {
           color: var(--white);
