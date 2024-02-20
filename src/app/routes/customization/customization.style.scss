@@ -24,9 +24,9 @@
       position: absolute;
 
       &--index-1 {
-        width: 35%;
-        margin-left: 2%;
-        z-index: 1;
+        width: 70%;
+        margin-top: 30%;
+        margin-left: 25%;
       }
 
       &--index-2 {
@@ -34,10 +34,8 @@
       }
 
       &--index-3 {
-        width: 70%;
-        margin-top: 30%;
-        margin-left: 25%;
-        z-index: 0;
+        width: 35%;
+        margin-left: 2%;
       }
 
       &--index-4 {
@@ -172,6 +170,12 @@
         display: flex;
         text-decoration: none;
         width: 100%;
+
+        &:active,
+        &:focus {
+          color: var(--yellow);
+          border-color: var(--yellow);
+        }
       }
 
       &__video {

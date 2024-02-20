@@ -9,9 +9,9 @@ import soloistsPdf from "../../../assets/pdf/solists.pdf";
 import soloistsVid from "../../../assets/vid/bodas_velas_vid.mp4";
 import decorationVid from "../../../assets/vid/decoration_vid.mp4";
 
-import a from "../../../assets/img/customization/1.jpg";
+import a from "../../../assets/img/customization/3.jpg";
 import b from "../../../assets/img/customization/2.jpg";
-import c from "../../../assets/img/customization/3.jpg";
+import c from "../../../assets/img/customization/1.jpg";
 import d from "../../../assets/img/customization/4.jpg";
 import e from "../../../assets/img/customization/5.jpg";
 import f from "../../../assets/img/customization/6.jpg";
