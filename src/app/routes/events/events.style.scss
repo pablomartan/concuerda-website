@@ -1,13 +1,18 @@
 @media (min-width: 300px) {
-.Events {
+  .Events {
     .MainHero__bg {
-    background-image: url('../../../assets/img/hero_banners/events_hero_mobile.png');
+      background-image: url("../../../assets/img/hero_banners/events_hero_mobile.png");
+      background-color: var(--white);
+      color: var(--black);
+    }
+  }
+}
 
-}}}
 @media (min-width: 1200px) {
-.Events{
-.MainHero__bg {
-    background-image: url('../../../assets/img/hero_banners/events_hero_desktop.png');
-    background-position: 40% 20%;
-}}
+  .Events {
+    .MainHero__bg {
+      background-image: url("../../../assets/img/hero_banners/events_hero_desktop.png");
+      background-position: 40% 20%;
+    }
+  }
 }

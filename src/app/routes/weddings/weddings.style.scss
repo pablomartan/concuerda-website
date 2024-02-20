@@ -1,8 +1,12 @@
 @media (min-width: 300px) {
   .Weddings {
+    background-color: var(--white);
+    color: var(--black);
+
     .Header__logo {
       filter: invert(1);
     }
+
     .Menu--wrapper {
       .hamburger-lines {
         .line {
@@ -23,8 +27,15 @@
         }
       }
     }
-    .MainHero__bg {
-      background-image: url("../../../assets/img/hero_banners/weddings_hero.png");
+
+    .MainHero {
+      &__bg {
+        background-image: url("../../../assets/img/hero_banners/weddings_hero.png");
+      }
+
+      &__text {
+        text-align: center;
+      }
     }
   }
 }
