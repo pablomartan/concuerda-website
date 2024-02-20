@@ -1,13 +1,13 @@
 @media (min-width: 300px) {
   .Events {
+    background-color: var(--white);
+    color: var(--black);
+
     .MainHero__bg {
       background-image: url("../../../assets/img/hero_banners/events_hero_mobile.png");
-      background-color: var(--white);
-      color: var(--black);
     }
   }
 }
-
 @media (min-width: 1200px) {
   .Events {
     .MainHero__bg {
