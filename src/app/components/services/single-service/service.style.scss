@@ -128,7 +128,10 @@
   .Service:has(.Ceremonia__options) {
     &.active {
       align-self: center;
+      width: 100%;
+      margin-left: -38.5%;
     }
+
     display: grid;
     grid-template-areas:
       "banner options options"
