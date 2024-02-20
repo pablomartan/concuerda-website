@@ -195,13 +195,13 @@
 
         .Button {
           width: 95%;
-          height: 50%;
+          height: 60px;
           margin-left: 2.5%;
           margin-top: 5%;
           background-color: var(--black);
           color: var(--white);
           border: 1px solid var(--white);
-          font-weight: bold;
+          font-size: 1.2rem;
         }
 
         &--special {
@@ -430,6 +430,8 @@
           width: 25%;
           height: 45px;
           margin-top: 10px;
+          background-color: var(--white);
+          color: var(--black);
         }
 
         &--special {
