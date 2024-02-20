@@ -1,4 +1,3 @@
-import React from "react";
 import { Menu } from "../menu/menu.component";
 import "./header.style.scss";
 import logo from "../../../assets/img/white_logo.png";

@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import { FC } from "react";
 import { UseFormRegisterReturn, useForm } from "react-hook-form";
 import { Header } from "../../components/header/header.component";
 import { Footer } from "../../components/footer/footer.component";
@@ -39,8 +39,10 @@ const ContactForm = () => {
     submit: "Enviar",
   };
 
-  const { register, getValues, setValue, formState, clearErrors } =
-    useForm<ContactFormInput>({ defaultValues, mode: "onBlur" });
+  const { register } = useForm<ContactFormInput>({
+    defaultValues,
+    mode: "onBlur",
+  });
 
   return (
     <div className="ContactForm">

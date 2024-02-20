@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { Service } from "./single-service/service.component";
 import "./services.style.scss";
 
@@ -11,7 +11,7 @@ export type ServiceType = {
   button?: string;
 };
 
-export const Services: React.FC<{ serviceList: ServiceType[] }> = ({
+export const Services: FC<{ serviceList: ServiceType[] }> = ({
   serviceList,
 }) => {
   return (

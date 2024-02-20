@@ -1,4 +1,3 @@
-import React from "react";
 import ceremonia from "../../assets/img/bodas_ceremonia.png";
 import religiosaPic from "../../assets/img/bodas_religiosa.png";
 import civilPic from "../../assets/img/bodas_civil.png";
@@ -16,7 +15,6 @@ import repertoirePdf from "../../assets/pdf/repertoire.pdf";
 import soloistsPdf from "../../assets/pdf/solists.pdf";
 import infinityPdf from "../../assets/pdf/infinity.pdf";
 import projectsPdf from "../../assets/pdf/projects.pdf";
-import faqPdf from "../../assets/pdf/faq.pdf";
 
 export const useMenuLinks = () => [
   {

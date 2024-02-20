@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import Weddings from "./routes/weddings/weddings.component";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./app.module.scss";

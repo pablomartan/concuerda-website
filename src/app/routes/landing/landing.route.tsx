@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Footer } from "../../components/footer/footer.component";
 import { Header } from "../../components/header/header.component";
 import { Button } from "../../components/button/button.component";
@@ -17,18 +17,6 @@ import cmaBanner from "../../../assets/vid/landing_cma_banner.mp4";
 import soloistsPdf from "../../../assets/pdf/solists.pdf";
 import repertoirePdf from "../../../assets/pdf/repertoire.pdf";
 import { MainHero } from "../../components/main-hero/main-hero.component";
-
-const LandingHero: FC = () => {
-  return (
-    <div className="MainHero">
-      <video src={heroBanner} autoPlay={true} className="MainHero__bg" />
-      <div className="MainHero__text">
-        <h1 className="MainHero__hook">la mejor música para tu evento</h1>
-        <h2 className="MainHero__subtext"></h2>
-      </div>
-    </div>
-  );
-};
 
 const LandingServices: FC = () => {
   const normalServices = [

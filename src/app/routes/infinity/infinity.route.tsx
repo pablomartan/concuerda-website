@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Header } from "../../components/header/header.component";
 import { Footer } from "../../components/footer/footer.component";
 import { OvalImage } from "../../components/services/single-service/service.component";
