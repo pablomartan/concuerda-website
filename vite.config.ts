@@ -7,4 +7,5 @@ export default defineConfig({
   build: {
     outDir: "build",
   },
+  base: "https://pablomartan.github.io/concuerda-website/",
 });
