@@ -1,8 +1,7 @@
 import { FC } from "react";
 import Weddings from "./routes/weddings/weddings.component";
 import {
-  createBrowserRouter,
-  HashRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import "./app.module.scss";
@@ -18,7 +17,7 @@ import Videos from "./routes/videos/videos.route";
 import Customization from "./routes/customization/customization.route";
 
 const App: FC = () => {
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/",
       element: <Landing />,
@@ -90,11 +89,9 @@ const App: FC = () => {
   ]);
 
   return (
-    <HashRouter>
       <div className="App">
         <RouterProvider router={router} />
       </div>
-    </HashRouter>
   );
 };
 
