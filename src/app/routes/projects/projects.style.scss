@@ -29,6 +29,12 @@
     background-color: var(--black);
 
     &__bg-wrapper {
+      .MainHero {
+        &__bg {
+          object-fit: cover;
+        }
+      }
+
       background: url("../../../assets/img/projects_bg.png") no-repeat center;
     }
 
