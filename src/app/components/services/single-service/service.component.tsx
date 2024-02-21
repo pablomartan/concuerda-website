@@ -112,7 +112,7 @@ export const Service: React.FC<ServiceType> = ({
               <p>{text}</p>
             </a>
           ) : (
-            <Link to={url}>
+            <Link to={url!}>
               <div
                 style={{ backgroundImage: `url("${pic}")` }}
                 className="Service__banner"
