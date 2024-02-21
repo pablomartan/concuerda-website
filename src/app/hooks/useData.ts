@@ -19,39 +19,39 @@ import projectsPdf from "../../assets/pdf/projects.pdf";
 export const useMenuLinks = () => [
   {
     section: "Inicio",
-    url: "./",
+    url: "/",
   },
   {
     section: "Bodas",
-    url: "./weddings",
+    url: "/weddings",
   },
   {
     section: "Eventos",
-    url: "./events",
+    url: "/events",
   },
   {
     section: "Infinity",
-    url: "./infinity",
+    url: "/infinity",
   },
   {
     section: "CM Agency",
-    url: "./cma",
+    url: "/cma",
   },
   {
     section: "Proyectos",
-    url: "./projects",
+    url: "/projects",
   },
   {
     section: "Personalización",
-    url: "./customization",
+    url: "/customization",
   },
   {
     section: "Vídeos",
-    url: "./videos",
+    url: "/videos",
   },
   {
     section: "Contacto",
-    url: "./contact",
+    url: "/contact",
   },
 ];
 
