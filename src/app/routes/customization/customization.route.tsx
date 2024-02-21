@@ -29,7 +29,6 @@ import { Button } from "../../components/button/button.component";
 
 import "./customization.style.scss";
 import { capitalize } from "../../utils/utils";
-import { Link } from "react-router-dom";
 import CustomLink from "../../components/link/link.component";
 
 type CustomizationSubServiceType = {
