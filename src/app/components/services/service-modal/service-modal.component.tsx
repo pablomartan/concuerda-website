@@ -91,10 +91,7 @@ export const ServiceModal: FC<{ modal: ServiceModalKeyType }> = ({ modal }) => {
             {capitalize(footerText)}
           </a>
         ) : (
-          <CustomLink
-            className="ServiceModal__footer__link"
-            url={footerCustomLink}
-          >
+          <CustomLink className="ServiceModal__footer__link" url={footerLink}>
             {capitalize(footerText)}
           </CustomLink>
         )}
