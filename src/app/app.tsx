@@ -1,6 +1,10 @@
 import { FC } from "react";
 import Weddings from "./routes/weddings/weddings.component";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  HashRouter,
+  RouterProvider,
+} from "react-router-dom";
 import "./app.module.scss";
 import Events from "./routes/events/events.component";
 import NotFound from "./routes/404/404.route";
@@ -86,9 +90,11 @@ const App: FC = () => {
   ]);
 
   return (
-    <div className="App">
-      <RouterProvider router={router} />
-    </div>
+    <HashRouter>
+      <div className="App">
+        <RouterProvider router={router} />
+      </div>
+    </HashRouter>
   );
 };
 
