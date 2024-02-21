@@ -19,67 +19,67 @@ import Customization from "./routes/customization/customization.route";
 const App: FC = () => {
   const router = createHashRouter([
     {
-      path: "/",
+      path: "/concuerda-website",
       element: <Landing />,
     },
     {
-      path: "/weddings",
+      path: "/concuerda-website/weddings",
       element: <Weddings />,
     },
     {
-      path: "/weddings/religious",
+      path: "/concuerda-website/weddings/religious",
       element: <ServiceModal modal={"religious"} />,
     },
     {
-      path: "/weddings/civil",
+      path: "/concuerda-website/weddings/civil",
       element: <ServiceModal modal={"civil"} />,
     },
     {
-      path: "/weddings/dinner",
+      path: "/concuerda-website/weddings/dinner",
       element: <ServiceModal modal={"dinner"} />,
     },
     {
-      path: "/weddings/cocktail",
+      path: "/concuerda-website/weddings/cocktail",
       element: <ServiceModal modal={"cocktail"} />,
     },
     {
-      path: "/weddings/party",
+      path: "/concuerda-website/weddings/party",
       element: <ServiceModal modal={"party"} />,
     },
     {
-      path: "/events",
+      path: "/concuerda-website/events",
       element: <Events />,
     },
     {
-      path: "/events/corporate",
+      path: "/concuerda-website/events/corporate",
       element: <ServiceModal modal={"corporate"} />,
     },
     {
-      path: "/events/custom",
+      path: "/concuerda-website/events/custom",
       element: <ServiceModal modal={"custom"} />,
     },
     {
-      path: "/infinity",
+      path: "/concuerda-website/infinity",
       element: <InfinityComponent />,
     },
     {
-      path: "/cma",
+      path: "/concuerda-website/cma",
       element: <CmaComponent />,
     },
     {
-      path: "/projects",
+      path: "/concuerda-website/projects",
       element: <Projects />,
     },
     {
-      path: "/videos",
+      path: "/concuerda-website/videos",
       element: <Videos />,
     },
     {
-      path: "/customization",
+      path: "/concuerda-website/customization",
       element: <Customization />,
     },
     {
-      path: "/contact",
+      path: "/concuerda-website/contact",
       element: <ContactComponent />,
     },
     {
