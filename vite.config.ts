@@ -12,7 +12,7 @@ export default defineConfig(({ command }) => {
   };
 
   if (command !== "serve") {
-    config.base = "/my-vite-react-app/";
+    config.base = "/concuerda-website/";
   }
 
   return config;
