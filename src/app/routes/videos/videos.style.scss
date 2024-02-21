@@ -2,6 +2,11 @@
   .Videos {
     background-color: var(--black);
     color: var(--white);
+    .MainHero {
+      &__bg {
+        object-fit: cover;
+      }
+    }
 
     &Carousel {
       display: flex;

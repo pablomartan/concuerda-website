@@ -2,17 +2,19 @@ import { FC, MouseEventHandler, useEffect, useMemo, useState } from "react";
 
 import { Header } from "../../components/header/header.component";
 import { Footer } from "../../components/footer/footer.component";
+import { MainHero } from "../../components/main-hero/main-hero.component";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
-const API_URL = import.meta.env.VITE_YOUTUBE_PLAYLIST_API;
-const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
+import banner from "../../../assets/vid/videos_banner.mp4";
 
 import { useVideosPlaylists } from "../../hooks/useData";
 
-import "./videos.style.scss";
 import "react-alice-carousel/lib/alice-carousel.css";
-import { MainHero } from "../../components/main-hero/main-hero.component";
+import "./videos.style.scss";
+
+const API_URL = import.meta.env.VITE_YOUTUBE_PLAYLIST_API;
+const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 
 const getFinalTitle = (title: string, className: string) => {
   if (title.endsWith("solistas")) {
@@ -97,7 +99,8 @@ const Videos: FC = () => {
   const mainHeroProps = {
     hook: "vídeos",
     subtext: "Versiones únicas",
-    pic: true,
+    pic: false,
+    video: banner,
   };
 
   return (
