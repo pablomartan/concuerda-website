@@ -8,9 +8,9 @@ import { useReviews } from "../../hooks/useData";
 import "./landing.style.scss";
 
 import heroBanner from "../../../assets/vid/landing_hero_banner.mp4";
-import versionesBanner from "../../../assets/vid/landing_soloists_banner.mp4";
+import versionesBanner from "../../../assets/vid/contact_banner.mp4";
 import soloistsBanner from "../../../assets/vid/landing_soloists_banner.mp4";
-import customizationBanner from "../../../assets/vid/landing_soloists_banner.mp4";
+import customizationBanner from "../../../assets/vid/videos_banner.mp4";
 import infinityBanner from "../../../assets/vid/landing_infinity_banner.mp4";
 import cmaBanner from "../../../assets/vid/landing_cma_banner.mp4";
 
