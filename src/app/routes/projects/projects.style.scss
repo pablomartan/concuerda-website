@@ -92,10 +92,11 @@
     }
 
     .Button {
+      background-color: var(--yellow);
       margin: 30% auto;
       font-size: 1rem;
       width: 25%;
-      background-color: var(--yellow);
+      height: 60px;
       a {
         color: var(--black);
       }

@@ -9,6 +9,7 @@ import {
 } from "../../../hooks/useData";
 import "./service-modal.style.scss";
 import { capitalize } from "../../../utils/utils";
+import { Link } from "react-router-dom";
 
 type ServiceModalKeyType =
   | "religious"
@@ -49,12 +50,12 @@ export const ServiceModal: FC<{ modal: ServiceModalKeyType }> = ({ modal }) => {
         className="ServiceModal__header"
         style={{ backgroundImage: `url(${hero})` }}
       >
-        <a className="ServiceModal__header__back-link" href="/weddings">
+        <Link className="ServiceModal__header__back-link" to="/weddings">
           Volver
-        </a>
-        <a className="ServiceModal__header__back-link--cross" href="/weddings">
+        </Link>
+        <Link className="ServiceModal__header__back-link--cross" to="/weddings">
           ⨉
-        </a>
+        </Link>
         <div className="ServiceModal__header--text">
           <h1 className="ServiceModal__header__title">{title}</h1>
           <h2 className="ServiceModal__header__subtitle">
@@ -78,9 +79,19 @@ export const ServiceModal: FC<{ modal: ServiceModalKeyType }> = ({ modal }) => {
         ) : null}
       </main>
       <footer className="ServiceModal__footer">
-        <a className="ServiceModal__footer__link" href={footerLink}>
-          {capitalize(footerText)}
-        </a>
+        {footerText.includes(".") ? (
+          <a
+            className="ServiceModal__footer__link"
+            href={footerLink}
+            target="_blank"
+          >
+            {capitalize(footerText)}
+          </a>
+        ) : (
+          <Link className="ServiceModal__footer__link" to={footerLink}>
+            {capitalize(footerText)}
+          </Link>
+        )}
       </footer>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { Dispatch, createContext, useContext, useState } from "react";
 import "./menu.style.scss";
 import { useMenuLinks } from "../../hooks/useData";
 import whiteLogo from "../../../assets/img/white_logo.png";
+import { NavLink } from "react-router-dom";
 
 const MenuContext = createContext({
   links: [
@@ -39,9 +40,9 @@ const MenuLinks = () => {
 
             return (
               <li key={section}>
-                <a href={url} className={className}>
+                <NavLink to={url} className={className} replace>
                   {section}
-                </a>
+                </NavLink>
               </li>
             );
           })}

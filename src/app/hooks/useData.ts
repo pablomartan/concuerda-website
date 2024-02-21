@@ -366,35 +366,35 @@ export const useEventsServiceModalData = () => ({
 export const useFooterLinks = () => [
   {
     text: "repertorio",
-    url: "",
+    url: repertoirePdf,
   },
   {
     text: "solistas",
-    url: "",
+    url: soloistsPdf,
   },
   {
     text: "decoración",
-    url: "",
+    url: "/customization",
   },
   {
     text: "grupos CM agency",
-    url: "",
+    url: "https://candlemusicagency.com",
   },
   {
     text: "escúchanos",
-    url: "",
+    url: "/videos",
   },
   {
     text: "contacto",
-    url: "",
+    url: "/contact",
   },
   {
     text: "instagram",
-    url: "",
+    url: "https://www.instagram.com/trio_concuerda/",
   },
   {
     text: "youtube",
-    url: "",
+    url: "https://www.youtube.com/@trioconcuerda",
   },
 ];
 

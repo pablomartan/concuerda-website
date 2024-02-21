@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import smallLogo from "../../../assets/img/footer_logo_small.png";
 import bigLogo from "../../../assets/img/footer_logo_big.png";
 import insta from "../../../assets/img/insta.png";
@@ -14,21 +15,40 @@ type TLink = {
 const FooterLink: React.FC<TLink> = ({ text, url }) => {
   const className = "Footer__nav-link";
 
-  return (
-    <a key={text} href={url} className={className}>
-      <li>{text}</li>
-    </a>
-  );
+  const isLinkInternal = !url.includes(".");
+
+  if (isLinkInternal) {
+    return (
+      <Link key={text} to={url} className={className}>
+        <li>{text}</li>
+      </Link>
+    );
+  } else {
+    return (
+      <a key={text} href={url} className={className} target="_blank">
+        <li>{text}</li>
+      </a>
+    );
+  }
 };
 
 const SocialLink: React.FC<TLink> = ({ text, url }) => {
-  return (
-    <a key={text} href={url} className="Footer__social-link">
-      <li>
+  const className = "Footer__social-link";
+  const isLinkInternal = !url.includes(".");
+
+  if (isLinkInternal) {
+    return (
+      <Link key={text} to={url} className={className}>
         <img src={text === "instagram" ? insta : yt} />
-      </li>
-    </a>
-  );
+      </Link>
+    );
+  } else {
+    return (
+      <a key={text} href={url} className={className}>
+        <img src={text === "instagram" ? insta : yt} />
+      </a>
+    );
+  }
 };
 
 export const Footer: React.FC = () => {

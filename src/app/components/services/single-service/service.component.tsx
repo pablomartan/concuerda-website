@@ -9,6 +9,7 @@ import {
   useWeddingsCeremonyTypes,
 } from "../../../hooks/useData";
 import { ServiceType } from "../services.component";
+import { Link } from "react-router-dom";
 
 export const OvalImage: React.FC<{ picture: string; svgClass: string }> = ({
   picture,
@@ -43,12 +44,12 @@ const CeremoniaSubType: React.FC<{
   title: string;
 }> = ({ url, picture, title }) => {
   return (
-    <a className="Ceremonia__subtype" href={url}>
+    <Link className="Ceremonia__subtype" to={url}>
       <div className="Ceremonia__subtype--wrapper">
         <OvalImage picture={picture} svgClass="Ceremonia__subtype--pic__svg" />
         <h4 className="Ceremonia__subtype--title">{title}</h4>
       </div>
-    </a>
+    </Link>
   );
 };
 
@@ -101,14 +102,25 @@ export const Service: React.FC<ServiceType> = ({
         </div>
       ) : (
         <div className={"Service".concat(className ? " " + className : "")}>
-          <a href={url}>
-            <div
-              style={{ backgroundImage: `url("${pic}")` }}
-              className="Service__banner"
-            />
-            <h2 className="Service__title">{name}</h2>
-            <p>{text}</p>
-          </a>
+          {url?.includes(".") ? (
+            <a href={url} target="_blank">
+              <div
+                style={{ backgroundImage: `url("${pic}")` }}
+                className="Service__banner"
+              />
+              <h2 className="Service__title">{name}</h2>
+              <p>{text}</p>
+            </a>
+          ) : (
+            <Link to={url}>
+              <div
+                style={{ backgroundImage: `url("${pic}")` }}
+                className="Service__banner"
+              />
+              <h2 className="Service__title">{name}</h2>
+              <p>{text}</p>
+            </Link>
+          )}
         </div>
       )}
     </>

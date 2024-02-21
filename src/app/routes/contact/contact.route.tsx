@@ -104,7 +104,11 @@ const ContactForm = () => {
           </div>
           <Input type="submit" inputProps={register("submit")} />
         </form>
-        <a className="ContactForm__content__faq-link" href={faqPdf}>
+        <a
+          className="ContactForm__content__faq-link"
+          href={faqPdf}
+          target="_blank"
+        >
           10 dudas más frecuentes
         </a>
       </div>

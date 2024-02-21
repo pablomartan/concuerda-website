@@ -14,6 +14,7 @@ import heroBanner from "../../../assets/vid/landing_infinity_banner.mp4";
 
 import "./infinity.style.scss";
 import { MainHero } from "../../components/main-hero/main-hero.component";
+import { Link } from "react-router-dom";
 
 const InfinityServices = () => {
   const services = useInfinityServices();
@@ -37,11 +38,11 @@ const InfinityServices = () => {
                 <p>{service.text}</p>
               )}
             </div>
-            <Button>
-              <a href={service.url} target="_blank">
+            <a href={service.url} target="_blank">
+              <Button>
                 {service.name === "solistas" ? "Ver Catálogo" : "Ver Más"}
-              </a>
-            </Button>
+              </Button>
+            </a>
           </div>
         );
       })}
@@ -67,7 +68,11 @@ const InfinityBody = () => {
             </p>
           ))}
         </section>
-        <a className="InfinityBody__how-it-works__link" href={link}>
+        <a
+          className="InfinityBody__how-it-works__link"
+          href={link}
+          target="_blank"
+        >
           Más información
         </a>
       </article>
@@ -87,9 +92,9 @@ const InfinityBody = () => {
       </article>
       <article className="InfinityBody__listen">
         <h2 className="InfinityBody__listen__title">escucha infinity</h2>
-        <Button>
-          <a href="/videos">Ver videos</a>
-        </Button>
+        <Link to="/videos">
+          <Button>Ver videos</Button>
+        </Link>
       </article>
     </section>
   );
