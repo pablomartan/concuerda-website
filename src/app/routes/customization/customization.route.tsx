@@ -30,6 +30,7 @@ import { Button } from "../../components/button/button.component";
 import "./customization.style.scss";
 import { capitalize } from "../../utils/utils";
 import { Link } from "react-router-dom";
+import CustomLink from "../../components/link/link.component";
 
 type CustomizationSubServiceType = {
   name: string;
@@ -129,19 +130,9 @@ const CustomizationService: FC<CustomizationServiceType> = ({
         </ul>
       ) : null}
       {url ? (
-        url.includes(".") ? (
-          <a
-            className="CustomizationService__button"
-            href={url}
-            target="_blank"
-          >
-            <Button>{buttonText ?? "Ver Más"}</Button>
-          </a>
-        ) : (
-          <Link className="CustomizationService__button" to={url}>
-            <Button>{buttonText ?? "Ver Más"}</Button>
-          </Link>
-        )
+        <CustomLink className="CustomizationService__button" url={url}>
+          <Button>{buttonText ?? "Ver Más"}</Button>
+        </CustomLink>
       ) : null}
       {video ? (
         <div className="CustomizationService__video--wrapper">
@@ -157,15 +148,9 @@ const CustomizationService: FC<CustomizationServiceType> = ({
             <h5 className="CustomizationService__video__subtext">
               {video.subtext}
             </h5>
-            {video.url.includes(".") ? (
-              <a href={video.url} target="_blank">
-                <Button>Ver Más</Button>
-              </a>
-            ) : (
-              <Link to={video.url}>
-                <Button>Ver Más</Button>
-              </Link>
-            )}
+            <CustomLink url={video.url}>
+              <Button>Ver Más</Button>
+            </CustomLink>
           </div>
         </div>
       ) : null}

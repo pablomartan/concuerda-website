@@ -17,7 +17,7 @@ import cmaBanner from "../../../assets/vid/landing_cma_banner.mp4";
 import soloistsPdf from "../../../assets/pdf/solists.pdf";
 import repertoirePdf from "../../../assets/pdf/repertoire.pdf";
 import { MainHero } from "../../components/main-hero/main-hero.component";
-import { Link } from "react-router-dom";
+import CustomLink from "../../components/link/link.component";
 
 const LandingServices: FC = () => {
   const normalServices = [
@@ -74,15 +74,9 @@ const LandingServices: FC = () => {
                   );
                 })}
               </div>
-              {url.includes(".") ? (
-                <a href={url} target="_blank">
-                  <Button>Ver Más</Button>
-                </a>
-              ) : (
-                <Link to={url}>
-                  <Button>Ver Más</Button>
-                </Link>
-              )}
+              <CustomLink url={url}>
+                <Button>Ver Más</Button>
+              </CustomLink>
             </div>
             <video src={banner} className="Service__banner" autoPlay />
           </div>
@@ -96,7 +90,7 @@ const LandingServices: FC = () => {
                 ` ${title.replace("\n", "-")}`,
               )}
             >
-              <Link to={url}>
+              <CustomLink url={url}>
                 <div className="Service__banner--special">
                   <h2 className="Service__title--special">
                     {title.split("\n").map((word) => (
@@ -118,7 +112,7 @@ const LandingServices: FC = () => {
                   </div>
                   <h3 className="Service__subtitle--special">{subtitle}</h3>
                 </div>
-              </Link>
+              </CustomLink>
             </div>
           );
         })}
