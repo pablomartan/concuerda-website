@@ -147,7 +147,7 @@ export const useWeddingsServiceModalsData = () => ({
       banner: bodasReligiosaVid,
       title: "ceremonia premium",
       subtitle: "para las ceremonias más impresionantes",
-      url: "/cma",
+      url: "https://candlemusicagency.com/",
     },
     footer: {
       url: "/weddings/cocktail",
@@ -314,12 +314,12 @@ export const useEventsServiceModalData = () => ({
       {
         title: "eventos personalizados",
         subtitle: "repertorio, solistas, decoración y vestuario",
-        url: "#",
+        url: "/customization",
       },
       {
         title: "infinity",
         subtitle: "innovación para marcar la diferencia",
-        url: "#",
+        url: "/infinity",
       },
       {
         title: "escúchanos",
@@ -348,7 +348,7 @@ export const useEventsServiceModalData = () => ({
         title: "espectáculos trío concuerda",
         subtitle:
           "todo un catálogo de proyectos a elegir, con diferentes objetivos y para todo tipo de audiencias: programas musicales variados, actuaciones para niños y mayores, conciertos literarios",
-        url: "#",
+        url: projectsPdf,
       },
       {
         title: "escúchanos",
