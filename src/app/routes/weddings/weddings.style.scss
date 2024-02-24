@@ -29,7 +29,6 @@
       &__bg {
         background-image: url("../../../assets/img/hero_banners/weddings_hero.png");
         height: 900px;
-        background-position: 0 70%;
       }
 
       &__text {
@@ -49,6 +48,12 @@
             color: #fff3cc;
           }
         }
+      }
+    }
+
+    .MainHero {
+      &__bg {
+        background-position: 50% 70%;
       }
     }
   }
