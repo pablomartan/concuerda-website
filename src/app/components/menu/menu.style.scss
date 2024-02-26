@@ -72,30 +72,9 @@
 
         cursor: pointer;
 
-        .line {
-          width: 100%;
-          height: 2px;
-          background-color: var(--white);
-          transform-origin: 0px 100%;
-          transition: all 300ms;
-          transform-style: preserve-3d;
-        }
-
-        .line1.active {
-          -webkit-transform: rotate(45deg) translate(2px, -4px);
-          -moz-transform: rotate(45deg) translate(-5px, -2px);
-          background-color: var(--white);
-        }
-
-        .line2.active {
-          opacity: 0;
-          margin-right: -30px;
-        }
-
-        .line3.active {
-          -webkit-transform: rotate(-45deg) translate(-7px, 15px);
-          -moz-transform: rotate(-45deg) translate(-8px, 8px);
-          background-color: var(--white);
+        .xmark,
+        .lines {
+          filter: invert(1);
         }
       }
     }

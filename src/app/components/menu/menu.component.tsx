@@ -4,6 +4,9 @@ import { useMenuLinks } from "../../hooks/useData";
 import whiteLogo from "../../../assets/img/white_logo.png";
 import { NavLink } from "react-router-dom";
 
+import hamburgerLines from "../../../assets/img/hamburger/hamburger_lines.svg";
+import xMark from "../../../assets/img/hamburger/xmark.svg";
+
 const MenuContext = createContext({
   links: [
     {
@@ -19,9 +22,10 @@ const Hamburger: React.FC<{
 }> = ({ on, setOn }) => {
   return (
     <div className="hamburger-lines" onClick={() => setOn(!on)}>
-      <span className={on ? "line line1 active" : "line line1"} />
-      <span className={on ? "line line2 active" : "line line2"} />
-      <span className={on ? "line line3 active" : "line line3"} />
+      <img
+        className={on ? "xmark" : "lines"}
+        src={on ? xMark : hamburgerLines}
+      />
     </div>
   );
 };
