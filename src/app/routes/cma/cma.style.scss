@@ -55,6 +55,8 @@
 
       .Button {
         background-color: var(--yellow);
+        width: unset;
+        margin-bottom: 5%;
 
         a {
           color: var(--black);
