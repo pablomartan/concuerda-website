@@ -79,7 +79,7 @@ const LandingServices: FC = () => {
                 <Button>Ver Más</Button>
               </CustomLink>
             </div>
-            <video src={banner} className="Service__banner" autoPlay />
+            <video src={banner} className="Service__banner" autoPlay muted />
           </div>
         );
       })}
