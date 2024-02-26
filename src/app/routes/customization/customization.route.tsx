@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 import { Header } from "../../components/header/header.component";
 import { Footer } from "../../components/footer/footer.component";
@@ -30,6 +30,7 @@ import { Button } from "../../components/button/button.component";
 import "./customization.style.scss";
 import { capitalize } from "../../utils/utils";
 import CustomLink from "../../components/link/link.component";
+import { useNavigate } from "react-router";
 
 type CustomizationSubServiceType = {
   name: string;
@@ -164,6 +165,8 @@ const CustomizationService: FC<CustomizationServiceType> = ({
 };
 
 const CustomizationPage: FC = () => {
+  const navigate = useNavigate();
+
   const mainHeroProps = {
     pic: true,
     hook: "Personalización",
@@ -211,6 +214,8 @@ const CustomizationPage: FC = () => {
     ],
     className: "decoration",
   };
+
+  useEffect(() => navigate("/customization"), []);
 
   return (
     <div className="CustomizationPage">

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Header } from "../../components/header/header.component";
 import { Footer } from "../../components/footer/footer.component";
 import { OvalImage } from "../../components/services/single-service/service.component";
@@ -15,6 +15,7 @@ import heroBanner from "../../../assets/vid/landing_infinity_banner.mp4";
 import "./infinity.style.scss";
 import { MainHero } from "../../components/main-hero/main-hero.component";
 import CustomLink from "../../components/link/link.component";
+import { useNavigate } from "react-router";
 
 const InfinityServices = () => {
   const services = useInfinityServices();
@@ -101,6 +102,10 @@ const InfinityBottomBanner = () => {
 };
 
 const InfinityComponent: FC = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => navigate("/infinity"), []);
+
   const mainHeroProps = {
     pic: false,
     hook: "infinity",

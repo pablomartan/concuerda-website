@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { UseFormRegisterReturn, useForm } from "react-hook-form";
 import { Header } from "../../components/header/header.component";
 import { Footer } from "../../components/footer/footer.component";
@@ -8,6 +8,7 @@ import contactBanner from "../../../assets/vid/contact_banner.mp4";
 import faqPdf from "../../../assets/pdf/faq.pdf";
 
 import "./contact.style.scss";
+import { useNavigate } from "react-router";
 
 type ContactFormInput = {
   name: string;
@@ -117,6 +118,10 @@ const ContactForm = () => {
 };
 
 const Contact: FC = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => navigate("/contact"), []);
+
   return (
     <div className="Contact">
       <Header />

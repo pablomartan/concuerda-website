@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 import { Header } from "../../components/header/header.component";
 import { MainHero } from "../../components/main-hero/main-hero.component";
@@ -13,6 +13,7 @@ import projectsPdf from "../../../assets/pdf/projects.pdf";
 import video from "../../../assets/vid/projects_banner.mp4";
 
 import "./projects.style.scss";
+import { useNavigate } from "react-router";
 
 const ProjectsServices = () => {
   const services: ServiceType[] = useProjectsServices();
@@ -41,6 +42,10 @@ const ProjectsServices = () => {
 };
 
 const Projects: FC = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => navigate("/projects"), []);
+
   const mainHeroProps = {
     pic: false,
     hook: "Proyectos Trío Concuerda",

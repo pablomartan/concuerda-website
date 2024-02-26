@@ -12,6 +12,7 @@ import { useVideosPlaylists } from "../../hooks/useData";
 
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./videos.style.scss";
+import { useNavigate } from "react-router";
 
 const API_URL = import.meta.env.VITE_YOUTUBE_PLAYLIST_API;
 const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
@@ -96,6 +97,11 @@ const VideosCarousel: FC<{
 
 const Videos: FC = () => {
   const playlists = useVideosPlaylists();
+
+  const navigate = useNavigate();
+
+  useEffect(() => navigate("/videos"), []);
+
   const mainHeroProps = {
     hook: "vídeos",
     subtext: "Versiones únicas",

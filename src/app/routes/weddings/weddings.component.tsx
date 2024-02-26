@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Footer } from "../../components/footer/footer.component";
 import { Header } from "../../components/header/header.component";
 import {
@@ -11,9 +11,14 @@ import {
 } from "../../components/services/services.component";
 import { useWeddingsServices } from "../../hooks/useData";
 import "./weddings.style.scss";
+import { useNavigate } from "react-router";
 
 const Weddings: FC = () => {
   const weddingServiceList = useWeddingsServices();
+
+  const navigate = useNavigate();
+
+  useEffect(() => navigate("/weddings"), []);
 
   const heroProps: MainHeroProps = {
     hook: "bodas trio concuerda",

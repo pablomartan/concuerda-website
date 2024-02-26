@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 import { Header } from "../../components/header/header.component";
 import { Footer } from "../../components/footer/footer.component";
@@ -7,6 +7,7 @@ import { Button } from "../../components/button/button.component";
 import cmaLogo from "../../../assets/img/cma_logo_yellow.png";
 import bottomBanner from "../../../assets/vid/bodas_velas_vid.mp4";
 import heroBanner from "../../../assets/vid/cma_banner.mp4";
+import { useNavigate } from "react-router";
 
 import "./cma.style.scss";
 
@@ -69,6 +70,9 @@ const CmaServices: FC = () => {
 };
 
 const Cma: FC = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => navigate("/cma"), []);
   return (
     <div className="Cma">
       <Header />

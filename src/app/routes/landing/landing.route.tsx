@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Footer } from "../../components/footer/footer.component";
 import { Header } from "../../components/header/header.component";
 import { Button } from "../../components/button/button.component";
@@ -18,6 +18,7 @@ import soloistsPdf from "../../../assets/pdf/solists.pdf";
 import repertoirePdf from "../../../assets/pdf/repertoire.pdf";
 import { MainHero } from "../../components/main-hero/main-hero.component";
 import CustomLink from "../../components/link/link.component";
+import { useNavigate } from "react-router";
 
 const LandingServices: FC = () => {
   const normalServices = [
@@ -165,6 +166,10 @@ const CookieNotice: FC = () => {
 };
 
 const Home: FC = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => navigate("/"), []);
+
   const mainHeroProps = {
     pic: false,
     video: heroBanner,
