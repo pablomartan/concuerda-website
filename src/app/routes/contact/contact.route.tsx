@@ -1,8 +1,10 @@
 import { FC, useEffect } from "react";
-import { UseFormRegisterReturn, useForm } from "react-hook-form";
+import { SubmitHandler, UseFormRegisterReturn, useForm } from "react-hook-form";
 import { Header } from "../../components/header/header.component";
 import { Footer } from "../../components/footer/footer.component";
 import { Button } from "../../components/button/button.component";
+
+import emailjs from "@emailjs/browser";
 
 import contactBanner from "../../../assets/vid/contact_banner.mp4";
 import faqPdf from "../../../assets/pdf/faq.pdf";
@@ -19,6 +21,10 @@ type ContactFormInput = {
   details: string;
   submit: ReturnType<typeof Button>;
 };
+
+export const EMAIL_SERVICE = "service_cy84y6d";
+export const EMAIL_TEMPLATE = "template_726fkoy";
+export const EMAIL_PUBLIC_ID = "w1kEM1Mri5d_SVzQZ";
 
 const Input = ({
   type,
@@ -40,17 +46,26 @@ const ContactForm = () => {
     submit: "Enviar",
   };
 
-  const { register } = useForm<ContactFormInput>({
+  const { register, handleSubmit } = useForm<ContactFormInput>({
     defaultValues,
     mode: "onBlur",
   });
+
+  const sendEmail: SubmitHandler<ContactFormInput> = (data) => {
+    emailjs
+      .send(EMAIL_SERVICE, EMAIL_TEMPLATE, data, {
+        publicKey: EMAIL_PUBLIC_ID,
+      })
+      .then((data) => console.log({ data }))
+      .catch((error) => console.log({ error }));
+  };
 
   return (
     <div className="ContactForm">
       <video src={contactBanner} muted autoPlay loop />
       <div className="ContactForm__content">
         <h2 className="ContactForm__title">¡Contacta con nosotros!</h2>
-        <form>
+        <form onSubmit={handleSubmit(sendEmail)}>
           <div>
             <label htmlFor="name">Nombre</label>
             <Input
