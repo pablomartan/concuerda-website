@@ -1,4 +1,11 @@
-import { FC, MouseEventHandler, useEffect, useMemo, useState } from "react";
+import {
+  FC,
+  MouseEventHandler,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 import { Header } from "../../components/header/header.component";
 import { Footer } from "../../components/footer/footer.component";
@@ -33,6 +40,41 @@ const getFinalTitle = (title: string, className: string) => {
 };
 
 const VideosCarousel: FC<{
+  videos: JSX.Element[];
+}> = ({ videos }) => {
+  const carousel = useRef<AliceCarousel>(null);
+
+  return (
+    <div className="VideosCarousel">
+      <div
+        className="VideosCarousel__arrow VideosCarousel__arrow--prev"
+        onClick={(e) => carousel.current?.slidePrev(e)}
+      >
+        <svg width="30px" height="30px">
+          <polygon points="30,0 30,30, 0,15" />
+        </svg>
+      </div>
+      <AliceCarousel
+        key="carousel"
+        infinite
+        items={videos}
+        disableButtonsControls
+        mouseTracking
+        ref={carousel}
+      />
+      <div
+        className="VideosCarousel__arrow VideosCarousel__arrow--next"
+        onClick={(e) => carousel.current?.slideNext(e)}
+      >
+        <svg width="30px" height="30px">
+          <polygon points="0,0 30,15, 0,30" />
+        </svg>
+      </div>
+    </div>
+  );
+};
+
+const VideosCarouselWrapper: FC<{
   title: string;
   videoList: string;
 }> = ({ title, videoList }) => {
@@ -59,38 +101,20 @@ const VideosCarousel: FC<{
     fetchedVideos.then((data) => setVideoIds(data));
   }, [fetchedVideos]);
 
-  const autoStop: MouseEventHandler<HTMLIFrameElement> = (e) => {
-    console.log(e.target);
-  };
-
   const videoIFrames = videoIds.map((id) => {
     return (
       <iframe
+        className="VideosCarousel__iframe"
         key={id}
         src={"https://youtube.com/embed/".concat(id)}
-        onDrag={autoStop}
       />
     );
   });
 
   return (
-    <div className="VideosCarousel">
+    <div className="VideosCarouselWrapper">
       {getFinalTitle(title, "VideosCarousel__title")}
-      <AliceCarousel
-        mouseTracking
-        infinite
-        items={videoIFrames}
-        responsive={{
-          300: {
-            items: 1,
-            itemsFit: "fill",
-          },
-          1024: {
-            items: 3,
-            itemsFit: "cover",
-          },
-        }}
-      />
+      <VideosCarousel videos={videoIFrames} />
     </div>
   );
 };
@@ -114,7 +138,7 @@ const Videos: FC = () => {
       <Header />
       <MainHero {...mainHeroProps} />
       {playlists.map(({ title, videoList }) => (
-        <VideosCarousel title={title} {...{ videoList }} />
+        <VideosCarouselWrapper title={title} {...{ videoList }} />
       ))}
       <Footer />
     </div>
