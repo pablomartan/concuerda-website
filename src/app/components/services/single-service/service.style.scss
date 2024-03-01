@@ -1,8 +1,18 @@
+/*
 .inactive {
   display: none !important;
 }
+*/
 
 @media screen and (min-width: 300px) {
+  .big {
+    display: none;
+  }
+
+  .small {
+    display: unset;
+  }
+
   .Service {
     a {
       width: 100%;
@@ -16,8 +26,8 @@
 
     &__banner {
       border-radius: 160px 160px 0 0;
-      height: 380px;
-      width: 80%;
+      height: 360px;
+      width: 290px;
       background-size: cover;
       margin: auto;
     }
@@ -37,6 +47,9 @@
   }
 
   .Ceremonia {
+    width: 100%;
+    height: auto;
+
     &__wrapper {
       width: 100%;
 
@@ -50,6 +63,8 @@
       padding-top: 100px;
 
       border-top: 1px solid;
+      transition: all 200ms ease-in-out;
+      overflow: hidden;
     }
 
     &__title {
@@ -98,6 +113,13 @@
 }
 
 @media screen and (min-width: 1200px) {
+  .small {
+    display: none;
+  }
+
+  .big {
+    display: unset;
+  }
   .Service {
     display: flex;
     flex-direction: column;
