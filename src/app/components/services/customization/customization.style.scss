@@ -63,7 +63,7 @@
       display: flex;
       justify-content: space-between;
       padding: 0 2%;
-      width: 75%;
+      width: 75% !important;
     }
 
     &__title {
@@ -81,9 +81,9 @@
 
     &__decorative-dot {
       display: block;
-      grid-area: dot;
-      margin: unset;
       font-size: 1.5rem;
+      color: var(--black);
+      margin: auto;
     }
   }
 }
