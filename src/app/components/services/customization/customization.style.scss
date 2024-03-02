@@ -64,6 +64,12 @@
       justify-content: space-between;
       padding: 0 2%;
       width: 75% !important;
+
+      div:first-child {
+        &:hover {
+          translate: 1vw;
+        }
+      }
     }
 
     &__title {
