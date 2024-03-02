@@ -9,12 +9,7 @@ import {
 } from "../../../hooks/useData";
 import { ServiceType } from "../services.component";
 import CustomLink from "../../link/link.component";
-import {
-  useSpring,
-  animated,
-  SpringValue,
-  Controller,
-} from "@react-spring/web";
+import { useSpring, animated, SpringValue } from "@react-spring/web";
 import useMeasure from "react-use-measure";
 
 import "./service.style.scss";
