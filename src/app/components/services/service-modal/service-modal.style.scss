@@ -146,6 +146,12 @@
 
         a {
           width: 100%;
+
+          &:hover {
+            div {
+              color: var(--accent);
+            }
+          }
         }
       }
 
