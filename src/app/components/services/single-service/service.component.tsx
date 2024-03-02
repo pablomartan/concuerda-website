@@ -1,4 +1,4 @@
-import { FC, Ref, useEffect, useReducer } from "react";
+import { FC, ReactNode, forwardRef, useContext, useReducer } from "react";
 import {
   Customization,
   CustomizationType,
@@ -9,10 +9,32 @@ import {
 } from "../../../hooks/useData";
 import { ServiceType } from "../services.component";
 import CustomLink from "../../link/link.component";
-import { useSpring, animated, SpringValue } from "@react-spring/web";
+import {
+  useSpring,
+  animated,
+  SpringValue,
+  Controller,
+} from "@react-spring/web";
+import useMeasure from "react-use-measure";
 
 import "./service.style.scss";
-import useMeasure from "react-use-measure";
+import { weddingContext } from "../../../routes/weddings/weddings.component";
+
+type CeremoniaSprings = {
+  springOpacity?: {
+    opacity: SpringValue<number>;
+  };
+  springHeight?: {
+    height: SpringValue<number>;
+  };
+  springHeightTypes?: {
+    height: SpringValue<number>;
+  };
+  springOptions?: {
+    height: SpringValue<number>;
+    width: SpringValue<number>;
+  };
+};
 
 export const OvalImage: FC<{ picture: string; svgClass: string }> = ({
   picture,
@@ -56,49 +78,83 @@ const CeremoniaSubType: FC<{
   );
 };
 
-type CeremoniaSprings = {
-  springOpacity: {
-    opacity: SpringValue<number>;
-  };
-  springHeight: {
-    height: SpringValue<number>;
-  };
+type CeremoniaProps = {
+  banner: ReactNode;
+  springs: CeremoniaSprings;
 };
 
-const Ceremonia: FC<{
-  active: boolean;
-  springs: CeremoniaSprings;
-  smallRef: Ref<HTMLDivElement>;
-}> = ({ active, springs, smallRef }) => {
-  const customizations = useWeddingsCustomizations();
-  const subtypes = useWeddingsCeremonyTypes();
+const CeremoniaSmall = forwardRef<HTMLDivElement, CeremoniaProps>(
+  ({ banner, springs }, ref) => {
+    const customizations = useWeddingsCustomizations();
+    const subtypes = useWeddingsCeremonyTypes();
 
-  const { springOpacity, springHeight } = springs;
+    const { springOpacity, springHeight } = springs;
 
-  return (
-    <animated.div className={"Ceremonia small"} style={{ ...springHeight }}>
-      <div className="Ceremonia__wrapper" ref={smallRef}>
-        <animated.div
-          className={"Ceremonia__options".concat(active ? "" : " inactive")}
-          style={{ ...springOpacity }}
-        >
-          <h3 className="Ceremonia__title">Música para la ceremonia</h3>
-          {customizations.map((cust: CustomizationType) => {
-            return <Customization key={cust.url} {...cust} />;
-          })}
+    return (
+      <>
+        {banner}
+        <animated.div className={"Ceremonia"} style={{ ...springHeight }}>
+          <div className="Ceremonia__wrapper" ref={ref}>
+            <animated.div
+              className={"Ceremonia__options"}
+              style={{ ...springOpacity }}
+            >
+              <h3 className="Ceremonia__title">Música para la ceremonia</h3>
+              {customizations.map((cust: CustomizationType) => {
+                return <Customization key={cust.url} {...cust} />;
+              })}
+            </animated.div>
+            <animated.div
+              className={"Ceremonia__types"}
+              style={{ ...springOpacity }}
+            >
+              {subtypes.map((subtype) => (
+                <CeremoniaSubType {...subtype} />
+              ))}
+            </animated.div>
+          </div>
         </animated.div>
+      </>
+    );
+  },
+);
+
+const CeremoniaBig = forwardRef<HTMLDivElement, CeremoniaProps>(
+  ({ banner, springs }, ref) => {
+    const customizations = useWeddingsCustomizations();
+    const subtypes = useWeddingsCeremonyTypes();
+
+    const { springOpacity, springHeightTypes, springOptions } = springs;
+
+    return (
+      <>
+        <div className="Ceremonia__top-flex">
+          <div className="Ceremonia__top-flex__banner">{banner}</div>
+          <animated.div style={{ ...springOptions }}>
+            <animated.div
+              className={"Ceremonia__options"}
+              style={{ ...springOpacity }}
+              ref={ref}
+            >
+              <h3 className="Ceremonia__title">Música para la ceremonia</h3>
+              {customizations.map((cust: CustomizationType) => {
+                return <Customization key={cust.url} {...cust} />;
+              })}
+            </animated.div>
+          </animated.div>
+        </div>
         <animated.div
-          className={"Ceremonia__types".concat(active ? "" : " inactive")}
-          style={{ ...springOpacity }}
+          className={"Ceremonia__types"}
+          style={{ ...springOpacity, ...springHeightTypes }}
         >
           {subtypes.map((subtype) => (
             <CeremoniaSubType {...subtype} />
           ))}
         </animated.div>
-      </div>
-    </animated.div>
-  );
-};
+      </>
+    );
+  },
+);
 
 export const Service: FC<ServiceType> = ({
   className,
@@ -109,10 +165,12 @@ export const Service: FC<ServiceType> = ({
 }) => {
   const [ceremoniaActive, setCeremoniaActive] = useReducer(
     (state) => !state,
-    true,
+    false,
   );
 
-  const [ref, { height }] = useMeasure();
+  const weddingComponentWidth = useContext(weddingContext);
+
+  const [ref, { height, width }] = useMeasure();
 
   const springHeight = useSpring({
     height: ceremoniaActive ? height : 0,
@@ -122,29 +180,90 @@ export const Service: FC<ServiceType> = ({
     },
   });
 
+  const [springOptions, springOptionsApi] = useSpring(() => ({
+    width: 0,
+    height: 0,
+    config: {
+      tension: 50,
+      friction: 50,
+    },
+  }));
+
+  const springHeightTypes = useSpring({
+    height: ceremoniaActive ? 550 : 0,
+    config: {
+      tension: 150,
+      friction: 40,
+    },
+  });
+
   const springOpacity = useSpring({
     opacity: ceremoniaActive ? 1 : 0,
     config: {
       tension: 90,
-      friction: 6,
+      friction: 10,
     },
   });
+
+  const springOptionsHandler = () => {
+    if (!ceremoniaActive) {
+      springOptionsApi.start({
+        width: width ? width : 700,
+        config: { tension: 0 },
+      });
+      springOptionsApi.start({
+        height: height,
+        immediate: true,
+      });
+    } else {
+      springOptionsApi.start({
+        height: 0,
+      });
+      springOptionsApi.start({
+        width: 0,
+        immediate: true,
+      });
+    }
+  };
 
   return (
     <>
       {name === "ceremonia" ? (
         <div className={"Service".concat(ceremoniaActive ? " active" : "")}>
-          <div
-            style={{ backgroundImage: `url("${pic}")` }}
-            className="Service__banner"
-            onClick={setCeremoniaActive}
-          />
-          <h2 className="Service__title">{name}</h2>
-          <Ceremonia
-            active={ceremoniaActive}
-            springs={{ springHeight, springOpacity }}
-            smallRef={ref}
-          />
+          {weddingComponentWidth < 1200 ? (
+            <CeremoniaSmall
+              banner={
+                <>
+                  <div
+                    style={{ backgroundImage: `url("${pic}")` }}
+                    className="Service__banner"
+                    onClick={setCeremoniaActive}
+                  />
+                  <h2 className="Service__title">{name}</h2>
+                </>
+              }
+              springs={{ springHeight, springOpacity }}
+              ref={ref}
+            />
+          ) : (
+            <CeremoniaBig
+              banner={
+                <>
+                  <div
+                    style={{ backgroundImage: `url("${pic}")` }}
+                    className="Service__banner"
+                    onClick={() => {
+                      springOptionsHandler();
+                      setCeremoniaActive();
+                    }}
+                  />
+                  <h2 className="Service__title">{name}</h2>
+                </>
+              }
+              springs={{ springHeightTypes, springOpacity, springOptions }}
+              ref={ref}
+            />
+          )}
         </div>
       ) : (
         <div className={"Service".concat(className ? " " + className : "")}>

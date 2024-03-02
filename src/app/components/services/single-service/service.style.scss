@@ -5,11 +5,11 @@
 */
 
 @media screen and (min-width: 300px) {
-  .big {
+  .desktop {
     display: none;
   }
 
-  .small {
+  .mobile {
     display: unset;
   }
 
@@ -79,7 +79,6 @@
 
     &__types {
       width: 100%;
-      height: 130vh;
       background-color: var(--black);
       padding: 20px 0;
     }
@@ -113,11 +112,11 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .small {
+  .mobile {
     display: none;
   }
 
-  .big {
+  .desktop {
     display: unset;
   }
   .Service {
@@ -145,39 +144,30 @@
       font-weight: 400;
       margin: 10px auto 0 auto;
     }
-  }
 
-  .Service:has(.Ceremonia__options) {
     &.active {
-      align-self: center;
       width: 100%;
-      margin-left: -38.5%;
-    }
 
-    display: grid;
-    grid-template-areas:
-      "banner options options"
-      "title options options"
-      "types types types";
-
-    .Service__banner {
-      grid-area: banner;
-      margin-right: -10%;
-    }
-
-    .Service__title {
-      grid-area: title;
-      margin-right: -10%;
+      .Ceremonia__top-flex {
+        width: 100%;
+      }
     }
   }
 
   .Ceremonia {
     &__options {
-      grid-area: options;
       border: none;
       padding-top: unset;
-      width: 70%;
-      margin-left: 10%;
+      height: 425px;
+      width: auto;
+      margin-left: 10px;
+    }
+
+    &__top-flex {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: auto;
     }
 
     &__title {
@@ -189,8 +179,6 @@
     &__types {
       width: 100vw;
       height: unset;
-      grid-area: types;
-      position: relative;
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
@@ -202,6 +190,7 @@
         width: 40%;
         height: 40%;
       }
+      margin: auto 0;
     }
   }
 }

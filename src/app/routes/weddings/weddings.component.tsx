@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, createContext, useEffect } from "react";
 import { Footer } from "../../components/footer/footer.component";
 import { Header } from "../../components/header/header.component";
 import {
@@ -10,13 +10,20 @@ import {
   Services,
 } from "../../components/services/services.component";
 import { useWeddingsServices } from "../../hooks/useData";
-import "./weddings.style.scss";
 import { useNavigate } from "react-router";
+import useMeasure from "react-use-measure";
+
+import "./weddings.style.scss";
+
+export const weddingContext = createContext<number>(0);
+const { Provider } = weddingContext;
 
 const Weddings: FC = () => {
   const weddingServiceList = useWeddingsServices();
 
   const navigate = useNavigate();
+
+  const [ref, { width }] = useMeasure();
 
   useEffect(() => navigate("/weddings"), []);
 
@@ -27,12 +34,14 @@ const Weddings: FC = () => {
   };
 
   return (
-    <div className="Weddings">
-      <Header />
-      <MainHero {...heroProps} />
-      <Services serviceList={weddingServiceList as ServiceType[]} />
-      <Footer />
-    </div>
+    <Provider value={width}>
+      <div className="Weddings" ref={ref}>
+        <Header />
+        <MainHero {...heroProps} />
+        <Services serviceList={weddingServiceList as ServiceType[]} />
+        <Footer />
+      </div>
+    </Provider>
   );
 };
 
