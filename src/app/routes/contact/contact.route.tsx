@@ -9,9 +9,11 @@ import emailjs from "@emailjs/browser";
 import contactBanner from "../../../assets/vid/contact_banner.mp4";
 import faqPdf from "../../../assets/pdf/faq.pdf";
 
-import "./contact.style.scss";
 import { useNavigate } from "react-router";
 import AnimatedTitle from "../../components/animated-title/animated-title.component";
+import AppearingComponent from "../../components/appearing-component/appearing.component";
+
+import "./contact.style.scss";
 
 type ContactFormInput = {
   name: string;
@@ -69,68 +71,72 @@ const ContactForm = () => {
           className="ContactForm__title"
           text="¡Contacta con nosotros!"
         />
-        <form onSubmit={handleSubmit(sendEmail)}>
-          <div>
-            <label htmlFor="name">Nombre</label>
-            <Input
-              type="text"
-              inputProps={register("name", {
-                required: true,
-              })}
-            />
-          </div>
-          <div className="name-input-separator" />
-          <div>
-            <label htmlFor="email">Correo</label>
-            <Input
-              type="email"
-              inputProps={register("email", {
-                required: true,
-              })}
-            />
-          </div>
-          <div>
-            <label htmlFor="phone">Teléfono</label>
-            <Input
-              type="text"
-              inputProps={register("phone", {
-                required: true,
-              })}
-            />
-          </div>
-          <div>
-            <label htmlFor="date">Fecha</label>
-            <Input
-              type="date"
-              inputProps={register("date", {
-                required: true,
-              })}
-            />
-          </div>
-          <div>
-            <label htmlFor="location">Lugar</label>
-            <Input
-              type="text"
-              inputProps={register("location", {
-                required: true,
-              })}
-            />
-          </div>
-          <div>
-            <label htmlFor="details">
-              Detalles del evento <span>(opcional)</span>
-            </label>
-            <textarea {...register("details")} rows={4} cols={50} />
-          </div>
-          <Input type="submit" inputProps={register("submit")} />
-        </form>
-        <a
-          className="ContactForm__content__faq-link"
-          href={faqPdf}
-          target="_blank"
-        >
-          10 dudas más frecuentes
-        </a>
+        <AppearingComponent direction="down">
+          <form onSubmit={handleSubmit(sendEmail)}>
+            <div>
+              <label htmlFor="name">Nombre</label>
+              <Input
+                type="text"
+                inputProps={register("name", {
+                  required: true,
+                })}
+              />
+            </div>
+            <div className="name-input-separator" />
+            <div>
+              <label htmlFor="email">Correo</label>
+              <Input
+                type="email"
+                inputProps={register("email", {
+                  required: true,
+                })}
+              />
+            </div>
+            <div>
+              <label htmlFor="phone">Teléfono</label>
+              <Input
+                type="text"
+                inputProps={register("phone", {
+                  required: true,
+                })}
+              />
+            </div>
+            <div>
+              <label htmlFor="date">Fecha</label>
+              <Input
+                type="date"
+                inputProps={register("date", {
+                  required: true,
+                })}
+              />
+            </div>
+            <div>
+              <label htmlFor="location">Lugar</label>
+              <Input
+                type="text"
+                inputProps={register("location", {
+                  required: true,
+                })}
+              />
+            </div>
+            <div>
+              <label htmlFor="details">
+                Detalles del evento <span>(opcional)</span>
+              </label>
+              <textarea {...register("details")} rows={4} cols={50} />
+            </div>
+            <Input type="submit" inputProps={register("submit")} />
+          </form>
+        </AppearingComponent>
+        <AppearingComponent direction="down" rootMargin="0px">
+          <a
+            className="ContactForm__content__faq-link"
+            href={faqPdf}
+            target="_blank"
+          >
+            10 dudas más frecuentes
+          </a>
+        </AppearingComponent>
       </div>
     </div>
   );
