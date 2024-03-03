@@ -1,0 +1,18 @@
+.animated-title {
+  animation: letter-spacing 3s ease-out forwards;
+
+  @keyframes letter-spacing {
+    0% {
+      letter-spacing: 20px;
+      opacity: 0;
+    }
+    30% {
+      letter-spacing: 10px;
+      opacity: 0.5;
+    }
+    100% {
+      letter-spacing: normal;
+      opacity: 1;
+    }
+  }
+}

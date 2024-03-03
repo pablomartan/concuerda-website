@@ -11,6 +11,7 @@ import faqPdf from "../../../assets/pdf/faq.pdf";
 
 import "./contact.style.scss";
 import { useNavigate } from "react-router";
+import AnimatedTitle from "../../components/animated-title/animated-title.component";
 
 type ContactFormInput = {
   name: string;
@@ -64,7 +65,10 @@ const ContactForm = () => {
     <div className="ContactForm">
       <video src={contactBanner} muted autoPlay loop />
       <div className="ContactForm__content">
-        <h2 className="ContactForm__title">¡Contacta con nosotros!</h2>
+        <AnimatedTitle
+          className="ContactForm__title"
+          text="¡Contacta con nosotros!"
+        />
         <form onSubmit={handleSubmit(sendEmail)}>
           <div>
             <label htmlFor="name">Nombre</label>

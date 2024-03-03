@@ -19,6 +19,7 @@ import repertoirePdf from "../../../assets/pdf/repertoire.pdf";
 import { MainHero } from "../../components/main-hero/main-hero.component";
 import CustomLink from "../../components/link/link.component";
 import { useNavigate } from "react-router";
+import AnimatedTitle from "../../components/animated-title/animated-title.component";
 
 const LandingServices: FC = () => {
   const normalServices = [
@@ -127,7 +128,7 @@ const Reviews: FC = () => {
 
   return (
     <div className="Reviews">
-      <h2 className="Reviews__title">Reseñas</h2>
+      <AnimatedTitle className="Reviews__title" text={"Reseñas"} />
       <div className="Reviews__separation-line" />
       <div className="Reviews--wrapper">
         {reviews.map((review) => {

@@ -10,6 +10,7 @@ import heroBanner from "../../../assets/vid/cma_banner.mp4";
 import { useNavigate } from "react-router";
 
 import "./cma.style.scss";
+import AnimatedTitle from "../../components/animated-title/animated-title.component";
 
 const CmaHero: FC = () => {
   const mainHeroProps = {
@@ -31,7 +32,10 @@ const CmaHero: FC = () => {
 const CmaServices: FC = () => {
   return (
     <section className="Services">
-      <h2 className="Services__title">Un nuevo concepto de evento</h2>
+      <AnimatedTitle
+        className="Services__title"
+        text="Un nuevo concepto de evento"
+      />
       <div className={"Services__service-container"}>
         <div className="Service">
           <p>

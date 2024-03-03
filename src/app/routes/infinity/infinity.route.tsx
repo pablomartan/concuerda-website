@@ -16,13 +16,17 @@ import "./infinity.style.scss";
 import { MainHero } from "../../components/main-hero/main-hero.component";
 import CustomLink from "../../components/link/link.component";
 import { useNavigate } from "react-router";
+import AnimatedTitle from "../../components/animated-title/animated-title.component";
 
 const InfinityServices = () => {
   const services = useInfinityServices();
 
   return (
     <section className="Services">
-      <h2 className="Services__title">¿Qué incluye infinity?</h2>
+      <AnimatedTitle
+        className="Services__title"
+        text={"¿Qué incluye infinity?"}
+      />
       {services.map((service: ServiceType & { text: string }) => {
         return (
           <div className="Service">
@@ -58,7 +62,10 @@ const InfinityBody = () => {
   return (
     <section className="InfinityBody">
       <article className="InfinityBody__how-it-works">
-        <h2 className="InfinityBody__how-it-works__title">{title}</h2>
+        <AnimatedTitle
+          className="InfinityBody__how-it-works__title"
+          text={title}
+        />
         <section className="InfinityBody__how-it-works__text">
           {paragraphs.map((paragraph: string) => (
             <p
@@ -74,7 +81,10 @@ const InfinityBody = () => {
         </CustomLink>
       </article>
       <article className="InfinityBody__music-types">
-        <h2 className="InfinityBody__music-types__title">{musicTitle}</h2>
+        <AnimatedTitle
+          className="InfinityBody__music-types__title"
+          text={musicTitle}
+        />
         <section className="InfinityBody__music-types__info">
           <OvalImage
             picture={ovalImage}
