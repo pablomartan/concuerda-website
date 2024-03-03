@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, forwardRef, useEffect, useRef, useState } from "react";
 
 import { Header } from "../../components/header/header.component";
 import { Footer } from "../../components/footer/footer.component";
@@ -31,6 +31,7 @@ import "./customization.style.scss";
 import { capitalize } from "../../utils/utils";
 import CustomLink from "../../components/link/link.component";
 import { useNavigate } from "react-router";
+import { animated, useSpring } from "@react-spring/web";
 
 type CustomizationSubServiceType = {
   name: string;
@@ -57,15 +58,80 @@ type CustomizationServiceType = {
   className?: string;
 };
 
+type CustomizationPicRefType = {
+  src: string;
+  style: object;
+  index: number;
+};
+
+const CustomizationPicRef = forwardRef<
+  HTMLImageElement,
+  CustomizationPicRefType
+>(({ src, index, style }, ref) => {
+  return (
+    <animated.img
+      ref={ref}
+      style={{ ...style }}
+      src={src}
+      alt=""
+      className={`CustomizationPage__pic CustomizationPage__pic--index-${index + 1}`}
+    />
+  );
+});
+
 const CustomizationPic: FC<{ src: string; index: number }> = ({
   src,
   index,
 }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLImageElement>();
+
+  const opacity = useSpring({
+    opacity: isVisible ? 1 : 0,
+    config: {
+      tension: 200,
+      friction: 50,
+    },
+  });
+
+  const [position, positionApi] = useSpring(() => ({
+    from: { y: 0 },
+    config: {
+      tension: 200,
+      friction: 20,
+    },
+  }));
+
+  useEffect(function setPicVisibility() {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { rootMargin: "-300px" },
+    );
+
+    observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      positionApi.start({
+        from: { y: 70 },
+        to: { y: 0 },
+      });
+    }
+  }, [isVisible]);
+
   return (
-    <img
+    <CustomizationPicRef
+      style={{ ...opacity, ...position }}
       src={src}
-      alt=""
-      className={`CustomizationPage__pic CustomizationPage__pic--index-${index + 1}`}
+      index={index}
+      ref={ref}
     />
   );
 };
