@@ -11,9 +11,9 @@ type AppearingComponentType = {
 const fromProps = (direction: Direction, ammount: number = 80) => {
   switch (direction) {
     case "up":
-      return { from: { y: ammount * -1, x: 0 } };
-    case "down":
       return { from: { y: ammount, x: 0 } };
+    case "down":
+      return { from: { y: ammount * -1, x: 0 } };
     case "left":
       return { from: { x: ammount, y: 0 } };
     case "right":
