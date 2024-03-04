@@ -32,6 +32,11 @@
       .MainHero {
         &__bg {
           object-fit: cover;
+          object-position: center;
+        }
+
+        &__text {
+          width: 95%;
         }
       }
 
@@ -39,16 +44,16 @@
     }
 
     .Services {
-      width: auto;
       font-family: "Poppins";
+      overflow: hidden;
 
       .Service {
-        &:nth-child(odd) {
-          align-self: end;
+        &__banner {
+          display: none;
         }
 
-        &:nth-child(even) {
-          align-self: start;
+        a {
+          width: 95%;
         }
       }
 
@@ -57,6 +62,17 @@
           font-family: "rogik" !important;
         }
       }
+      p {
+        font-weight: lighter;
+      }
+
+      .daily,
+      .snell {
+        p {
+          font-size: 1.5rem;
+        }
+      }
+
       .daily {
         .Service__title {
           text-transform: none;
@@ -68,16 +84,19 @@
           text-shadow: 0 0 6px #fffcac;
         }
       }
+
       .retro {
         .Service__title {
           font-family: "retro_star" !important;
         }
       }
+
       .kento {
         .Service__title {
           font-family: "kento" !important;
         }
       }
+
       .snell {
         .Service__title {
           text-transform: none;
@@ -101,10 +120,24 @@
       background-color: var(--yellow);
       margin: 30% auto;
       font-size: 1rem;
-      width: 25%;
       height: 60px;
+
       a {
         color: var(--black);
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .Projects {
+    .Service {
+      &:nth-child(odd) {
+        align-self: end;
+      }
+
+      &:nth-child(even) {
+        align-self: start;
       }
     }
   }
