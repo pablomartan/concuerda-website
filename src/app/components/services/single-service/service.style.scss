@@ -124,7 +124,6 @@
     flex-direction: column;
     align-items: center;
     width: 40%;
-    margin: 45px 60px;
 
     &:nth-child(even) {
       align-self: flex-end;
@@ -184,7 +183,6 @@
       flex-direction: row;
       justify-content: space-evenly;
       margin-top: 40px;
-      margin-right: 9%;
     }
 
     &__subtype {
