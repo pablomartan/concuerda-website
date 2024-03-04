@@ -1,4 +1,4 @@
-import { FC, ReactNode, forwardRef, useContext, useReducer } from "react";
+import { FC, ReactNode, forwardRef, useReducer } from "react";
 import {
   Customization,
   CustomizationType,
@@ -13,7 +13,6 @@ import { useSpring, animated, SpringValue } from "@react-spring/web";
 import useMeasure from "react-use-measure";
 
 import "./service.style.scss";
-import { weddingContext } from "../../../routes/weddings/weddings.component";
 import AppearingComponent from "../../appearing-component/appearing.component";
 
 type CeremoniaSprings = {
@@ -164,8 +163,6 @@ export const Service: FC<ServiceType> = ({
     false,
   );
 
-  const weddingComponentWidth = useContext(weddingContext);
-
   const [ref, { height, width }] = useMeasure();
 
   const springHeight = useSpring({
@@ -230,7 +227,7 @@ export const Service: FC<ServiceType> = ({
           style={{ backgroundImage: `url("${pic}")` }}
           className="Service__banner"
           onClick={
-            weddingComponentWidth < 1200
+            window.innerWidth < 1200
               ? setCeremoniaActive
               : () => {
                   setCeremoniaActive();
@@ -239,7 +236,7 @@ export const Service: FC<ServiceType> = ({
           }
         />
       </AppearingComponent>
-      <AppearingComponent direction="up" rootMargin="0px">
+      <AppearingComponent direction="up">
         <h2 className="Service__title">{name}</h2>
       </AppearingComponent>
     </>
@@ -249,7 +246,7 @@ export const Service: FC<ServiceType> = ({
     <>
       {name === "ceremonia" ? (
         <div className={"Service".concat(ceremoniaActive ? " active" : "")}>
-          {weddingComponentWidth < 1200 ? (
+          {window.innerWidth < 1200 ? (
             <CeremoniaSmall
               banner={serviceBanner}
               springs={{ springHeight, springOpacity }}

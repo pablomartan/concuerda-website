@@ -5,8 +5,8 @@ type Direction = "up" | "down" | "left" | "right";
 
 type AppearingComponentType = {
   direction: Direction;
-  rootMargin?: string;
   className?: string;
+  delay?: number;
 };
 
 const fromProps = (direction: Direction, ammount: number = 80) => {
@@ -24,8 +24,8 @@ const fromProps = (direction: Direction, ammount: number = 80) => {
 
 const AppearingComponent: FC<PropsWithChildren<AppearingComponentType>> = ({
   direction,
-  rootMargin = "-300px",
   className = "",
+  delay = 0,
   children,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,6 +33,9 @@ const AppearingComponent: FC<PropsWithChildren<AppearingComponentType>> = ({
 
   const [spring, api] = useSpring(() => ({
     ...fromProps(direction),
+    config: {
+      delay,
+    },
   }));
 
   const opacity = useSpring({
@@ -49,7 +52,7 @@ const AppearingComponent: FC<PropsWithChildren<AppearingComponentType>> = ({
           setIsVisible(true);
         }
       },
-      { rootMargin: rootMargin },
+      { rootMargin: window.innerWidth < 1200 ? "0px" : "-300px" },
     );
 
     if (ref.current) {

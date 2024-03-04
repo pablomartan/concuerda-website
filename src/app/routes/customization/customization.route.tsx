@@ -109,7 +109,7 @@ const CustomizationPic: FC<{ src: string; index: number }> = ({
           setIsVisible(true);
         }
       },
-      { rootMargin: "-300px" },
+      { rootMargin: window.innerWidth < 1200 ? "0px" : "-300px" },
     );
 
     if (ref.current) {
