@@ -267,7 +267,13 @@ export const Service: FC<ServiceType> = ({
         <div className={"Service".concat(className ? " " + className : "")}>
           <CustomLink url={url!}>
             {serviceBanner}
-            <p>{text}</p>
+            {url?.includes("project") ? (
+              <AppearingComponent direction="down">
+                <p>{text}</p>
+              </AppearingComponent>
+            ) : (
+              <p>{text}</p>
+            )}
           </CustomLink>
         </div>
       )}
