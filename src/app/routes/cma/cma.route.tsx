@@ -12,6 +12,7 @@ import { useNavigate } from "react-router";
 import "./cma.style.scss";
 import AnimatedTitle from "../../components/animated-title/animated-title.component";
 import { animated, useSpring } from "@react-spring/web";
+import AppearingComponent from "../../components/appearing-component/appearing.component";
 
 const CmaHero: FC = () => {
   const mainHeroProps = {
@@ -120,7 +121,9 @@ const CmaServices: FC = () => {
         </div>
       </div>
       <a href="https://candlemusicagency.com/" target="_blank">
-        <Button>Ver Más</Button>
+        <AppearingComponent direction="up">
+          <Button>Ver Más</Button>
+        </AppearingComponent>
       </a>
       <video src={bottomBanner} autoPlay muted loop />
     </section>
