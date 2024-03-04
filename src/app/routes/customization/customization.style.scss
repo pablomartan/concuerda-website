@@ -2,6 +2,7 @@
   .CustomizationPage {
     max-width: 100%;
     overflow: hidden;
+    position: relative;
 
     .MainHero {
       &__bg {
@@ -53,13 +54,13 @@
       &--index-6 {
         width: 50%;
         margin-left: -8%;
-        margin-top: -110vh;
+        margin-top: -125vh;
       }
 
       &--index-7 {
         width: 45%;
         margin-left: 63%;
-        margin-top: -85vh;
+        margin-top: -100vh;
       }
 
       &--index-8 {
@@ -170,11 +171,12 @@
         display: flex;
         text-decoration: none;
         width: 100%;
+        height: 60px;
       }
 
       &__video {
         &--wrapper {
-          margin-top: 80vh;
+          margin-top: 100vh;
           display: flex;
           flex-direction: column;
         }
@@ -406,7 +408,7 @@
 
         &__text {
           margin-left: 25%;
-          margin-top: 10%;
+          margin-top: 20%;
           position: absolute;
           width: 25%;
           background: transparent;
