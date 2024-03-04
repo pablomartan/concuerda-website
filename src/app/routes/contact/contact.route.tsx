@@ -128,7 +128,7 @@ const ContactForm = () => {
             <Input type="submit" inputProps={register("submit")} />
           </form>
         </AppearingComponent>
-        <AppearingComponent direction="down" rootMargin="0px">
+        <AppearingComponent direction="down">
           <a
             className="ContactForm__content__faq-link"
             href={faqPdf}

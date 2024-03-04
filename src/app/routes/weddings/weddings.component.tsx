@@ -1,4 +1,4 @@
-import { FC, createContext, useEffect } from "react";
+import { FC, useEffect } from "react";
 import { Footer } from "../../components/footer/footer.component";
 import { Header } from "../../components/header/header.component";
 import {
@@ -11,7 +11,6 @@ import {
 } from "../../components/services/services.component";
 import { useWeddingsServices } from "../../hooks/useData";
 import { useNavigate } from "react-router";
-import useMeasure from "react-use-measure";
 
 import "./weddings.style.scss";
 
