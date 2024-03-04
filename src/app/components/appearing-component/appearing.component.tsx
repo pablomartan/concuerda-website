@@ -67,7 +67,7 @@ const AppearingComponent: FC<PropsWithChildren<AppearingComponentType>> = ({
 
   return (
     <animated.div
-      style={{ ...spring, ...opacity, width: "auto", height: "auto" }}
+      style={{ ...spring, ...opacity }}
       ref={ref}
       className={className}
     >
