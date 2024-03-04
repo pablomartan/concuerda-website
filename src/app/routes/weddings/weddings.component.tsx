@@ -15,15 +15,10 @@ import useMeasure from "react-use-measure";
 
 import "./weddings.style.scss";
 
-export const weddingContext = createContext<number>(0);
-const { Provider } = weddingContext;
-
 const Weddings: FC = () => {
   const weddingServiceList = useWeddingsServices();
 
   const navigate = useNavigate();
-
-  const [ref, { width }] = useMeasure();
 
   useEffect(() => navigate("/weddings"), []);
 
@@ -34,14 +29,12 @@ const Weddings: FC = () => {
   };
 
   return (
-    <Provider value={width}>
-      <div className="Weddings" ref={ref}>
-        <Header />
-        <MainHero {...heroProps} />
-        <Services serviceList={weddingServiceList as ServiceType[]} />
-        <Footer />
-      </div>
-    </Provider>
+    <div className="Weddings">
+      <Header />
+      <MainHero {...heroProps} />
+      <Services serviceList={weddingServiceList as ServiceType[]} />
+      <Footer />
+    </div>
   );
 };
 
