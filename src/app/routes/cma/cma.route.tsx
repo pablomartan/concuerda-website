@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 
 import { Header } from "../../components/header/header.component";
 import { Footer } from "../../components/footer/footer.component";
@@ -11,6 +11,7 @@ import { useNavigate } from "react-router";
 
 import "./cma.style.scss";
 import AnimatedTitle from "../../components/animated-title/animated-title.component";
+import { animated, useSpring } from "@react-spring/web";
 
 const CmaHero: FC = () => {
   const mainHeroProps = {
@@ -29,6 +30,51 @@ const CmaHero: FC = () => {
   );
 };
 
+const CmaOpacityText: FC<{ text: string }> = ({ text }) => {
+  const ref = useRef<HTMLSpanElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const [opacity, api] = useSpring(() => ({
+    opacity: 0,
+  }));
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { rootMargin: window.innerWidth < 1200 ? "0px" : "-300px" },
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [ref]);
+
+  useEffect(() => {
+    if (isVisible) {
+      api.start({
+        opacity: 1,
+        config: {
+          tension: 80,
+          friction: 50,
+          clamp: true,
+        },
+      });
+    }
+  }, [isVisible]);
+
+  return (
+    <animated.span style={opacity} ref={ref}>
+      {text}
+    </animated.span>
+  );
+};
+
 const CmaServices: FC = () => {
   return (
     <section className="Services">
@@ -39,29 +85,35 @@ const CmaServices: FC = () => {
       <div className={"Services__service-container"}>
         <div className="Service">
           <p>
-            Una selección de los mejores artistas de Pop, Jazz, Funky, Rock,
-            Flamenco o Soul, en una empresa gestionada por{" "}
+            <CmaOpacityText
+              text={
+                "Una selección de los mejores artistas de Pop, Jazz, Funky, Rock, Flamenco o Soul, en una empresa gestionada por"
+              }
+            />{" "}
             <span className={"Service__cma-word"}>músicos</span>
           </p>
         </div>
         <div className="Service">
           <p>
-            Agrupaciones <span className="Service__cma-word">premium</span>:
-            String Band TC, Coro Gospel, Bandas, Camerata Concuerda
+            <CmaOpacityText text="Agrupaciones" />{" "}
+            <span className="Service__cma-word">premium</span>
+            <CmaOpacityText
+              text={": String Band TC, Coro Gospel, Bandas, Camerata Concuerda"}
+            />
           </p>
         </div>
         <div className="Service">
           <p>
-            Eventos únicos gracias a servicios como el de{" "}
-            <span className="Service__cma-word">1001 velas</span> y el{" "}
+            <CmaOpacityText text="Eventos únicos gracias a servicios como el de" />{" "}
+            <span className="Service__cma-word">1001 velas</span>{" "}
+            <CmaOpacityText text="y el" />{" "}
             <span className="Service__cma-word">piano de cola</span>
           </p>
         </div>
         <div className="Service">
           <p>
-            <span className="Service__cma-word">Music Planners</span>: los
-            músicos de Trio Concuerda te ayudarán a elegir la mejor opción para
-            tu evento
+            <span className="Service__cma-word">Music Planners</span>
+            <CmaOpacityText text=": los músicos de Trio Concuerda te ayudarán a elegir la mejor opción para tu evento" />
           </p>
         </div>
       </div>
