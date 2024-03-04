@@ -50,22 +50,32 @@
           font-family: "melrose";
           font-size: 4rem;
           line-height: 1.1rem;
+
+          &-number {
+            opacity: 0.7;
+            font-size: 3rem;
+          }
         }
       }
 
-      .Button {
-        background-color: var(--yellow);
-        width: unset;
+      a {
+        display: flex;
+        justify-content: center;
+        color: var(--black);
+        font-size: 1.1rem;
+        width: 100%;
         margin-bottom: 5%;
+        text-decoration: none;
 
-        a {
-          color: var(--black);
-          font-size: 1.1rem;
+        .Button {
+          height: 60px;
+          background-color: var(--yellow);
         }
       }
 
       video {
-        width: 100%;
+        width: 100vw;
+        position: relative;
         object-fit: contain;
       }
     }
@@ -114,8 +124,9 @@
         }
       }
 
-      .Button {
-        margin-top: 5%;
+      a {
+        margin-top: 15%;
+        margin-bottom: 20%;
       }
     }
   }

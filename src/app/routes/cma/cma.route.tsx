@@ -45,7 +45,7 @@ const CmaOpacityText: FC<{ text: string }> = ({ text }) => {
           setIsVisible(true);
         }
       },
-      { rootMargin: window.innerWidth < 1200 ? "0px" : "-300px" },
+      { rootMargin: window.innerWidth < 1200 ? "-150px" : "-300px" },
     );
 
     if (ref.current) {
@@ -105,7 +105,9 @@ const CmaServices: FC = () => {
         <div className="Service">
           <p>
             <CmaOpacityText text="Eventos únicos gracias a servicios como el de" />{" "}
-            <span className="Service__cma-word">1001 velas</span>{" "}
+            <span className="Service__cma-word">
+              <span className="Service__cma-word-number">1001</span>velas
+            </span>{" "}
             <CmaOpacityText text="y el" />{" "}
             <span className="Service__cma-word">piano de cola</span>
           </p>
