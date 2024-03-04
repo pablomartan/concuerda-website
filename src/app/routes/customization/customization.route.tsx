@@ -84,7 +84,7 @@ const CustomizationPic: FC<{ src: string; index: number }> = ({
   index,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLImageElement>();
+  const ref = useRef<HTMLImageElement | null>(null);
 
   const opacity = useSpring({
     opacity: isVisible ? 1 : 0,
@@ -112,7 +112,9 @@ const CustomizationPic: FC<{ src: string; index: number }> = ({
       { rootMargin: "-300px" },
     );
 
-    observer.observe(ref.current);
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
 
     return () => observer.disconnect();
   }, []);

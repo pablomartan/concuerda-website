@@ -11,24 +11,13 @@ type AppearingComponentType = {
 const fromProps = (direction: Direction, ammount: number = 80) => {
   switch (direction) {
     case "up":
-      return { from: { y: ammount * -1 } };
+      return { from: { y: ammount * -1, x: 0 } };
     case "down":
-      return { from: { y: ammount } };
+      return { from: { y: ammount, x: 0 } };
     case "left":
-      return { from: { x: ammount } };
+      return { from: { x: ammount, y: 0 } };
     case "right":
-      return { from: { x: ammount * -1 } };
-  }
-};
-
-const toProps = (direction: Direction) => {
-  switch (direction) {
-    case "up":
-    case "down":
-      return { to: { y: 0 } };
-    case "left":
-    case "right":
-      return { to: { x: 0 } };
+      return { from: { x: ammount * -1, y: 0 } };
   }
 };
 
@@ -38,7 +27,7 @@ const AppearingComponent: FC<PropsWithChildren<AppearingComponentType>> = ({
   children,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   const [spring, api] = useSpring(() => ({
     ...fromProps(direction),
@@ -70,7 +59,7 @@ const AppearingComponent: FC<PropsWithChildren<AppearingComponentType>> = ({
 
   if (isVisible) {
     api.start({
-      ...toProps(direction),
+      to: { x: 0, y: 0 },
     });
   }
 

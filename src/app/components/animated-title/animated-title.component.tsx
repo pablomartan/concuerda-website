@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren, useEffect, useRef, useState } from "react";
-import { SpringValue, animated, useSpring, useTrail } from "@react-spring/web";
+import { SpringValue, animated, useTrail } from "@react-spring/web";
 import "./animated-title.style.scss";
 
 type AnimatedLetterType = {
