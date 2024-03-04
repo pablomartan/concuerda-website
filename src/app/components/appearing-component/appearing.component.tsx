@@ -6,6 +6,7 @@ type Direction = "up" | "down" | "left" | "right";
 type AppearingComponentType = {
   direction: Direction;
   rootMargin?: string;
+  className?: string;
 };
 
 const fromProps = (direction: Direction, ammount: number = 80) => {
@@ -24,6 +25,7 @@ const fromProps = (direction: Direction, ammount: number = 80) => {
 const AppearingComponent: FC<PropsWithChildren<AppearingComponentType>> = ({
   direction,
   rootMargin = "-300px",
+  className = "",
   children,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -64,7 +66,11 @@ const AppearingComponent: FC<PropsWithChildren<AppearingComponentType>> = ({
   }
 
   return (
-    <animated.div style={{ ...spring, ...opacity }} ref={ref}>
+    <animated.div
+      style={{ ...spring, ...opacity, width: "auto", height: "auto" }}
+      ref={ref}
+      className={className}
+    >
       {children}
     </animated.div>
   );
