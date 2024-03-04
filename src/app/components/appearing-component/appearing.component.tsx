@@ -52,7 +52,7 @@ const AppearingComponent: FC<PropsWithChildren<AppearingComponentType>> = ({
           setIsVisible(true);
         }
       },
-      { rootMargin: window.innerWidth < 1200 ? "0px" : "-300px" },
+      { rootMargin: window.innerWidth < 1200 ? "-100px" : "-300px" },
     );
 
     if (ref.current) {
