@@ -14,6 +14,7 @@ import useMeasure from "react-use-measure";
 
 import "./service.style.scss";
 import { weddingContext } from "../../../routes/weddings/weddings.component";
+import AppearingComponent from "../../appearing-component/appearing.component";
 
 type CeremoniaSprings = {
   springOpacity?: {
@@ -224,19 +225,23 @@ export const Service: FC<ServiceType> = ({
 
   const serviceBanner = (
     <>
-      <animated.div
-        style={{ backgroundImage: `url("${pic}")` }}
-        className="Service__banner"
-        onClick={
-          weddingComponentWidth < 1200
-            ? setCeremoniaActive
-            : () => {
-                setCeremoniaActive();
-                springOptionsHandler();
-              }
-        }
-      />
-      <h2 className="Service__title">{name}</h2>
+      <AppearingComponent direction="up">
+        <div
+          style={{ backgroundImage: `url("${pic}")` }}
+          className="Service__banner"
+          onClick={
+            weddingComponentWidth < 1200
+              ? setCeremoniaActive
+              : () => {
+                  setCeremoniaActive();
+                  springOptionsHandler();
+                }
+          }
+        />
+      </AppearingComponent>
+      <AppearingComponent direction="up" rootMargin="0px">
+        <h2 className="Service__title">{name}</h2>
+      </AppearingComponent>
     </>
   );
 
