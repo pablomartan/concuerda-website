@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { Footer } from "../../components/footer/footer.component";
 import { Header } from "../../components/header/header.component";
 import { Button } from "../../components/button/button.component";
@@ -20,6 +20,8 @@ import { MainHero } from "../../components/main-hero/main-hero.component";
 import CustomLink from "../../components/link/link.component";
 import { useNavigate } from "react-router";
 import AnimatedTitle from "../../components/animated-title/animated-title.component";
+import AppearingComponent from "../../components/appearing-component/appearing.component";
+import { animated, useSpring } from "@react-spring/web";
 
 const LandingServices: FC = () => {
   const normalServices = [
@@ -59,10 +61,13 @@ const LandingServices: FC = () => {
 
   return (
     <div className="LandingServices">
-      {normalServices.map(({ title, banner, url }) => {
+      {normalServices.map(({ title, banner, url }, index) => {
         return (
           <div className="Service">
-            <div className="Service__interaction">
+            <AppearingComponent
+              direction={index % 2 === 0 ? "right" : "left"}
+              className="Service__interaction"
+            >
               <div className="Service__title">
                 {title.split(" ").map((titleWord, i, array) => {
                   return titleWord === "de" ? null : i > 1 &&
@@ -79,45 +84,53 @@ const LandingServices: FC = () => {
               <CustomLink url={url}>
                 <Button>Ver Más</Button>
               </CustomLink>
-            </div>
+            </AppearingComponent>
             <video src={banner} className="Service__banner" autoPlay muted />
           </div>
         );
       })}
       <div className="LandingServices__special">
-        {specialServices.map(({ title, subtitle, banner, logo, url }) => {
-          return (
-            <div
-              className={"Service--special".concat(
-                ` ${title.replace("\n", "-")}`,
-              )}
-            >
-              <CustomLink url={url}>
-                <div className="Service__banner--special">
-                  <h2 className="Service__title--special">
-                    {title.split("\n").map((word) => (
-                      <span className="Service__title--special__word">
-                        {word}
-                      </span>
-                    ))}
-                  </h2>
-                  <video
-                    src={banner}
-                    className="Service__banner--special__video"
-                    autoPlay
-                    muted
-                  />
-                </div>
-                <div className="Service__interaction--special">
-                  <div className="Service__interaction--special__logo">
-                    {logo}
-                  </div>
-                  <h3 className="Service__subtitle--special">{subtitle}</h3>
-                </div>
-              </CustomLink>
-            </div>
-          );
-        })}
+        {specialServices.map(
+          ({ title, subtitle, banner, logo, url }, index) => {
+            return (
+              <div
+                className={"Service--special".concat(
+                  ` ${title.replace("\n", "-")}`,
+                )}
+              >
+                <CustomLink url={url}>
+                  <AppearingComponent
+                    direction={index % 2 === 0 ? "left" : "right"}
+                    className="Service__banner--special"
+                  >
+                    <h2 className="Service__title--special">
+                      {title.split("\n").map((word) => (
+                        <span className="Service__title--special__word">
+                          {word}
+                        </span>
+                      ))}
+                    </h2>
+                    <video
+                      src={banner}
+                      className="Service__banner--special__video"
+                      autoPlay
+                      muted
+                    />
+                  </AppearingComponent>
+                  <AppearingComponent
+                    direction={index % 2 === 0 ? "right" : "left"}
+                    className="Service__interaction--special"
+                  >
+                    <div className="Service__interaction--special__logo">
+                      {logo}
+                    </div>
+                    <h3 className="Service__subtitle--special">{subtitle}</h3>
+                  </AppearingComponent>
+                </CustomLink>
+              </div>
+            );
+          },
+        )}
       </div>
     </div>
   );
@@ -125,21 +138,61 @@ const LandingServices: FC = () => {
 
 const Reviews: FC = () => {
   const reviews: string[] = useReviews();
+  const [isVisible, setIsVisible] = useState(false);
+
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [spring, api] = useSpring(() => ({
+    width: "0",
+  }));
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+      }
+    });
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      api.start({
+        width: "100%",
+        config: {
+          tension: 500,
+          friction: 80,
+        },
+      });
+    }
+  }, [isVisible]);
 
   return (
     <div className="Reviews">
       <AnimatedTitle className="Reviews__title" text={"Reseñas"} />
       <div className="Reviews__separation-line" />
-      <div className="Reviews--wrapper">
+      <animated.div
+        className="Reviews--wrapper"
+        style={{ ...spring }}
+        ref={ref}
+      >
         {reviews.map((review) => {
           return (
-            <div className="Reviews__review-wrapper">
+            <AppearingComponent
+              className="Reviews__review-wrapper"
+              direction="up"
+              delay={300}
+            >
               <p className="Reviews__review">"{review}"</p>
               <p className="Reviews__decorative-dot">•</p>
-            </div>
+            </AppearingComponent>
           );
         })}
-      </div>
+      </animated.div>
       <div className="Reviews__collabs" />
     </div>
   );
