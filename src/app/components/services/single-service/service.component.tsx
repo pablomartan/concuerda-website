@@ -197,6 +197,7 @@ export const Service: FC<ServiceType> = ({
     config: {
       tension: 90,
       friction: 10,
+      clamp: true,
     },
   });
 
@@ -221,40 +222,37 @@ export const Service: FC<ServiceType> = ({
     }
   };
 
+  const serviceBanner = (
+    <>
+      <animated.div
+        style={{ backgroundImage: `url("${pic}")` }}
+        className="Service__banner"
+        onClick={
+          weddingComponentWidth < 1200
+            ? setCeremoniaActive
+            : () => {
+                setCeremoniaActive();
+                springOptionsHandler();
+              }
+        }
+      />
+      <h2 className="Service__title">{name}</h2>
+    </>
+  );
+
   return (
     <>
       {name === "ceremonia" ? (
         <div className={"Service".concat(ceremoniaActive ? " active" : "")}>
           {weddingComponentWidth < 1200 ? (
             <CeremoniaSmall
-              banner={
-                <>
-                  <div
-                    style={{ backgroundImage: `url("${pic}")` }}
-                    className="Service__banner"
-                    onClick={setCeremoniaActive}
-                  />
-                  <h2 className="Service__title">{name}</h2>
-                </>
-              }
+              banner={serviceBanner}
               springs={{ springHeight, springOpacity }}
               ref={ref}
             />
           ) : (
             <CeremoniaBig
-              banner={
-                <>
-                  <div
-                    style={{ backgroundImage: `url("${pic}")` }}
-                    className="Service__banner"
-                    onClick={() => {
-                      springOptionsHandler();
-                      setCeremoniaActive();
-                    }}
-                  />
-                  <h2 className="Service__title">{name}</h2>
-                </>
-              }
+              banner={serviceBanner}
               springs={{ springHeightTypes, springOpacity, springOptions }}
               ref={ref}
             />
@@ -263,11 +261,7 @@ export const Service: FC<ServiceType> = ({
       ) : (
         <div className={"Service".concat(className ? " " + className : "")}>
           <CustomLink url={url!}>
-            <div
-              style={{ backgroundImage: `url("${pic}")` }}
-              className="Service__banner"
-            />
-            <h2 className="Service__title">{name}</h2>
+            {serviceBanner}
             <p>{text}</p>
           </CustomLink>
         </div>
