@@ -10,6 +10,11 @@
     color: var(--black);
     font-family: "Poppins";
 
+    &:hover {
+      background-color: var(--accent) !important;
+      color: var(--black) !important;
+    }
+
     a {
       text-decoration: none;
     }
