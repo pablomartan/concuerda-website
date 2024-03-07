@@ -76,10 +76,11 @@ const CeremoniaSubType: FC<{
 type CeremoniaProps = {
   banner: ReactNode;
   springs: CeremoniaSprings;
+  active: boolean;
 };
 
 const CeremoniaSmall = forwardRef<HTMLDivElement, CeremoniaProps>(
-  ({ banner, springs }, ref) => {
+  ({ banner, springs, active }, ref) => {
     const customizations = useWeddingsCustomizations();
     const subtypes = useWeddingsCeremonyTypes();
 
@@ -88,7 +89,10 @@ const CeremoniaSmall = forwardRef<HTMLDivElement, CeremoniaProps>(
     return (
       <>
         {banner}
-        <animated.div className={"Ceremonia"} style={{ ...springHeight }}>
+        <animated.div
+          className={"Ceremonia".concat(active ? "" : " inactive")}
+          style={{ ...springHeight }}
+        >
           <div className="Ceremonia__wrapper" ref={ref}>
             <animated.div
               className={"Ceremonia__options"}
@@ -115,7 +119,7 @@ const CeremoniaSmall = forwardRef<HTMLDivElement, CeremoniaProps>(
 );
 
 const CeremoniaBig = forwardRef<HTMLDivElement, CeremoniaProps>(
-  ({ banner, springs }, ref) => {
+  ({ banner, springs, active }, ref) => {
     const customizations = useWeddingsCustomizations();
     const subtypes = useWeddingsCeremonyTypes();
 
@@ -123,7 +127,7 @@ const CeremoniaBig = forwardRef<HTMLDivElement, CeremoniaProps>(
 
     return (
       <>
-        <div className="Ceremonia__top-flex">
+        <div className={"Ceremonia__top-flex"}>
           <div className="Ceremonia__top-flex__banner">{banner}</div>
           <animated.div style={{ ...springOptions }}>
             <animated.div
@@ -139,7 +143,7 @@ const CeremoniaBig = forwardRef<HTMLDivElement, CeremoniaProps>(
           </animated.div>
         </div>
         <animated.div
-          className={"Ceremonia__types"}
+          className={"Ceremonia__types".concat(active ? "" : " inactive")}
           style={{ ...springOpacity, ...springHeightTypes }}
         >
           {subtypes.map((subtype) => (
@@ -251,12 +255,14 @@ export const Service: FC<ServiceType> = ({
               banner={serviceBanner}
               springs={{ springHeight, springOpacity }}
               ref={ref}
+              active={ceremoniaActive}
             />
           ) : (
             <CeremoniaBig
               banner={serviceBanner}
               springs={{ springHeightTypes, springOpacity, springOptions }}
               ref={ref}
+              active={ceremoniaActive}
             />
           )}
         </div>
