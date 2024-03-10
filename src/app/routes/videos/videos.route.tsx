@@ -3,16 +3,13 @@ import { FC, useEffect, useMemo, useRef, useState } from "react";
 import { Header } from "../../components/header/header.component";
 import { Footer } from "../../components/footer/footer.component";
 import { MainHero } from "../../components/main-hero/main-hero.component";
-import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
+import { useNavigate } from "react-router";
 
 import banner from "../../../assets/vid/videos_banner.mp4";
 
 import { useVideosPlaylists } from "../../hooks/useData";
 
-import "react-alice-carousel/lib/alice-carousel.css";
 import "./videos.style.scss";
-import { useNavigate } from "react-router";
 
 const API_URL = import.meta.env.VITE_YOUTUBE_PLAYLIST_API;
 const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
@@ -47,14 +44,6 @@ const VideosCarousel: FC<{
           <polygon points="30,0 30,30, 0,15" />
         </svg>
       </div>
-      <AliceCarousel
-        key="carousel"
-        infinite
-        items={videos}
-        disableButtonsControls
-        mouseTracking
-        ref={carousel}
-      />
       <div
         className="VideosCarousel__arrow VideosCarousel__arrow--next"
         onClick={(e) => carousel.current?.slideNext(e)}
