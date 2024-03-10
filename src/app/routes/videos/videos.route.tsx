@@ -30,30 +30,86 @@ const getFinalTitle = (title: string, className: string) => {
   return <h2 className={className ?? ""}>{title}</h2>;
 };
 
+const getSlideItemClassName = (currentItem: number, videoItem: number) => {
+  const base = "VideosCarousel__item__";
+
+  if (videoItem === currentItem) {
+    return base + "active";
+  }
+
+  if (videoItem === currentItem - 1) {
+    return base + "prev";
+  }
+
+  if (videoItem === currentItem + 1) {
+    return base + "next";
+  }
+
+  return base + "inactive";
+};
+
 const VideosCarousel: FC<{
   videos: JSX.Element[];
 }> = ({ videos }) => {
-  console.log({
-    videos,
+  const [currentItem, setCurrentItem] = useState(0);
+  const viewportWidth = window.innerWidth;
+
+  const {
+    carouselFragment,
+    thumbsFragment,
+    slideToItem,
+    useListenToCustomEvent,
+  } = useSpringCarousel({
+    withThumbs: true,
+    itemsPerSlide: viewportWidth < 1200 ? 1 : 3,
+    gutter: viewportWidth >= 1200 ? 8 : 0,
+    startEndGutter: viewportWidth >= 1200 ? 0 : 24,
+    items: videos.map((video, i) => ({
+      id: i,
+      renderItem: (
+        <div key={video.key} className={getSlideItemClassName(currentItem, i)}>
+          {video}
+        </div>
+      ),
+      renderThumb: <p onClick={() => slideToItem(i)}>•</p>,
+    })),
   });
 
-  const { carouselFragment, thumbsFragment, slideToNextItem, slideToPrevItem } =
-    useSpringCarousel({
-      withThumbs: true,
-      gutter: 15,
-      itemsPerSlide: 3,
-      items: videos.map((video, i) => ({
-        id: i,
-        renderItem: <div className="VideosCarousel__item">{video}</div>,
-        renderThumb: <p>•</p>,
-      })),
-    });
+  const handleSlide = (to: "prev" | "next") => {
+    if (to === "prev") {
+      const prev = currentItem - 1;
+      if (prev < 0) {
+        return;
+      } else {
+        slideToItem(prev);
+      }
+    }
+
+    if (to === "next") {
+      const next = currentItem + 1;
+      if (next < 0) {
+        return;
+      } else {
+        slideToItem(next);
+      }
+    }
+  };
+
+  useListenToCustomEvent((event) => {
+    if (event.eventName === "onSlideStartChange") {
+      setCurrentItem(event.nextItem.id);
+    }
+
+    if (event.eventName === "onDrag") {
+      slideToItem(event.nextItem.id);
+    }
+  });
 
   return (
     <div className="VideosCarousel">
       <div
         className="VideosCarousel__arrow VideosCarousel__arrow--prev"
-        onClick={slideToPrevItem}
+        onClick={() => handleSlide("prev")}
       >
         <svg width="30px" height="30px">
           <polygon points="30,0 30,30, 0,15" />
@@ -65,7 +121,7 @@ const VideosCarousel: FC<{
       </div>
       <div
         className="VideosCarousel__arrow VideosCarousel__arrow--next"
-        onClick={slideToNextItem}
+        onClick={() => handleSlide("next")}
       >
         <svg width="30px" height="30px">
           <polygon points="0,0 30,15, 0,30" />

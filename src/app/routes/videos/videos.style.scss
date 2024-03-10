@@ -12,7 +12,27 @@
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      height: 75vh;
+      overflow: clip;
+
+      .use-spring-carousel-main-wrapper {
+        height: auto !important;
+        margin-left: 6%;
+      }
+
+      .use-spring-carousel-item {
+        width: 85% !important;
+      }
+
+      .use-spring-carousel-thumbs-wrapper {
+        cursor: pointer;
+        width: fit-content !important;
+        margin: 0 auto;
+      }
+
+      .thumb-item {
+        font-size: 2rem;
+        margin-right: 4px;
+      }
 
       &__title {
         padding-top: 8%;
@@ -28,6 +48,18 @@
         }
       }
 
+      &__iframe {
+        width: 100%;
+      }
+
+      &__item {
+        &__active,
+        &__prev,
+        &__next {
+          margin: 0 auto;
+        }
+      }
+
       &Wrapper {
         &:nth-child(even) {
           background-color: var(--white);
@@ -35,16 +67,9 @@
         }
       }
 
-      &__prev-arrow {
+      &__arrow {
         display: none;
       }
-
-      &__next-arrow {
-        display: none;
-      }
-    }
-
-    .alice-carousel {
     }
   }
 }
@@ -52,23 +77,30 @@
 @media (min-width: 1200px) {
   .Videos {
     .thumb-item {
+      width: auto;
       font-size: 1.5rem;
       margin-right: 8px;
     }
 
     .use-spring-carousel-main-wrapper {
       height: auto !important;
+      margin-left: 60vw;
+      padding-top: 10%;
     }
 
     .use-spring-carousel-thumbs-wrapper {
-      flex: unset !important;
-      height: unset !important;
       width: auto !important;
+      //margin-top: 20%;
+    }
+
+    .use-spring-carousel-track-wrapper {
+      align-items: center;
     }
 
     &Carousel {
       margin: 0 auto;
-      width: 75%;
+      width: 85%;
+      overflow: visible;
 
       &__carousel-wrapper {
         display: flex;
@@ -76,6 +108,35 @@
         align-items: center;
         justify-content: center;
         width: 100%;
+      }
+
+      &__iframe {
+        width: 100%;
+      }
+
+      &__item {
+        width: 100%;
+        height: 100%;
+
+        &__active {
+          .VideosCarousel__iframe {
+            width: 40vw;
+            height: calc(9 * 40vw / 16);
+          }
+          margin-left: -9.5vw;
+        }
+
+        &__prev,
+        &__next {
+          .VideosCarousel__iframe {
+            width: 18vw;
+            height: calc(9 * 15vw / 16);
+          }
+        }
+
+        &__inactive {
+          display: none;
+        }
       }
 
       &__arrow {
@@ -96,6 +157,7 @@
       }
 
       &Wrapper {
+        height: 75vh;
         padding-bottom: 10%;
 
         &:nth-child(even) {
