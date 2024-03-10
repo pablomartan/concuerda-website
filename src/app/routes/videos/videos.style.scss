@@ -51,9 +51,32 @@
 
 @media (min-width: 1200px) {
   .Videos {
+    .thumb-item {
+      font-size: 1.5rem;
+      margin-right: 8px;
+    }
+
+    .use-spring-carousel-main-wrapper {
+      height: auto !important;
+    }
+
+    .use-spring-carousel-thumbs-wrapper {
+      flex: unset !important;
+      height: unset !important;
+      width: auto !important;
+    }
+
     &Carousel {
       margin: 0 auto;
       width: 75%;
+
+      &__carousel-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
 
       &__arrow {
         display: block;
@@ -61,6 +84,7 @@
         height: 30px;
         margin: auto 0;
         fill: var(--white);
+        z-index: 3;
 
         &--next {
           margin-left: 8px;
@@ -72,6 +96,8 @@
       }
 
       &Wrapper {
+        padding-bottom: 10%;
+
         &:nth-child(even) {
           .VideosCarousel__arrow {
             fill: var(--black);

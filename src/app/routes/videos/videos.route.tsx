@@ -1,9 +1,10 @@
-import { FC, useEffect, useMemo, useRef, useState } from "react";
+import { FC, useEffect, useMemo, useState } from "react";
 
 import { Header } from "../../components/header/header.component";
 import { Footer } from "../../components/footer/footer.component";
 import { MainHero } from "../../components/main-hero/main-hero.component";
 import { useNavigate } from "react-router";
+import { useSpringCarousel } from "react-spring-carousel";
 
 import banner from "../../../assets/vid/videos_banner.mp4";
 
@@ -32,21 +33,39 @@ const getFinalTitle = (title: string, className: string) => {
 const VideosCarousel: FC<{
   videos: JSX.Element[];
 }> = ({ videos }) => {
-  const carousel = useRef<AliceCarousel>(null);
+  console.log({
+    videos,
+  });
+
+  const { carouselFragment, thumbsFragment, slideToNextItem, slideToPrevItem } =
+    useSpringCarousel({
+      withThumbs: true,
+      gutter: 15,
+      itemsPerSlide: 3,
+      items: videos.map((video, i) => ({
+        id: i,
+        renderItem: <div className="VideosCarousel__item">{video}</div>,
+        renderThumb: <p>•</p>,
+      })),
+    });
 
   return (
     <div className="VideosCarousel">
       <div
         className="VideosCarousel__arrow VideosCarousel__arrow--prev"
-        onClick={(e) => carousel.current?.slidePrev(e)}
+        onClick={slideToPrevItem}
       >
         <svg width="30px" height="30px">
           <polygon points="30,0 30,30, 0,15" />
         </svg>
       </div>
+      <div className="VideosCarousel__carousel-wrapper">
+        {carouselFragment}
+        {thumbsFragment}
+      </div>
       <div
         className="VideosCarousel__arrow VideosCarousel__arrow--next"
-        onClick={(e) => carousel.current?.slideNext(e)}
+        onClick={slideToNextItem}
       >
         <svg width="30px" height="30px">
           <polygon points="0,0 30,15, 0,30" />
@@ -68,10 +87,6 @@ const VideosCarouselWrapper: FC<{
     )
       .then((data) => data.json())
       .then((response) => {
-        console.log({
-          response,
-        });
-
         return response.items.map(
           ({ snippet: { resourceId } }: any) => resourceId.videoId,
         );
@@ -96,7 +111,7 @@ const VideosCarouselWrapper: FC<{
   return (
     <div className="VideosCarouselWrapper">
       {getFinalTitle(title, "VideosCarousel__title")}
-      <VideosCarousel videos={videoIFrames} />
+      {videoIFrames.length > 0 && <VideosCarousel videos={videoIFrames} />}
     </div>
   );
 };
