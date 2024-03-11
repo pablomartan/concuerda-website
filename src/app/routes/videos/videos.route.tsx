@@ -62,7 +62,12 @@ const VideosCarousel: FC<{
   } = useSpringCarousel({
     withThumbs: true,
     itemsPerSlide: viewportWidth < 1200 ? 1 : 3,
-    gutter: viewportWidth >= 1200 ? 8 : 0,
+    gutter:
+      viewportWidth >= 1200
+        ? 8
+        : viewportWidth >= 400
+          ? -0.1 * viewportWidth
+          : -10,
     startEndGutter: viewportWidth >= 1200 ? 0 : 24,
     items: videos.map((video, i) => ({
       id: i,
