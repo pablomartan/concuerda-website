@@ -128,7 +128,7 @@ export const useWeddingsServiceModalsData = () => ({
         url: repertoirePdf,
       },
       {
-        title: "versiones trio concuerda",
+        title: "versiones trío concuerda",
         subtitle: "estilo único y arreglos propios de cada canción",
         url: "/videos",
       },
@@ -166,7 +166,7 @@ export const useWeddingsServiceModalsData = () => ({
         url: repertoirePdf,
       },
       {
-        title: "versiones trio concuerda",
+        title: "versiones trío concuerda",
         subtitle: "estilo único y arreglos propios de cada canción",
         url: "/videos",
       },
@@ -184,7 +184,7 @@ export const useWeddingsServiceModalsData = () => ({
     premiumCustomization: {
       banner: tbvVid,
       title: "ceremonia premium",
-      subtitle: 'lo mejor para el momento del "sí quiero"',
+      subtitle: 'lo mejor para el momento del "Sí, quiero"',
       url: "/cma",
     },
     footer: {
@@ -390,11 +390,11 @@ export const useFooterLinks = () => [
   },
   {
     text: "instagram",
-    url: "https://www.instagram.com/trio_concuerda/",
+    url: "https://www.instagram.com/trío_concuerda/",
   },
   {
     text: "youtube",
-    url: "https://www.youtube.com/@trioconcuerda",
+    url: "https://www.youtube.com/@tríoconcuerda",
   },
 ];
 
