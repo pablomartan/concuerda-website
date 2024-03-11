@@ -5,15 +5,9 @@ import insta from "../../../assets/img/insta.png";
 import yt from "../../../assets/img/youtube.png";
 import { useContactData, useFooterLinks } from "../../hooks/useData";
 import CustomLink from "../link/link.component";
-import emailjs from "@emailjs/browser";
-
-import {
-  EMAIL_PUBLIC_ID,
-  EMAIL_SERVICE,
-  EMAIL_TEMPLATE,
-} from "../../routes/contact/contact.route";
 
 import "./footer.style.scss";
+import { useNavigate } from "react-router-dom";
 
 type TLink = {
   text: string;
@@ -40,18 +34,27 @@ const SocialLink: FC<TLink> = ({ text, url }) => {
   );
 };
 
-const submitForm = (e: FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  //console.log({ e });
-
-  emailjs.sendForm(EMAIL_SERVICE, EMAIL_TEMPLATE, "#footer-form", {
-    publicKey: EMAIL_PUBLIC_ID,
-  });
-};
-
 export const Footer: FC = () => {
+  const navigate = useNavigate();
   const links = useFooterLinks();
   const { phone: contactPhone, email: contactEmail } = useContactData();
+
+  const footerSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const isAgentMobile = window.innerWidth < 1200;
+    const form = new FormData(e.currentTarget);
+    const details = form.get("details");
+
+    if (isAgentMobile) {
+      const a = document.createElement("a");
+      a.href = "whatsapp://send?text=" + details + "&phone=+34685405267";
+      a.click();
+      a.remove();
+    } else {
+      navigate("/contact?details='" + details + "'");
+    }
+  };
+
   return (
     <footer className="Footer">
       <nav className="Footer__nav">
@@ -78,7 +81,7 @@ export const Footer: FC = () => {
         <form
           className="Footer__contact-form"
           id="footer-form"
-          onSubmit={submitForm}
+          onSubmit={footerSubmitHandler}
         >
           <label htmlFor="message">Cuéntanos tu idea</label>
           <input type="text" name="details" placeholder="Escribe tu mensaje" />

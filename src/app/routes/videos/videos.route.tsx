@@ -107,7 +107,7 @@ const VideosCarousel: FC<{
     }
   };
 
-  useListenToCustomEvent((event) => {
+  useListenToCustomEvent((event: any) => {
     if (event.eventName === "onSlideStartChange") {
       setCurrentItem(event.nextItem.id);
     }

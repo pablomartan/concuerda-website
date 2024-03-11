@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import { SubmitHandler, UseFormRegisterReturn, useForm } from "react-hook-form";
 import { Header } from "../../components/header/header.component";
 import { Footer } from "../../components/footer/footer.component";
@@ -14,6 +14,7 @@ import AnimatedTitle from "../../components/animated-title/animated-title.compon
 import AppearingComponent from "../../components/appearing-component/appearing.component";
 
 import "./contact.style.scss";
+import { useSearchParams } from "react-router-dom";
 
 type ContactFormInput = {
   name: string;
@@ -39,7 +40,16 @@ const Input = ({
   return <input type={type} {...inputProps} />;
 };
 
-const ContactForm = () => {
+const sendEmail: SubmitHandler<ContactFormInput> = (data) => {
+  emailjs
+    .send(EMAIL_SERVICE, EMAIL_TEMPLATE, data, {
+      publicKey: EMAIL_PUBLIC_ID,
+    })
+    .then((data) => console.log({ data }))
+    .catch((error) => console.log({ error }));
+};
+
+const ContactForm = ({ details }: { details?: string }) => {
   const defaultValues = {
     name: "Tu nombre",
     email: "correo@mail.com",
@@ -53,15 +63,6 @@ const ContactForm = () => {
     defaultValues,
     mode: "onBlur",
   });
-
-  const sendEmail: SubmitHandler<ContactFormInput> = (data) => {
-    emailjs
-      .send(EMAIL_SERVICE, EMAIL_TEMPLATE, data, {
-        publicKey: EMAIL_PUBLIC_ID,
-      })
-      .then((data) => console.log({ data }))
-      .catch((error) => console.log({ error }));
-  };
 
   return (
     <div className="ContactForm">
@@ -123,7 +124,12 @@ const ContactForm = () => {
               <label htmlFor="details">
                 Detalles del evento <span>(opcional)</span>
               </label>
-              <textarea {...register("details")} rows={4} cols={50} />
+              <textarea
+                {...register("details")}
+                rows={4}
+                cols={50}
+                defaultValue={details}
+              />
             </div>
             <Input type="submit" inputProps={register("submit")} />
           </form>
@@ -144,13 +150,24 @@ const ContactForm = () => {
 
 const Contact: FC = () => {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [details, setDetails] = useState<string | undefined>();
 
-  useEffect(() => navigate("/contact"), []);
+  useEffect(() => {
+    const details = searchParams.get("details");
+    if (details) {
+      setDetails(details.slice(1, -1));
+      setSearchParams(searchParams);
+      navigate("/contact", { replace: true });
+    } else {
+      navigate("/contact");
+    }
+  }, [searchParams]);
 
   return (
     <div className="Contact">
       <Header />
-      <ContactForm />
+      <ContactForm details={details} />
       <Footer />
     </div>
   );
