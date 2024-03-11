@@ -84,13 +84,12 @@
 
     .use-spring-carousel-main-wrapper {
       height: auto !important;
-      margin-left: 60vw;
+      margin-left: 50vw;
       padding-top: 10%;
     }
 
     .use-spring-carousel-thumbs-wrapper {
       width: auto !important;
-      //margin-top: 20%;
     }
 
     .use-spring-carousel-track-wrapper {
@@ -123,7 +122,7 @@
             width: 40vw;
             height: calc(9 * 40vw / 16);
           }
-          margin-left: -9.5vw;
+          margin-left: -2.5vw;
         }
 
         &__prev,
@@ -132,6 +131,10 @@
             width: 18vw;
             height: calc(9 * 15vw / 16);
           }
+        }
+
+        &__next {
+          margin-left: 2vw;
         }
 
         &__inactive {
