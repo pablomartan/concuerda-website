@@ -76,7 +76,14 @@ const VideosCarousel: FC<{
           {video}
         </div>
       ),
-      renderThumb: <p onClick={() => slideToItem(i)}>•</p>,
+      renderThumb: (
+        <p
+          className={i === currentItem ? "__active" : ""}
+          onClick={() => slideToItem(i)}
+        >
+          •
+        </p>
+      ),
     })),
   });
 

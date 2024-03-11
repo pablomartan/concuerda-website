@@ -28,6 +28,11 @@
       .thumb-item {
         font-size: 2rem;
         margin-right: 4px;
+        opacity: 0.5;
+
+        &:has(.__active) {
+          opacity: 1;
+        }
       }
 
       &__title {
