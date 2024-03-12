@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../../button/button.component";
 import "./customization.style.scss";
+import CustomLink from "../../link/link.component";
 
 export type CustomizationType = {
   title: string;
@@ -20,7 +21,7 @@ export const Customization: React.FC<CustomizationType> = ({
         title === "infinity" ? " infinity" : "",
       )}
     >
-      <a href={url} target={url.includes("pdf") ? "_blank" : ""}>
+      <CustomLink url={url}>
         <div>
           <h4 className="Customization__title">{title}</h4>
           <h5 className="Customization__subtitle">{subtitle}</h5>
@@ -29,7 +30,7 @@ export const Customization: React.FC<CustomizationType> = ({
           <Button className="Customization__button">Ver Más</Button>
           <p className="Customization__decorative-dot">•</p>
         </div>
-      </a>
+      </CustomLink>
     </div>
   );
 };
