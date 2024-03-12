@@ -51,7 +51,7 @@ export const Footer: FC = () => {
       a.click();
       a.remove();
     } else {
-      navigate("/contact?details='" + details + "'");
+      navigate("/contact", { state: { details } });
     }
   };
 

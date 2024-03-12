@@ -9,12 +9,11 @@ import emailjs from "@emailjs/browser";
 import contactBanner from "../../../assets/vid/contact_banner.mp4";
 import faqPdf from "../../../assets/pdf/faq.pdf";
 
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import AnimatedTitle from "../../components/animated-title/animated-title.component";
 import AppearingComponent from "../../components/appearing-component/appearing.component";
 
 import "./contact.style.scss";
-import { useSearchParams } from "react-router-dom";
 
 type ContactFormInput = {
   name: string;
@@ -150,19 +149,15 @@ const ContactForm = ({ details }: { details?: string }) => {
 
 const Contact: FC = () => {
   const navigate = useNavigate();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const { state } = useLocation();
   const [details, setDetails] = useState<string | undefined>();
 
   useEffect(() => {
-    const details = searchParams.get("details");
-    if (details) {
-      setDetails(details.slice(1, -1));
-      setSearchParams(searchParams);
-      navigate("/contact", { replace: true });
-    } else {
-      navigate("/contact");
+    if (state) {
+      setDetails(state.details);
     }
-  }, [searchParams]);
+    navigate("/contact");
+  }, []);
 
   return (
     <div className="Contact">
