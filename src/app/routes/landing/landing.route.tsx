@@ -2,10 +2,15 @@ import { FC, useEffect, useRef, useState } from "react";
 import { Footer } from "../../components/footer/footer.component";
 import { Header } from "../../components/header/header.component";
 import { Button } from "../../components/button/button.component";
+import { Outlet, useLocation, useNavigate } from "react-router";
+import { ScrollRestoration } from "react-router-dom";
 
-import { useReviews } from "../../hooks/useData";
+import { MainHero } from "../../components/main-hero/main-hero.component";
+import CustomLink from "../../components/link/link.component";
 
-import "./landing.style.scss";
+import AnimatedTitle from "../../components/animated-title/animated-title.component";
+import AppearingComponent from "../../components/appearing-component/appearing.component";
+import { animated, useSpring } from "@react-spring/web";
 
 import heroBanner from "../../../assets/vid/landing_hero_banner.mp4";
 import versionesBanner from "../../../assets/vid/contact_banner.mp4";
@@ -16,12 +21,9 @@ import cmaBanner from "../../../assets/vid/landing_cma_banner.mp4";
 
 import soloistsPdf from "../../../assets/pdf/solists.pdf";
 import repertoirePdf from "../../../assets/pdf/repertoire.pdf";
-import { MainHero } from "../../components/main-hero/main-hero.component";
-import CustomLink from "../../components/link/link.component";
-import { useNavigate } from "react-router";
-import AnimatedTitle from "../../components/animated-title/animated-title.component";
-import AppearingComponent from "../../components/appearing-component/appearing.component";
-import { animated, useSpring } from "@react-spring/web";
+
+import "./landing.style.scss";
+import { useReviews } from "../../hooks/useData";
 
 const LandingServices: FC = () => {
   const normalServices = [
@@ -222,6 +224,7 @@ const CookieNotice: FC = () => {
 
 const Home: FC = () => {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   useEffect(() => navigate("/"), []);
 
@@ -233,14 +236,21 @@ const Home: FC = () => {
   };
 
   return (
-    <div className="Landing">
-      <CookieNotice />
-      <Header />
-      <MainHero {...mainHeroProps} />
-      <LandingServices />
-      <Reviews />
-      <Footer />
-    </div>
+    <>
+      <ScrollRestoration />
+      {pathname !== "/" ? (
+        <Outlet />
+      ) : (
+        <div className="Landing">
+          <CookieNotice />
+          <Header />
+          <MainHero {...mainHeroProps} />
+          <LandingServices />
+          <Reviews />
+          <Footer />
+        </div>
+      )}
+    </>
   );
 };
 

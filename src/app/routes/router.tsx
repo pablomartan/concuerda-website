@@ -17,70 +17,72 @@ export const routes = createBrowserRouter(
     {
       path: "/",
       element: <Landing />,
-    },
-    {
-      path: "/weddings",
-      element: <Weddings />,
-    },
-    {
-      path: "/weddings/religious",
-      element: <ServiceModal modal={"religious"} />,
-    },
-    {
-      path: "/weddings/civil",
-      element: <ServiceModal modal={"civil"} />,
-    },
-    {
-      path: "/weddings/dinner",
-      element: <ServiceModal modal={"dinner"} />,
-    },
-    {
-      path: "/weddings/cocktail",
-      element: <ServiceModal modal={"cocktail"} />,
-    },
-    {
-      path: "/weddings/party",
-      element: <ServiceModal modal={"party"} />,
-    },
-    {
-      path: "/events",
-      element: <Events />,
-    },
-    {
-      path: "/events/corporate",
-      element: <ServiceModal modal={"corporate"} />,
-    },
-    {
-      path: "/events/custom",
-      element: <ServiceModal modal={"custom"} />,
-    },
-    {
-      path: "/infinity",
-      element: <InfinityComponent />,
-    },
-    {
-      path: "/cma",
-      element: <CmaComponent />,
-    },
-    {
-      path: "/projects",
-      element: <Projects />,
-    },
-    {
-      path: "/videos",
-      element: <Videos />,
-    },
-    {
-      path: "/customization",
-      element: <Customization />,
-    },
-    {
-      path: "/contact",
-      element: <ContactComponent />,
-    },
-    {
-      path: "*",
-      element: <NotFound />,
+      children: [
+        {
+          path: "/weddings",
+          element: <Weddings />,
+        },
+        {
+          path: "/weddings/religious",
+          element: <ServiceModal modal={"religious"} />,
+        },
+        {
+          path: "/weddings/civil",
+          element: <ServiceModal modal={"civil"} />,
+        },
+        {
+          path: "/weddings/dinner",
+          element: <ServiceModal modal={"dinner"} />,
+        },
+        {
+          path: "/weddings/cocktail",
+          element: <ServiceModal modal={"cocktail"} />,
+        },
+        {
+          path: "/weddings/party",
+          element: <ServiceModal modal={"party"} />,
+        },
+        {
+          path: "/events",
+          element: <Events />,
+        },
+        {
+          path: "/events/corporate",
+          element: <ServiceModal modal={"corporate"} />,
+        },
+        {
+          path: "/events/custom",
+          element: <ServiceModal modal={"custom"} />,
+        },
+        {
+          path: "/infinity",
+          element: <InfinityComponent />,
+        },
+        {
+          path: "/cma",
+          element: <CmaComponent />,
+        },
+        {
+          path: "/projects",
+          element: <Projects />,
+        },
+        {
+          path: "/videos",
+          element: <Videos />,
+        },
+        {
+          path: "/customization",
+          element: <Customization />,
+        },
+        {
+          path: "/contact",
+          element: <ContactComponent />,
+        },
+        {
+          path: "*",
+          element: <NotFound />,
+        },
+      ],
     },
   ],
   { basename: import.meta.env.DEV ? "/" : "/concuerda-website/" },
