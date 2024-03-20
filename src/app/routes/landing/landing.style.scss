@@ -294,6 +294,21 @@
       font-size: 2rem;
       margin: unset;
     }
+
+    &__separator {
+      height: 2px;
+      width: 228px;
+      background-color: var(--white);
+      margin: 5% auto 50% auto;
+    }
+
+    &__collabs {
+      max-width: 640px;
+      height: 1000px;
+      background-image: url("../../../assets/img/collabs_mobile.png");
+      background-size: cover;
+      background-position: center;
+    }
   }
 }
 
@@ -534,6 +549,10 @@
       }
 
       &__decorative-dot {
+        display: none;
+      }
+
+      &__separator {
         display: none;
       }
 

@@ -193,6 +193,7 @@ const Reviews: FC = () => {
           );
         })}
       </animated.div>
+      <div className="Reviews__separator" />
       <div className="Reviews__collabs" />
     </div>
   );
