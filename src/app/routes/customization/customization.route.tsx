@@ -199,7 +199,9 @@ const CustomizationService: FC<CustomizationServiceType> = ({
       ) : null}
       {url ? (
         <CustomLink className="CustomizationService__button" url={url}>
-          <Button>{buttonText ?? "Ver Más"}</Button>
+          <Button style={hook === "repertorio" ? "black" : undefined}>
+            {buttonText ?? "Ver Más"}
+          </Button>
         </CustomLink>
       ) : null}
       {video ? (
