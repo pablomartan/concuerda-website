@@ -68,7 +68,15 @@ export const ServiceModal: FC<{ modal: ServiceModalKeyType }> = ({ modal }) => {
       </header>
       <main className="ServiceModal__body">
         {customizations.map((customization) => {
-          return <Customization {...customization} />;
+          return (
+            <Customization
+              {...{
+                ...customization,
+                buttonStyle:
+                  customization.title === "infinity" ? "infinity" : "yellow",
+              }}
+            />
+          );
         })}
         {premiumCustomization ? (
           <div className="ServiceModal__body__premium-customization">
