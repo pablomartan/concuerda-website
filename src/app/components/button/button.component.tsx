@@ -1,9 +1,11 @@
 import React, { PropsWithChildren } from "react";
 import "./button.style.scss";
 
+export type ButtonStyle = "black" | "yellow" | "transparent" | "infinity";
+
 export const Button: React.FC<
   PropsWithChildren<{
-    style?: "black" | "yellow" | "transparent" | "infinity";
+    style?: ButtonStyle;
     size?: "small";
   }>
 > = ({ style, size, children }) => {
