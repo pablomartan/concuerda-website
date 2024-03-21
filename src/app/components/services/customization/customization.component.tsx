@@ -8,12 +8,14 @@ export type CustomizationType = {
   subtitle: string;
   url: string;
   banner?: string;
+  buttonStyle?: string;
 };
 
 export const Customization: React.FC<CustomizationType> = ({
   title,
   subtitle,
   url,
+  buttonStyle,
 }) => {
   return (
     <div
@@ -27,7 +29,12 @@ export const Customization: React.FC<CustomizationType> = ({
           <h5 className="Customization__subtitle">{subtitle}</h5>
         </div>
         <div>
-          <Button>Ver Más</Button>
+          <Button
+            style={buttonStyle}
+            size={innerWidth < 1200 ? "small" : undefined}
+          >
+            Ver Más
+          </Button>
           <p className="Customization__decorative-dot">•</p>
         </div>
       </CustomLink>
