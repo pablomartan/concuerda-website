@@ -124,7 +124,7 @@ const InfinityBody = () => {
           className="InfinityBody__listen__button"
         >
           <CustomLink url="/videos">
-            <Button>Ver videos</Button>
+            <Button style="infinity">Ver videos</Button>
           </CustomLink>
         </AppearingComponent>
       </article>
