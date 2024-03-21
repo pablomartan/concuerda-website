@@ -67,6 +67,8 @@
       }
 
       &.infinity {
+        color: var(--white);
+
         &:hover,
         &:active {
           background-color: inherit;
