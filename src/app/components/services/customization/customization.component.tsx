@@ -27,7 +27,7 @@ export const Customization: React.FC<CustomizationType> = ({
           <h5 className="Customization__subtitle">{subtitle}</h5>
         </div>
         <div>
-          <Button className="Customization__button">Ver Más</Button>
+          <Button>Ver Más</Button>
           <p className="Customization__decorative-dot">•</p>
         </div>
       </CustomLink>

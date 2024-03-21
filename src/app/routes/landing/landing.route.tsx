@@ -26,6 +26,8 @@ import "./landing.style.scss";
 import { useReviews } from "../../hooks/useData";
 
 const LandingServices: FC = () => {
+  const innerWidth = window.innerWidth;
+
   const normalServices = [
     {
       title: "versiones únicas",
@@ -84,7 +86,9 @@ const LandingServices: FC = () => {
                 })}
               </div>
               <CustomLink url={url}>
-                <Button>Ver Más</Button>
+                <Button style={innerWidth < 1200 ? "black" : undefined}>
+                  Ver Más
+                </Button>
               </CustomLink>
             </AppearingComponent>
             <video src={banner} className="Service__banner" autoPlay muted />
@@ -212,7 +216,7 @@ const CookieNotice: FC = () => {
             navegando, consideramos que acepta su uso.
           </div>
         </div>
-        <Button className="CookieNotice__acceptance-button">
+        <Button style="transparent">
           <a href="" target="">
             Aceptar cookies
           </a>
