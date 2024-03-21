@@ -14,6 +14,7 @@ import video from "../../../assets/vid/projects_banner.mp4";
 
 import "./projects.style.scss";
 import { useNavigate } from "react-router";
+import CustomLink from "../../components/link/link.component";
 
 const ProjectsServices = () => {
   const services: ServiceType[] = useProjectsServices();
@@ -32,11 +33,9 @@ const ProjectsServices = () => {
       {services.map((service, i) => {
         return <Service className={fontClassNames[i]} {...service} />;
       })}
-      <Button>
-        <a href={projectsPdf} target="_blank">
-          Ver Más
-        </a>
-      </Button>
+      <CustomLink url={projectsPdf}>
+        <Button>Ver Más</Button>
+      </CustomLink>
     </div>
   );
 };
