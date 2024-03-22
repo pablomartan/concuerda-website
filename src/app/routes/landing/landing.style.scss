@@ -170,7 +170,6 @@
 
         &--special {
           position: absolute;
-          z-index: 1;
           font-family: var(--sans);
           text-transform: uppercase;
           width: 50%;
@@ -459,7 +458,6 @@
           width: 50%;
           text-align: center;
           margin: 130px 12%;
-          z-index: 1;
 
           span {
             display: block;
