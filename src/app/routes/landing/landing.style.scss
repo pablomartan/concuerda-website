@@ -236,6 +236,10 @@
   .Reviews {
     margin-top: 30%;
 
+    &--wrapper {
+      margin-bottom: 120px;
+    }
+
     &__title {
       text-transform: uppercase;
       font-size: 32px;
@@ -529,11 +533,12 @@
       }
 
       &__collabs {
-        width: 90vw;
-        height: 90vh;
+        max-width: unset;
+        width: 986px;
+        height: 376px;
         margin: auto;
         background-image: url("../../../assets/img/collabs_desktop.png");
-        background-size: 100%;
+        background-size: cover;
       }
     }
   }
