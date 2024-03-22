@@ -128,32 +128,10 @@
         }
       }
 
-      &:nth-child(1) {
-        .Service__title {
-          margin-left: 8%;
-          &-word {
-            &:nth-child(even) {
-              padding-left: 40%;
-            }
-          }
-        }
-      }
-
-      &:nth-child(2) {
-        .Service__title {
-          margin-left: 12%;
-          &-word {
-            &:nth-child(even) {
-              padding-left: 30%;
-            }
-          }
-        }
-      }
-
       &:nth-child(3) {
         .Service__title {
-          text-align: center;
           &-word {
+            margin: 0 auto;
             span:nth-child(1) {
               margin-right: 4%;
               font-size: 1.8rem;
@@ -163,9 +141,19 @@
       }
 
       &__title {
+        text-align: center;
+        width: auto;
         &-word {
           font-size: 32px;
           margin: 0 auto;
+
+          &:nth-child(1) {
+            margin-left: -56px;
+          }
+
+          &:nth-child(2) {
+            margin-right: -56px;
+          }
         }
 
         &--special {
