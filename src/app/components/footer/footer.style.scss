@@ -198,11 +198,13 @@
           margin: unset;
           margin-bottom: 10%;
           padding: unset;
+          font-size: 40px;
         }
 
         input[type="text"] {
           grid-area: input;
           margin: unset;
+          font-size: unset;
         }
 
         input[type="submit"] {
@@ -214,6 +216,8 @@
       &-data {
         display: flex;
         gap: 39px;
+
+        font-size: unset;
       }
     }
 
