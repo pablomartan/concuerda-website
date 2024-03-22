@@ -85,7 +85,7 @@ export const Footer: FC = () => {
         >
           <label htmlFor="message">Cuéntanos tu idea</label>
           <input type="text" name="details" placeholder="Escribe tu mensaje" />
-          <input type="submit" value="Enviar" />
+          <input type="submit" value="Enviar" className="Button" />
         </form>
         <div className="Footer__contact-data">
           <div className="Footer__contact__phone">
