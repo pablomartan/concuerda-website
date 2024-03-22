@@ -230,10 +230,6 @@
   .Reviews {
     margin-top: 30%;
 
-    &--wrapper {
-      margin-bottom: 120px;
-    }
-
     &__title {
       text-transform: uppercase;
       font-size: 32px;
@@ -491,6 +487,10 @@
     }
 
     .Reviews {
+      &--wrapper {
+        margin-bottom: 120px;
+      }
+
       &__title {
         font-size: 52px;
         width: 50%;
