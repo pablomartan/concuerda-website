@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../../button/button.component";
+import { Button, ButtonStyle } from "../../button/button.component";
 import "./customization.style.scss";
 import CustomLink from "../../link/link.component";
 
@@ -8,7 +8,7 @@ export type CustomizationType = {
   subtitle: string;
   url: string;
   banner?: string;
-  buttonStyle?: string;
+  buttonStyle?: ButtonStyle;
 };
 
 export const Customization: React.FC<CustomizationType> = ({
