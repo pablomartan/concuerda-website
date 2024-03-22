@@ -182,7 +182,7 @@ const Reviews: FC = () => {
       <AnimatedTitle
         className="Reviews__title"
         text={"Reseñas"}
-        marginRight={16}
+        marginRight={innerWidth < 1200 ? 16 : 26}
       />
       <div className="Reviews__separation-line" />
       <animated.div

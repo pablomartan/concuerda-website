@@ -243,9 +243,9 @@
     &__title {
       text-transform: uppercase;
       font-size: 32px;
-      letter-spacing: 1rem;
       font-weight: normal;
       text-align: center;
+      padding-left: 16px;
     }
 
     &__separation-line {
@@ -502,8 +502,7 @@
         font-size: 52px;
         width: 50%;
         margin: auto;
-        margin-top: 15%;
-        margin-bottom: 3%;
+        padding-left: 26px;
       }
 
       &__separation-line {
