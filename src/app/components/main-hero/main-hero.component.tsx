@@ -19,6 +19,7 @@ export const MainHero: FC<MainHeroProps> = ({ hook, subtext, pic, video }) => {
           autoPlay={true}
           muted={true}
           loop={true}
+          playsInline={true}
         >
           <source src={video} type="video/mp4" />
         </video>
