@@ -89,7 +89,6 @@
               color: #f4df9b;
               font-size: 1.3rem;
               font-weight: 300;
-              letter-spacing: 0.6rem;
               line-height: 2rem;
 
               &:nth-child(even) {
@@ -164,7 +163,7 @@
 
       &__title {
         &-word {
-          font-size: 2.3rem;
+          font-size: 32px;
           margin: 0 auto;
         }
 
@@ -237,7 +236,7 @@
 
     &__title {
       text-transform: uppercase;
-      font-size: 2.3rem;
+      font-size: 32px;
       letter-spacing: 1rem;
       font-weight: normal;
       text-align: center;
@@ -488,7 +487,7 @@
 
     .Reviews {
       &__title {
-        font-size: 3rem;
+        font-size: 52px;
         width: 50%;
         margin: auto;
         margin-top: 15%;

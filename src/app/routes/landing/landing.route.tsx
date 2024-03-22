@@ -179,7 +179,11 @@ const Reviews: FC = () => {
 
   return (
     <div className="Reviews">
-      <AnimatedTitle className="Reviews__title" text={"Reseñas"} />
+      <AnimatedTitle
+        className="Reviews__title"
+        text={"Reseñas"}
+        marginRight={16}
+      />
       <div className="Reviews__separation-line" />
       <animated.div
         className="Reviews--wrapper"

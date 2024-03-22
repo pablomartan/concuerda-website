@@ -4,6 +4,7 @@ import "./animated-title.style.scss";
 
 type AnimatedLetterType = {
   style: {
+    marginRight?: SpringValue<number>;
     opacity: SpringValue<number>;
     x: SpringValue<number>;
   };
@@ -21,8 +22,8 @@ const AnimatedLetter: FC<PropsWithChildren<AnimatedLetterType>> = ({
 };
 
 const AnimatedTitle: FC<
-  PropsWithChildren<{ text: string; className: string }>
-> = ({ text, className }) => {
+  PropsWithChildren<{ text: string; className: string; marginRight?: number }>
+> = ({ text, className, marginRight }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLHeadingElement | null>(null);
   const letters = text.split("");
@@ -30,7 +31,7 @@ const AnimatedTitle: FC<
   const [trails, api] = useTrail(
     letters.length,
     () => ({
-      from: { opacity: 0, x: 80 },
+      from: { opacity: 0, x: 80, marginRight: 0 },
     }),
     [],
   );
@@ -51,6 +52,11 @@ const AnimatedTitle: FC<
             friction: 20,
           },
         });
+        if (!!marginRight) {
+          api.start({
+            to: { marginRight },
+          });
+        }
       }
     });
 
