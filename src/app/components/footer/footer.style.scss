@@ -55,6 +55,32 @@
     &__contact {
       width: 95%;
       margin-top: 128px;
+
+      &__phone {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        div {
+          width: 21px;
+          height: 21px;
+
+          background: url("../../../assets/img/phone.png");
+        }
+      }
+
+      &__email {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        div {
+          width: 21px;
+          height: 14px;
+
+          background: url("../../../assets/img/mail.png");
+        }
+      }
     }
 
     &__contact-form {
@@ -87,6 +113,7 @@
 
     &__contact-data {
       margin-top: 45px;
+      font-size: 12px;
     }
 
     &__logo {

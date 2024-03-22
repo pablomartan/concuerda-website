@@ -89,11 +89,11 @@ export const Footer: FC = () => {
         </form>
         <div className="Footer__contact-data">
           <div className="Footer__contact__phone">
-            <i className="" />
+            <div />
             <p>{contactPhone}</p>
           </div>
           <div className="Footer__contact__email">
-            <i className="" />
+            <div />
             <p>{contactEmail}</p>
           </div>
         </div>
