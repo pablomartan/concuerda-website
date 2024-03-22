@@ -91,7 +91,13 @@ const LandingServices: FC = () => {
                 </Button>
               </CustomLink>
             </AppearingComponent>
-            <video src={banner} className="Service__banner" autoPlay muted />
+            <video
+              src={banner}
+              className="Service__banner"
+              autoPlay
+              muted
+              playsInline={true}
+            />
           </div>
         );
       })}
@@ -121,6 +127,7 @@ const LandingServices: FC = () => {
                       className="Service__banner--special__video"
                       autoPlay
                       muted
+                      playsInline={true}
                     />
                   </AppearingComponent>
                   <AppearingComponent

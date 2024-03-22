@@ -22,7 +22,14 @@ const CmaHero: FC = () => {
 
   return (
     <div className="MainHero">
-      <video src={heroBanner} className="MainHero__bg" autoPlay muted loop />
+      <video
+        src={heroBanner}
+        className="MainHero__bg"
+        autoPlay
+        muted
+        loop
+        playsInline={true}
+      />
       <div className="MainHero__text">
         <img src={cmaLogo} alt="" />
         <h2 className="MainHero__subtext">{mainHeroProps.subtext}</h2>
@@ -125,7 +132,7 @@ const CmaServices: FC = () => {
           <Button>Ver Más</Button>
         </AppearingComponent>
       </a>
-      <video src={bottomBanner} autoPlay muted loop />
+      <video src={bottomBanner} autoPlay muted loop playsInline={true} />
     </section>
   );
 };

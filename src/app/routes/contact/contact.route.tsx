@@ -65,7 +65,7 @@ const ContactForm = ({ details }: { details?: string }) => {
 
   return (
     <div className="ContactForm">
-      <video src={contactBanner} muted autoPlay loop />
+      <video src={contactBanner} muted autoPlay loop playsInline={true} />
       <div className="ContactForm__content">
         <AnimatedTitle
           className="ContactForm__title"

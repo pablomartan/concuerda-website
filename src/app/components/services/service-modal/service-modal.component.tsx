@@ -84,6 +84,7 @@ export const ServiceModal: FC<{ modal: ServiceModalKeyType }> = ({ modal }) => {
               className={"ServiceModal__body__premium-customization__banner"}
               src={premiumCustomization["banner"]}
               autoPlay={true}
+              playsInline={true}
             />
             <Customization {...premiumCustomization} />
           </div>

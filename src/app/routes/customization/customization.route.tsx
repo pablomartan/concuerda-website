@@ -160,6 +160,7 @@ const CustomizationSubService: FC<CustomizationSubServiceType> = ({
           muted
           loop
           src={video}
+          playsInline={true}
         />
       ) : null}
     </div>
@@ -212,6 +213,7 @@ const CustomizationService: FC<CustomizationServiceType> = ({
             autoPlay
             muted
             loop
+            playsInline={true}
           />
           <div className="CustomizationService__video__text">
             <h4 className="CustomizationService__video__hook">{video.hook}</h4>
