@@ -67,7 +67,11 @@ const AnimatedTitle: FC<
       ref={ref}
     >
       {letters.map((letter, i) => {
-        return <AnimatedLetter style={trails[i]}>{letter}</AnimatedLetter>;
+        return (
+          <AnimatedLetter key={letter + i.toString()} style={trails[i]}>
+            {letter}
+          </AnimatedLetter>
+        );
       })}
     </h2>
   );
