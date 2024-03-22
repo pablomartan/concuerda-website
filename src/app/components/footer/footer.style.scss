@@ -54,7 +54,7 @@
 
     &__contact {
       width: 95%;
-      margin-top: 30%;
+      margin-top: 128px;
     }
 
     &__contact-form {
@@ -63,15 +63,15 @@
       align-items: center;
 
       label[for="message"] {
-        margin: 5%;
-        width: 90%;
+        width: 100%;
+        margin-left: 18px;
 
-        font-size: 2rem;
+        font-size: 36px;
         font-family: var(--serif);
       }
 
       input[type="text"] {
-        margin: 3%;
+        margin-left: 3%;
         width: 90%;
 
         border: unset;
