@@ -124,6 +124,7 @@
           margin-bottom: 15%;
         }
       }
+
       .merosa {
         .Service__title {
           text-transform: none;
@@ -142,13 +143,80 @@
 
 @media (min-width: 1200px) {
   .Projects {
-    .Service {
-      &:nth-child(odd) {
-        align-self: end;
+    .MainHero {
+      &__hook {
+        font-size: 40px;
       }
 
-      &:nth-child(even) {
-        align-self: start;
+      &__subtext {
+        font-size: 24px;
+      }
+
+      margin-bottom: 167px;
+    }
+
+    .Services {
+      width: calc(100% - 380px);
+
+      p {
+        font-size: 20px;
+      }
+
+      .Service {
+        a {
+          width: unset;
+        }
+
+        &:nth-child(odd) {
+          align-self: end;
+        }
+
+        &:nth-child(even) {
+          align-self: start;
+        }
+      }
+
+      .rogik {
+        width: 482px;
+
+        .Service__title {
+          font-size: 48px;
+        }
+      }
+
+      .daily {
+        width: 468px;
+      }
+
+      .retro {
+        width: 404px;
+
+        .Service__title {
+          font-size: 50px;
+        }
+      }
+
+      .kento {
+        width: 346px;
+      }
+
+      .snell {
+        width: 547px;
+
+        .Service__title {
+          font-size: 112px;
+        }
+      }
+
+      .merosa {
+        width: 338px;
+        .Service__title {
+          font-size: 50px;
+        }
+      }
+
+      a:has(.Button) {
+        margin-bottom: 200px;
       }
     }
   }
