@@ -83,8 +83,6 @@
 
         &.candlemusic-agency {
           .Service__title--special {
-            margin: unset;
-            margin-top: 25%;
             line-height: 2.5rem;
 
             span {
@@ -102,7 +100,6 @@
                 font-size: 1rem;
                 font-weight: lighter;
                 letter-spacing: 1rem;
-                margin-left: 50%;
               }
             }
           }
@@ -243,7 +240,8 @@
       height: 2px;
       background-color: white;
       margin: auto;
-      margin-bottom: 3%;
+      margin-top: 57px;
+      margin-bottom: 37px;
     }
 
     &__review-wrapper {
@@ -387,7 +385,6 @@
               &__logo {
                 width: 93px;
                 height: 70px;
-                background-image: url("../../../assets/img/cma_logo.png");
               }
             }
 
