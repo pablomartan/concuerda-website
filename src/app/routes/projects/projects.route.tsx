@@ -34,7 +34,7 @@ const ProjectsServices = () => {
         return <Service className={fontClassNames[i]} {...service} />;
       })}
       <CustomLink url={projectsPdf}>
-        <Button>Ver Más</Button>
+        <Button style="yellow">Ver Más</Button>
       </CustomLink>
     </div>
   );
