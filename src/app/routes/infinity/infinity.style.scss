@@ -260,7 +260,7 @@
 @media (min-width: 1200px) {
   .Infinity {
     .MainHero {
-      height: 100%;
+      height: 100vh;
 
       &__banner {
         width: 100%;
@@ -383,6 +383,13 @@
         font-weight: normal;
       }
 
+      &:nth-child(4) {
+        .Service__text {
+          width: 235px;
+          margin: auto;
+        }
+      }
+
       .Service {
         width: 100%;
         min-height: unset;
@@ -401,7 +408,10 @@
           margin-left: 0;
 
           ul {
-            margin: unset;
+            margin: auto;
+            padding: unset;
+            width: 185px;
+
             li {
               text-align: left;
             }
