@@ -47,7 +47,7 @@ export const Footer: FC = () => {
 
     if (isAgentMobile) {
       const a = document.createElement("a");
-      a.href = "whatsapp://send?text=" + details + "&phone=+34685405267";
+      a.href = "whatsapp://send?text=" + details + "&phone=+34604820022";
       a.click();
       a.remove();
     } else {
