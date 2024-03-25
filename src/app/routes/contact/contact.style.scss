@@ -25,39 +25,40 @@
       }
 
       &__title {
-        font-size: 3.5rem;
+        margin-top: 300px;
+        font-size: 48px;
         text-transform: uppercase;
-        margin-top: 50%;
         padding: 5%;
       }
 
       label,
       input {
         display: block;
-        width: 80%;
+        width: calc(100% - 32px);
         margin: auto;
         text-align: left;
         font-family: "Poppins";
       }
 
       label {
-        margin: 0 auto;
-        margin-top: 8%;
+        margin-bottom: 6px;
         font-weight: 700;
+        font-size: 20px;
 
         span {
           font-weight: normal;
+          font-size: 14px;
         }
       }
 
       input {
+        font-size: 16px;
         background-color: rgba(0, 0, 0, 0);
         border: none;
         border-bottom: 1px solid white;
         margin: 0 auto;
-        margin-bottom: 15%;
-        padding-top: 5%;
         color: var(--white);
+        margin-bottom: 40px;
 
         &:focus-visible,
         &:focus {
@@ -70,7 +71,6 @@
           color: var(--black);
           border-radius: 100px;
           text-align: center;
-          padding-bottom: 5%;
         }
       }
 
@@ -81,8 +81,9 @@
         font-family: "Poppins";
         border: none;
         border-bottom: 1px solid white;
-        width: 80%;
-        margin: 8% auto;
+        width: calc(100% - 32px);
+        margin: auto;
+        margin-bottom: 40px;
       }
 
       &__content__faq-link {
@@ -90,7 +91,7 @@
         font-family: var(--sans);
         color: var(--white);
         text-align: center;
-        margin-top: 10%;
+        margin-top: 150px;
       }
     }
   }

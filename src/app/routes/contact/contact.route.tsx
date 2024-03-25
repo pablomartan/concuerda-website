@@ -130,7 +130,12 @@ const ContactForm = ({ details }: { details?: string }) => {
                 defaultValue={details}
               />
             </div>
-            <Input type="submit" inputProps={register("submit")} />
+            <input
+              type="submit"
+              className="Button"
+              {...register("submit")}
+              value="Enviar"
+            />
           </form>
         </AppearingComponent>
         <AppearingComponent direction="down">
