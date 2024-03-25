@@ -1,5 +1,7 @@
 @media screen and (min-width: 300px) {
   .Customization {
+    font-size: 14px;
+
     a {
       text-align: center;
       margin: 30px 20px;
@@ -49,6 +51,8 @@
 
 @media screen and (min-width: 1200px) {
   .Customization {
+    font-size: 20px;
+
     a {
       text-align: left !important;
       border-bottom: 1px solid;
@@ -64,12 +68,7 @@
       }
     }
 
-    &__title {
-      font-size: 1.2rem;
-    }
-
     &__subtitle {
-      font-size: 1.2rem;
       margin: unset;
     }
 

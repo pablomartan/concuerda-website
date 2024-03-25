@@ -28,11 +28,36 @@
     .MainHero {
       &__bg {
         background-image: url("../../../assets/img/hero_banners/weddings_hero.png");
-        height: 900px;
+        background-size: 180%;
+        background-position: 50% bottom;
+        height: 800px;
       }
 
       &__text {
+        width: calc(100% - 82px);
+        font-size: 1rem;
+        margin-top: 130px;
         text-align: center;
+      }
+
+      &__hook {
+        font-size: 28px;
+      }
+    }
+
+    .Services {
+      .Service {
+        &__title {
+          font-size: 48px;
+        }
+      }
+
+      .Customization {
+        margin-bottom: 40px;
+
+        a {
+          margin: 30px 0;
+        }
       }
     }
   }

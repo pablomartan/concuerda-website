@@ -59,7 +59,6 @@
 
     &__options {
       width: 100%;
-      padding-top: 100px;
 
       border-top: 1px solid;
       transition: all 200ms ease-in-out;
@@ -67,13 +66,11 @@
     }
 
     &__title {
-      font-size: 1.3em;
+      font-size: 20px;
       text-transform: uppercase;
       text-align: center;
       font-family: var(--sans);
-
-      width: 90%;
-      margin: auto;
+      margin: 84px auto 48px auto;
     }
 
     &__types {
