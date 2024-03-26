@@ -12,15 +12,15 @@
     &__header {
       height: 340px;
       font-family: "Poppins";
-      background-size: 600% 600%;
-      background-position: center;
+      background-size: 400%;
+      background-position: 50% 35%;
 
       &__back-link {
         text-decoration: none;
         font-weight: 600;
         color: var(--white);
         display: block;
-        margin: 5%;
+        margin: 23px 0 0 18px;
 
         &--cross {
           display: none;
@@ -38,6 +38,7 @@
         text-transform: uppercase;
         text-align: center;
         font-family: var(--serif);
+        margin-bottom: 5px;
       }
 
       &__subtitle {
@@ -48,33 +49,20 @@
         margin: 0 auto;
       }
     }
+
     &__body {
-      padding-top: 40%;
+      padding-top: 120px;
 
-      .Customization__button {
-        background: var(--black);
-        color: var(--white);
-        border: 1px solid var(--white);
-
-        a {
-          color: var(--white);
-        }
+      .Customization {
+        margin: unset;
+        margin-bottom: 70px;
       }
 
       &__premium-customization {
         margin-top: 10%;
         background: var(--yellow);
         color: var(--black);
-
-        .Customization__button {
-          background: var(--yellow);
-          border: 1px solid var(--black);
-          color: var(--black);
-
-          a {
-            color: var(--black);
-          }
-        }
+        border-radius: 0 0 15px 15px;
 
         &__banner {
           width: 100%;
@@ -85,7 +73,7 @@
 
     &__footer {
       height: 200px;
-      padding-top: 10%;
+      padding-top: 80px;
 
       &__link {
         display: block;
