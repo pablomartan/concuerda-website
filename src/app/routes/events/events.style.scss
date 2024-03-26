@@ -14,5 +14,13 @@
       background-image: url("../../../assets/img/hero_banners/events_hero_desktop.png");
       background-position: 40% 20%;
     }
+
+    .Services {
+      .Service {
+        &__title {
+          font-size: 64px;
+        }
+      }
+    }
   }
 }

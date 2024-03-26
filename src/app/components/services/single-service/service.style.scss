@@ -108,13 +108,6 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .mobile {
-    display: none;
-  }
-
-  .desktop {
-    display: unset;
-  }
   .Service {
     display: flex;
     flex-direction: column;
@@ -127,15 +120,14 @@
 
     &__banner {
       margin: auto;
-      width: 300px;
-      border-radius: 160px 160px 0 0;
-      height: 380px;
+      width: 362px;
+      border-radius: 200px 200px 0 0;
+      height: 454px;
       object-fit: cover;
     }
 
     &__title {
       text-transform: uppercase;
-      font-size: 3em;
       font-weight: 400;
       margin: 10px auto 0 auto;
     }
@@ -153,9 +145,16 @@
     &__options {
       border: none;
       padding-top: unset;
-      height: 425px;
       width: auto;
       margin-left: 40px;
+      margin-top: -45px;
+
+      .Customization {
+        a {
+          margin: 0;
+          padding-bottom: 10px;
+        }
+      }
     }
 
     &__top-flex {

@@ -82,5 +82,19 @@
         background-position: 50% 65%;
       }
     }
+
+    .Services {
+      .Customization {
+        a {
+          width: 96% !important;
+        }
+      }
+
+      .Service {
+        &__title {
+          font-size: 64px;
+        }
+      }
+    }
   }
 }
