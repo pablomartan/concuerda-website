@@ -78,7 +78,8 @@
 
     .MainHero {
       &__bg {
-        background-position: 50% 70%;
+        background-size: cover;
+        background-position: 50% 65%;
       }
     }
   }
