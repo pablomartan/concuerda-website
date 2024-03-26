@@ -16,6 +16,8 @@
     }
 
     .Services {
+      margin-bottom: calc(200px - 45px);
+
       .Service {
         &__title {
           font-size: 64px;
