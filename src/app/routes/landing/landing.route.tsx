@@ -115,13 +115,6 @@ const LandingServices: FC = () => {
                     direction={index % 2 === 0 ? "left" : "right"}
                     className="Service__banner--special"
                   >
-                    <h2 className="Service__title--special">
-                      {title.split("\n").map((word) => (
-                        <span className="Service__title--special__word">
-                          {word}
-                        </span>
-                      ))}
-                    </h2>
                     <video
                       src={banner}
                       className="Service__banner--special__video"
@@ -129,6 +122,13 @@ const LandingServices: FC = () => {
                       muted
                       playsInline={true}
                     />
+                    <h2 className="Service__title--special">
+                      {title.split("\n").map((word) => (
+                        <span className="Service__title--special__word">
+                          {word}
+                        </span>
+                      ))}
+                    </h2>
                   </AppearingComponent>
                   <AppearingComponent
                     direction={index % 2 === 0 ? "right" : "left"}
