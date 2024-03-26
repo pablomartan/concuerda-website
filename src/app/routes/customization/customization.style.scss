@@ -227,7 +227,7 @@
         }
 
         &__name {
-          font-size: 1.4rem;
+          font-size: 1.5rem;
           font-family: "Poppins";
           font-weight: 600;
         }
@@ -377,7 +377,6 @@
       &.decoration {
         .CustomizationService__subtext {
           display: block;
-          font-size: 1.5rem;
         }
       }
 
@@ -385,8 +384,16 @@
         font-size: 4rem;
       }
 
+      &__subtext {
+        font-size: 1.5rem;
+        font-weight: 100;
+      }
+
       &__list {
         margin: 5% auto;
+        &__item {
+          font-weight: 100;
+        }
       }
 
       .Button {
@@ -432,7 +439,7 @@
         margin-top: 12%;
 
         &__name {
-          margin-bottom: 5%;
+          margin-bottom: 54px;
         }
 
         &__hook {
@@ -440,7 +447,7 @@
         }
 
         &__subtext {
-          max-width: 66%;
+          max-width: 550px;
           margin: 0 auto;
           font-size: 1.2rem;
           opacity: 0.6;
@@ -450,6 +457,7 @@
           object-fit: cover;
           max-height: 240px;
           width: 100%;
+          margin-top: 24px;
         }
       }
     }
