@@ -108,19 +108,24 @@
 
       &--text {
         align-items: flex-start;
-        margin-left: 2%;
+        height: unset;
+        width: 383px;
+        margin-top: 155px;
+        margin-left: 85px;
       }
 
       &__title {
         margin: unset;
-        font-size: 3rem;
+        width: auto;
+        font-size: 54px;
         font-weight: normal;
       }
 
       &__subtitle {
         margin: unset;
-        width: 21%;
+        width: auto;
         text-align: unset;
+        font-size: 20px;
       }
     }
 
