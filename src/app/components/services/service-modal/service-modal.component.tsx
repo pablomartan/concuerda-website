@@ -10,6 +10,7 @@ import {
 import "./service-modal.style.scss";
 import { capitalize } from "../../../utils/utils";
 import CustomLink from "../../link/link.component";
+import { useLocation } from "react-router";
 
 type ServiceModalKeyType =
   | "religious"
@@ -30,6 +31,9 @@ type ServiceModalType = {
 };
 
 export const ServiceModal: FC<{ modal: ServiceModalKeyType }> = ({ modal }) => {
+  const { pathname } = useLocation();
+  const previousLocation = pathname.split("/")[1];
+
   const modalCustomizations = {
     ...useWeddingsServiceModalsData(),
     ...useEventsServiceModalData(),
@@ -50,12 +54,15 @@ export const ServiceModal: FC<{ modal: ServiceModalKeyType }> = ({ modal }) => {
         className="ServiceModal__header"
         style={{ backgroundImage: `url(${hero})` }}
       >
-        <CustomLink className="ServiceModal__header__back-link" url="/weddings">
+        <CustomLink
+          className="ServiceModal__header__back-link"
+          url={"/" + previousLocation}
+        >
           Volver
         </CustomLink>
         <CustomLink
           className="ServiceModal__header__back-link--cross"
-          url="/weddings"
+          url={"/" + previousLocation}
         >
           ⨉
         </CustomLink>
