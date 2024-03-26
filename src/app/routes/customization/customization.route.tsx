@@ -221,7 +221,9 @@ const CustomizationService: FC<CustomizationServiceType> = ({
               {video.subtext}
             </h5>
             <CustomLink url={video.url}>
-              <Button>Ver Más</Button>
+              <Button style="black" size="small">
+                Ver Más
+              </Button>
             </CustomLink>
           </div>
         </div>

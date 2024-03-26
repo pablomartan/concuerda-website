@@ -9,15 +9,18 @@
         background-image: url("../../../assets/img/hero_banners/customization_banner.jpg");
       }
 
-      &__text {
-        overflow-x: hidden;
-        word-wrap: break-word;
-        width: 90%;
+      &__hook {
+        font-size: 28px;
         word-wrap: break-word;
         hyphens: auto;
         -ms-hyphens: auto;
         -moz-hyphens: auto;
         -webkit-hyphens: auto;
+      }
+
+      &__text {
+        overflow-x: hidden;
+        width: 90%;
       }
     }
 
@@ -133,15 +136,15 @@
       }
 
       &__hook {
-        font-size: 2.5rem;
+        font-size: 35px;
         text-align: center;
         text-transform: uppercase;
-        margin-bottom: 0;
+        margin-bottom: 150px;
       }
 
       &__subtext {
         font-family: "poppins";
-        font-weight: normal;
+        font-weight: 100;
         text-align: center;
         max-width: 80%;
         margin: 0 auto;
@@ -155,7 +158,8 @@
         &__item {
           list-style: none;
           font-family: var(--sans);
-          font-size: 1.5rem;
+          font-size: 20px;
+          font-weight: 100;
           text-align: center;
           line-height: 2rem;
         }
@@ -189,17 +193,7 @@
           color: var(--black);
           font-family: "Poppins";
           border-radius: 0 0 20px 20px;
-
-          a:has(.Button) {
-            min-width: 30%;
-          }
-
-          .Button {
-            height: unset;
-            margin: 5% auto;
-            font-size: 0.8rem;
-            background-color: var(--yellow);
-          }
+          padding-bottom: 14px;
         }
 
         &__hook {
@@ -220,7 +214,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 50%;
 
         &:nth-child(4) {
           height: 200vh;
@@ -230,6 +223,7 @@
           font-size: 1.5rem;
           font-family: "Poppins";
           font-weight: 600;
+          margin-bottom: 64px;
         }
 
         &__hook {
@@ -243,12 +237,13 @@
           text-align: center;
           font-size: 1rem;
           font-family: "Poppins";
-          font-weight: normal;
+          font-weight: 100;
           margin-top: 0;
         }
 
         &__video {
           width: 100%;
+          margin-bottom: 120px;
         }
       }
     }
@@ -394,11 +389,6 @@
         &__item {
           font-weight: 100;
         }
-      }
-
-      .Button {
-        height: 60px;
-        font-size: 1.2rem;
       }
 
       &__video {
