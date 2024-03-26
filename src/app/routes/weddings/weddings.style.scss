@@ -65,6 +65,13 @@
 
 @media (min-width: 1200px) {
   .Weddings {
+    &:has(.Service.active) {
+      .MainHero__bg {
+        background-image: url("../../../assets/img/hero_banners/weddings_alternate_hero.png");
+        background-position: 30% 40%;
+      }
+    }
+
     .Menu--wrapper {
       .MenuLinks {
         .MenuLinks__link {
