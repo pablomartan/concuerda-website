@@ -132,7 +132,20 @@ const CmaServices: FC = () => {
           <Button>Ver Más</Button>
         </AppearingComponent>
       </a>
-      <video src={bottomBanner} autoPlay muted loop playsInline={true} />
+      <video
+        src={bottomBanner}
+        autoPlay
+        muted
+        loop
+        playsInline={true}
+        controls={false}
+      />
+      <a
+        href="whatsapp://send?&phone=+34604820022"
+        className="Services__whatsapp-link"
+      >
+        ¿Te ayudamos a elegir la banda sonora de tu evento?
+      </a>
     </section>
   );
 };
