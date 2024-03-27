@@ -52,7 +52,6 @@ const VideosCarousel: FC<{
   videos: JSX.Element[];
 }> = ({ videos }) => {
   const [currentItem, setCurrentItem] = useState(0);
-  const viewportWidth = window.innerWidth;
 
   const {
     carouselFragment,
@@ -61,14 +60,10 @@ const VideosCarousel: FC<{
     useListenToCustomEvent,
   } = useSpringCarousel({
     withThumbs: true,
-    itemsPerSlide: viewportWidth < 1200 ? 1 : 3,
+    itemsPerSlide: innerWidth < 1200 ? 1 : 3,
     gutter:
-      viewportWidth >= 1200
-        ? 8
-        : viewportWidth >= 400
-          ? -0.1 * viewportWidth
-          : -10,
-    startEndGutter: viewportWidth >= 1200 ? 0 : 24,
+      innerWidth >= 1200 ? 8 : innerWidth >= 400 ? -0.1 * innerWidth : -10,
+    startEndGutter: innerWidth >= 1200 ? 0 : 24,
     items: videos.map((video, i) => ({
       id: i,
       renderItem: (

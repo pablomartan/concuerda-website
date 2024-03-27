@@ -129,7 +129,7 @@ const CmaServices: FC = () => {
       </div>
       <a href="https://candlemusicagency.com/" target="_blank">
         <AppearingComponent direction="up">
-          <Button>Ver Más</Button>
+          <Button style="yellow">Ver Más</Button>
         </AppearingComponent>
       </a>
       <video
