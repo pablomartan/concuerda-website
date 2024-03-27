@@ -240,7 +240,7 @@ export const Service: FC<ServiceType> = ({
           }
         />
       </AppearingComponent>
-      <AppearingComponent direction="up">
+      <AppearingComponent direction="up" rootMargin="-100px">
         <h2 className="Service__title">{name}</h2>
       </AppearingComponent>
     </>

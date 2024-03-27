@@ -7,6 +7,7 @@ type AppearingComponentType = {
   direction: Direction;
   className?: string;
   delay?: number;
+  rootMargin?: string;
 };
 
 const fromProps = (direction: Direction, ammount: number = 80) => {
@@ -27,6 +28,7 @@ const AppearingComponent: FC<PropsWithChildren<AppearingComponentType>> = ({
   className = "",
   delay = 0,
   children,
+  rootMargin,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
@@ -52,7 +54,10 @@ const AppearingComponent: FC<PropsWithChildren<AppearingComponentType>> = ({
           setIsVisible(true);
         }
       },
-      { rootMargin: window.innerWidth < 1200 ? "-100px" : "-300px" },
+      {
+        rootMargin:
+          rootMargin ?? window.innerWidth < 1200 ? "-100px" : "-300px",
+      },
     );
 
     if (ref.current) {
