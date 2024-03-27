@@ -33,6 +33,10 @@ const getFinalTitle = (title: string, className: string) => {
 const getSlideItemClassName = (currentItem: number, videoItem: number) => {
   const base = "VideosCarousel__item__";
 
+  if (videoItem === 0) {
+    return base + "inactive";
+  }
+
   if (videoItem === currentItem) {
     return base + "active";
   }
@@ -71,21 +75,22 @@ const VideosCarousel: FC<{
           {video}
         </div>
       ),
-      renderThumb: (
-        <p
-          className={i === currentItem ? "__active" : ""}
-          onClick={() => slideToItem(i)}
-        >
-          •
-        </p>
-      ),
+      renderThumb:
+        i > 0 ? (
+          <p
+            className={i === currentItem ? "__active" : ""}
+            onClick={() => slideToItem(i)}
+          >
+            •
+          </p>
+        ) : null,
     })),
   });
 
   const handleSlide = (to: "prev" | "next") => {
     if (to === "prev") {
       const prev = currentItem - 1;
-      if (prev < 0) {
+      if (prev < 1) {
         return;
       } else {
         slideToItem(prev);
@@ -94,7 +99,7 @@ const VideosCarousel: FC<{
 
     if (to === "next") {
       const next = currentItem + 1;
-      if (next < 0) {
+      if (next < 1) {
         return;
       } else {
         slideToItem(next);
@@ -111,6 +116,15 @@ const VideosCarousel: FC<{
       slideToItem(event.nextItem.id);
     }
   });
+
+  useEffect(() => {
+    slideToItem(3);
+    const timeout = setTimeout(() => {
+      slideToItem(1);
+    }, 100);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <div className="VideosCarousel">
@@ -158,7 +172,7 @@ const VideosCarouselWrapper: FC<{
   }, [setVideoIds]);
 
   useEffect(() => {
-    fetchedVideos.then((data) => setVideoIds(data));
+    fetchedVideos.then((data) => setVideoIds([""].concat(data)));
   }, [fetchedVideos]);
 
   const videoIFrames = videoIds.map((id) => {
