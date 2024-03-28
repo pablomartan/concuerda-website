@@ -7,7 +7,6 @@ import { Button } from "../../components/button/button.component";
 import cmaLogo from "../../../assets/img/cma_logo_yellow.png";
 import bottomBanner from "../../../assets/vid/bodas_velas_vid.mp4";
 import heroBanner from "../../../assets/vid/cma_banner.mp4";
-import { useNavigate } from "react-router";
 
 import "./cma.style.scss";
 import AnimatedTitle from "../../components/animated-title/animated-title.component";

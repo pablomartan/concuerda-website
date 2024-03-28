@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 
 import { Header } from "../../components/header/header.component";
 import { MainHero } from "../../components/main-hero/main-hero.component";
