@@ -151,9 +151,6 @@ const CmaServices: FC = () => {
 };
 
 const Cma: FC = () => {
-  const navigate = useNavigate();
-
-  useEffect(() => navigate("/cma"), []);
   return (
     <div className="Cma">
       <Header />

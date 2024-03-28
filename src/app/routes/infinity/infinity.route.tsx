@@ -15,7 +15,6 @@ import heroBanner from "../../../assets/vid/landing_infinity_banner.mp4";
 import "./infinity.style.scss";
 import { MainHero } from "../../components/main-hero/main-hero.component";
 import CustomLink from "../../components/link/link.component";
-import { useNavigate } from "react-router";
 import AnimatedTitle from "../../components/animated-title/animated-title.component";
 import AppearingComponent from "../../components/appearing-component/appearing.component";
 
@@ -137,10 +136,6 @@ const InfinityBottomBanner = () => {
 };
 
 const InfinityComponent: FC = () => {
-  const navigate = useNavigate();
-
-  useEffect(() => navigate("/infinity"), []);
-
   const mainHeroProps = {
     pic: false,
     hook: "infinity",

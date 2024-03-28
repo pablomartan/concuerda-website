@@ -13,7 +13,6 @@ import projectsPdf from "../../../assets/pdf/projects.pdf";
 import video from "../../../assets/vid/projects_banner.mp4";
 
 import "./projects.style.scss";
-import { useNavigate } from "react-router";
 import CustomLink from "../../components/link/link.component";
 
 const ProjectsServices = () => {
@@ -41,10 +40,6 @@ const ProjectsServices = () => {
 };
 
 const Projects: FC = () => {
-  const navigate = useNavigate();
-
-  useEffect(() => navigate("/projects"), []);
-
   const mainHeroProps = {
     pic: false,
     hook: "Proyectos Trío Concuerda",

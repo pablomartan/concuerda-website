@@ -3,7 +3,6 @@ import { FC, useEffect, useMemo, useState } from "react";
 import { Header } from "../../components/header/header.component";
 import { Footer } from "../../components/footer/footer.component";
 import { MainHero } from "../../components/main-hero/main-hero.component";
-import { useNavigate } from "react-router";
 import { useSpringCarousel } from "react-spring-carousel";
 
 import banner from "../../../assets/vid/videos_banner.mp4";
@@ -195,10 +194,6 @@ const VideosCarouselWrapper: FC<{
 
 const Videos: FC = () => {
   const playlists = useVideosPlaylists();
-
-  const navigate = useNavigate();
-
-  useEffect(() => navigate("/videos"), []);
 
   const mainHeroProps = {
     hook: "vídeos",

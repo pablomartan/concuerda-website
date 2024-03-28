@@ -30,7 +30,6 @@ import { Button } from "../../components/button/button.component";
 import "./customization.style.scss";
 import { capitalize } from "../../utils/utils";
 import CustomLink from "../../components/link/link.component";
-import { useNavigate } from "react-router";
 import { animated, useSpring } from "@react-spring/web";
 
 type CustomizationSubServiceType = {
@@ -213,7 +212,6 @@ const CustomizationService: FC<CustomizationServiceType> = ({
             autoPlay
             muted
             loop
-            playsInline={true}
           />
           <div className="CustomizationService__video__text">
             <h4 className="CustomizationService__video__hook">{video.hook}</h4>
@@ -221,9 +219,7 @@ const CustomizationService: FC<CustomizationServiceType> = ({
               {video.subtext}
             </h5>
             <CustomLink url={video.url}>
-              <Button style="black" size="small">
-                Ver Más
-              </Button>
+              <Button>Ver Más</Button>
             </CustomLink>
           </div>
         </div>
@@ -239,8 +235,6 @@ const CustomizationService: FC<CustomizationServiceType> = ({
 };
 
 const CustomizationPage: FC = () => {
-  const navigate = useNavigate();
-
   const mainHeroProps = {
     pic: true,
     hook: "Personalización",
@@ -288,8 +282,6 @@ const CustomizationPage: FC = () => {
     ],
     className: "decoration",
   };
-
-  useEffect(() => navigate("/customization"), []);
 
   return (
     <div className="CustomizationPage">

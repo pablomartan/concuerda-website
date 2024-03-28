@@ -2,7 +2,7 @@ import { FC, useEffect, useRef, useState } from "react";
 import { Footer } from "../../components/footer/footer.component";
 import { Header } from "../../components/header/header.component";
 import { Button } from "../../components/button/button.component";
-import { Outlet, useLocation, useNavigate } from "react-router";
+import { Outlet, useLocation } from "react-router";
 import { ScrollRestoration } from "react-router-dom";
 
 import { MainHero } from "../../components/main-hero/main-hero.component";
@@ -238,10 +238,7 @@ const CookieNotice: FC = () => {
 };
 
 const Home: FC = () => {
-  const navigate = useNavigate();
   const { pathname } = useLocation();
-
-  useEffect(() => navigate("/"), []);
 
   const mainHeroProps = {
     pic: false,

@@ -9,7 +9,7 @@ import emailjs from "@emailjs/browser";
 import contactBanner from "../../../assets/vid/contact_banner.mp4";
 import faqPdf from "../../../assets/pdf/faq.pdf";
 
-import { useLocation, useNavigate } from "react-router";
+import { useLocation } from "react-router";
 import AnimatedTitle from "../../components/animated-title/animated-title.component";
 import AppearingComponent from "../../components/appearing-component/appearing.component";
 
@@ -153,7 +153,6 @@ const ContactForm = ({ details }: { details?: string }) => {
 };
 
 const Contact: FC = () => {
-  const navigate = useNavigate();
   const { state } = useLocation();
   const [details, setDetails] = useState<string | undefined>();
 
@@ -161,7 +160,6 @@ const Contact: FC = () => {
     if (state) {
       setDetails(state.details);
     }
-    navigate("/contact");
   }, []);
 
   return (
